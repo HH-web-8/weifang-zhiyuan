@@ -1256,30 +1256,17 @@
 
     <script src="js/main.js"></script>
     
-    <!-- 扣子 Chat SDK 集成说明 -->
-    <!-- 
-    扣子 Chat SDK 集成步骤：
-    1. 在 https://www.coze.cn/ 创建您的智能体
-    2. 获取您的 bot_id
-    3. 引入 SDK 并配置（参考以下代码）
-    
+    <!-- 扣子 Chat SDK -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/latest/libs/cn/index.js"></script>
     <script>
-    (function() {
-        const script = document.createElement('script');
-        script.src = 'https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/0.1.0-beta.4/libs/cn/index.js';
-        script.onload = function() {
-            new CozeWebSDK.WebChatClient({
-                config: {
-                    bot_id: 'YOUR_BOT_ID_HERE',  // 请替换为您的 bot_id
-                },
-                componentProps: {
-                    title: '招生学长 - 智能咨询',
-                },
-            });
-        };
-        document.head.appendChild(script);
-    })();
+    new CozeWebSDK.WebChatClient({
+        config: {
+            bot_id: '762933544636293124',
+        },
+        componentProps: {
+            title: '招生学长 - 智能咨询',
+        },
+    });
     </script>
-    -->
 </body>
 </html>
