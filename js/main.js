@@ -52,11 +52,32 @@ function toggleChat() {
     chatWindow.classList.toggle('hidden');
 }
 
-// 打开聊天窗口（扣子智能体iframe）
+// 打开聊天窗口（扣子智能体SDK）
 function openChat() {
-    if (typeof openCozeChat === 'function') {
-        openCozeChat();
+    // 尝试触发扣子SDK悬浮球点击
+    var selectors = [
+        '#coze-chat-widget button',
+        '[class*="coze-web-chat"] button',
+        '[class*="CozeWebSDK"] button',
+        'button[class*="chat"]'
+    ];
+    for (var i = 0; i < selectors.length; i++) {
+        var btn = document.querySelector(selectors[i]);
+        if (btn) {
+            btn.click();
+            return;
+        }
     }
+    // 如果没找到SDK按钮，可能SDK还没加载完，延迟重试
+    setTimeout(function() {
+        for (var i = 0; i < selectors.length; i++) {
+            var btn = document.querySelector(selectors[i]);
+            if (btn) {
+                btn.click();
+                return;
+            }
+        }
+    }, 1500);
 }
 
 // 滚动到顶部
