@@ -1524,17 +1524,18 @@
     <script>
     var cozeWebSDK = new CozeWebSDK.WebChatClient({
         config: {
-            type: 'app',
-            app_id: '7629335446362931240',
+            bot_id: '7629335446362931240',
+        },
+        componentProps: {
+            title: '招生咨询',
         },
         auth: {
             type: 'token',
             token: 'pat_nO0af6d1Dtt9eKxAKjKzAI9VFiPRb7B3GK6GJElaUzD9q5IocpWpTfTQGjevH0AV',
-            onRefreshToken: async () => 'pat_nO0af6d1Dtt9eKxAKjKzAI9VFiPRb7B3GK6GJElaUzD9q5IocpWpTfTQGjevH0AV',
-        },
-        componentProps: {
-            title: '招生学长 - 智能咨询',
-        },
+            onRefreshToken: function () {
+                return 'pat_nO0af6d1Dtt9eKxAKjKzAI9VFiPRb7B3GK6GJElaUzD9q5IocpWpTfTQGjevH0AV'
+            }
+        }
     });
     </script>
 </body>
