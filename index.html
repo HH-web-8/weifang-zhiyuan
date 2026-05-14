@@ -1519,26 +1519,180 @@
 
     <script src="js/main.js"></script>
     
-    <!-- 扣子智能体 iframe嵌入 -->
-    <div id="coze-chat-overlay" style="display:none; position:fixed; bottom:0; right:0; width:420px; height:650px; z-index:9999; border-radius:12px 0 0 0; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
-      <div style="display:flex; justify-content:space-between; align-items:center; background:#1e40af; color:#fff; padding:12px 16px; font-weight:600;">
-        <span>🎓 招生咨询</span>
-        <button onclick="closeCozeChat()" style="background:none; border:none; color:#fff; font-size:20px; cursor:pointer; line-height:1;">✕</button>
-      </div>
-      <iframe id="coze-iframe" src="https://coze-coding-project.tos.coze.site/coze_storage_7629336077718945826/chat_widget_v2_276ca070.html?sign=1781337553-a18365f51b-0-7f68ef0f3c5322da0b2bca2791c0ed3b0226eef60f28cbe027dfc7ace2799f0a" style="width:100%; height:calc(100% - 48px); border:none;" allow="microphone; camera"></iframe>
+    <!-- 扣子智能体聊天组件（直接调用API） -->
+    <div class="chat-fab" id="chatFab" onclick="toggleChat()">💬</div>
+    <div class="chat-window hidden" id="chatWindow">
+        <div class="chat-header">
+            <div class="chat-header-left">
+                <div class="chat-avatar">🎓</div>
+                <div>
+                    <div class="chat-title">招生小助手 小智</div>
+                    <div class="chat-subtitle">山东工业技师学院</div>
+                </div>
+            </div>
+            <button class="chat-close" onclick="toggleChat()">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="welcome-card">
+                <h3>👋 你好呀！我是招生小助手小智</h3>
+                <p>我是山东工业技师学院的在校学长～不管是专业咨询、招生政策、校园生活，都可以问我哦！😊</p>
+            </div>
+        </div>
+        <div class="quick-actions" id="quickActions">
+            <button class="quick-btn" onclick="sendQuick('有哪些专业？')">📚 专业介绍</button>
+            <button class="quick-btn" onclick="sendQuick('就业怎么样？')">💼 就业前景</button>
+            <button class="quick-btn" onclick="sendQuick('学费多少？')">💰 学费政策</button>
+            <button class="quick-btn" onclick="sendQuick('我想报名')">📝 我要报名</button>
+        </div>
+        <div class="chat-input-area">
+            <textarea class="chat-input" id="chatInput" placeholder="输入你想了解的问题..." rows="1" onkeydown="handleKeydown(event)"></textarea>
+            <button class="chat-send" id="chatSend" onclick="sendMessage()">➤</button>
+        </div>
+        <div class="chat-footer">📞 <a href="tel:13371096986">13371096986</a>（张老师）| 山东工业技师学院招生办</div>
     </div>
     <style>
-    @media (max-width: 640px) {
-      #coze-chat-overlay { width:100%!important; height:85vh!important; border-radius:0!important; bottom:0!important; right:0!important; }
-    }
+    .chat-fab { position:fixed; right:20px; bottom:20px; width:60px; height:60px; border-radius:50%; background:linear-gradient(135deg,#1e88e5,#1565c0); color:#fff; display:flex; align-items:center; justify-content:center; cursor:pointer; box-shadow:0 4px 15px rgba(30,136,229,.4); z-index:10000; transition:transform .3s,box-shadow .3s; font-size:28px; }
+    .chat-fab:hover { transform:scale(1.1); box-shadow:0 6px 20px rgba(30,136,229,.5); }
+    .chat-fab.hidden { display:none; }
+    .chat-window { position:fixed; right:20px; bottom:20px; width:420px; height:620px; max-height:90vh; border-radius:16px; box-shadow:0 8px 40px rgba(0,0,0,.15); display:flex; flex-direction:column; z-index:10001; background:#fff; overflow:hidden; transition:opacity .3s,transform .3s; }
+    .chat-window.hidden { opacity:0; transform:scale(.9) translateY(20px); pointer-events:none; }
+    @media(max-width:500px){ .chat-window{width:100%;height:100%;max-height:100vh;right:0;bottom:0;border-radius:0;} }
+    .chat-header { background:linear-gradient(135deg,#1e88e5,#1565c0); color:#fff; padding:16px 20px; display:flex; align-items:center; justify-content:space-between; flex-shrink:0; }
+    .chat-header-left { display:flex; align-items:center; gap:12px; }
+    .chat-avatar { width:42px; height:42px; border-radius:50%; background:rgba(255,255,255,.25); display:flex; align-items:center; justify-content:center; font-size:22px; }
+    .chat-title { font-size:16px; font-weight:600; }
+    .chat-subtitle { font-size:12px; opacity:.8; margin-top:2px; }
+    .chat-close { background:none; border:none; color:#fff; font-size:22px; cursor:pointer; opacity:.8; padding:4px 8px; border-radius:8px; transition:opacity .2s; }
+    .chat-close:hover { opacity:1; background:rgba(255,255,255,.15); }
+    .chat-messages { flex:1; overflow-y:auto; padding:16px; display:flex; flex-direction:column; gap:12px; scroll-behavior:smooth; background:#f8f9fa; }
+    .chat-messages::-webkit-scrollbar { width:4px; }
+    .chat-messages::-webkit-scrollbar-thumb { background:#ddd; border-radius:4px; }
+    .message { max-width:85%; padding:12px 16px; border-radius:16px; line-height:1.6; font-size:14px; word-wrap:break-word; white-space:pre-wrap; }
+    .message.bot { align-self:flex-start; background:#fff; color:#333; border-bottom-left-radius:4px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+    .message.user { align-self:flex-end; background:linear-gradient(135deg,#1e88e5,#1976d2); color:#fff; border-bottom-right-radius:4px; }
+    .message.bot a { color:#1e88e5; text-decoration:underline; }
+    .typing-indicator { display:flex; gap:4px; padding:12px 16px; align-self:flex-start; background:#fff; border-radius:16px; border-bottom-left-radius:4px; box-shadow:0 1px 4px rgba(0,0,0,.06); }
+    .typing-dot { width:8px; height:8px; border-radius:50%; background:#bbb; animation:typing 1.4s infinite; }
+    .typing-dot:nth-child(2) { animation-delay:.2s; }
+    .typing-dot:nth-child(3) { animation-delay:.4s; }
+    @keyframes typing { 0%,60%,100%{transform:translateY(0);opacity:.4;} 30%{transform:translateY(-6px);opacity:1;} }
+    .quick-actions { display:flex; flex-wrap:wrap; gap:8px; padding:0 16px 12px; flex-shrink:0; }
+    .quick-btn { padding:6px 14px; border-radius:20px; border:1px solid #1e88e5; background:#fff; color:#1e88e5; font-size:13px; cursor:pointer; transition:all .2s; white-space:nowrap; }
+    .quick-btn:hover { background:#1e88e5; color:#fff; }
+    .chat-input-area { padding:12px 16px; display:flex; gap:10px; align-items:flex-end; border-top:1px solid #eee; background:#fff; flex-shrink:0; }
+    .chat-input { flex:1; padding:10px 16px; border:1px solid #e0e0e0; border-radius:24px; font-size:14px; outline:none; resize:none; max-height:100px; min-height:40px; line-height:1.4; font-family:inherit; transition:border-color .2s; }
+    .chat-input:focus { border-color:#1e88e5; }
+    .chat-send { width:40px; height:40px; border-radius:50%; border:none; background:linear-gradient(135deg,#1e88e5,#1565c0); color:#fff; font-size:18px; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:transform .2s,opacity .2s; flex-shrink:0; }
+    .chat-send:hover { transform:scale(1.05); }
+    .chat-send:disabled { opacity:.5; cursor:not-allowed; }
+    .welcome-card { background:linear-gradient(135deg,#e3f2fd,#bbdefb); border-radius:16px; padding:16px; margin-bottom:4px; }
+    .welcome-card h3 { color:#1565c0; margin-bottom:8px; font-size:15px; }
+    .welcome-card p { color:#333; font-size:13px; line-height:1.5; }
+    .chat-footer { text-align:center; padding:6px; background:#f0f0f0; font-size:11px; color:#666; flex-shrink:0; }
+    .chat-footer a { color:#1e88e5; text-decoration:none; }
     </style>
     <script>
+    // ========== 智能体配置 ==========
+    const CHAT_API_BASE = 'https://d2ff6154-e12a-4efa-8a55-802b1882d13e.dev.coze.site';
+    let _chatIsOpen = false;
+    let _chatIsLoading = false;
+    let _chatHistory = [];
+
+    function toggleChat() {
+        _chatIsOpen = !_chatIsOpen;
+        document.getElementById('chatWindow').classList.toggle('hidden', !_chatIsOpen);
+        document.getElementById('chatFab').classList.toggle('hidden', _chatIsOpen);
+        if (_chatIsOpen) { document.getElementById('chatInput').focus(); }
+    }
     function openCozeChat() {
-      document.getElementById('coze-chat-overlay').style.display = 'block';
+        if (!_chatIsOpen) toggleChat();
     }
     function closeCozeChat() {
-      document.getElementById('coze-chat-overlay').style.display = 'none';
+        if (_chatIsOpen) toggleChat();
     }
+    function sendQuick(text) {
+        document.getElementById('chatInput').value = text;
+        sendMessage();
+        document.getElementById('quickActions').style.display = 'none';
+    }
+    function handleKeydown(e) {
+        if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); sendMessage(); }
+    }
+    document.getElementById('chatInput').addEventListener('input', function() {
+        this.style.height = 'auto';
+        this.style.height = Math.min(this.scrollHeight, 100) + 'px';
+    });
+    async function sendMessage() {
+        const text = document.getElementById('chatInput').value.trim();
+        if (!text || _chatIsLoading) return;
+        addMsg('user', text);
+        document.getElementById('chatInput').value = '';
+        document.getElementById('chatInput').style.height = 'auto';
+        document.getElementById('quickActions').style.display = 'none';
+        const typingEl = showTyping();
+        _chatIsLoading = true;
+        document.getElementById('chatSend').disabled = true;
+        try {
+            const messages = [];
+            for (const msg of _chatHistory) {
+                messages.push({ role: msg.role === 'assistant' ? 'ai' : 'human', type: msg.role === 'assistant' ? 'ai' : 'human', content: msg.content });
+            }
+            messages.push({ role: 'human', type: 'human', content: text });
+            const response = await fetch(CHAT_API_BASE + '/run', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ messages: messages }),
+            });
+            if (!response.ok) throw new Error('API返回错误: ' + response.status);
+            const data = await response.json();
+            let botReply = '';
+            if (data.messages && data.messages.length > 0) {
+                const aiMsgs = data.messages.filter(m => m.type === 'ai');
+                botReply = aiMsgs.length > 0 ? aiMsgs[aiMsgs.length - 1].content : data.messages[data.messages.length - 1].content;
+            }
+            removeTyping(typingEl);
+            if (botReply) {
+                addMsg('bot', botReply);
+                _chatHistory.push({ role: 'user', content: text });
+                _chatHistory.push({ role: 'assistant', content: botReply });
+            } else {
+                addMsg('bot', '抱歉，我暂时无法回复，请稍后再试～ 😅\n\n📞 您也可以直接拨打：13371096986（张老师）');
+            }
+        } catch (error) {
+            console.error('发送消息失败:', error);
+            removeTyping(typingEl);
+            addMsg('bot', '网络似乎有点问题，请稍后再试～ 😅\n\n📞 您也可以直接拨打：13371096986（张老师）');
+        } finally {
+            _chatIsLoading = false;
+            document.getElementById('chatSend').disabled = false;
+            document.getElementById('chatInput').focus();
+        }
+    }
+    function addMsg(role, content) {
+        const div = document.createElement('div');
+        div.className = 'message ' + role;
+        div.innerHTML = formatMsg(content);
+        document.getElementById('chatMessages').appendChild(div);
+        document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+        return div;
+    }
+    function formatMsg(text) {
+        if (!text) return '';
+        let html = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        html = html.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+        html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        html = html.replace(/\n/g, '<br>');
+        return html;
+    }
+    function showTyping() {
+        const div = document.createElement('div');
+        div.className = 'typing-indicator';
+        div.innerHTML = '<div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div>';
+        document.getElementById('chatMessages').appendChild(div);
+        document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
+        return div;
+    }
+    function removeTyping(el) { if (el && el.parentNode) el.parentNode.removeChild(el); }
     </script>
 </body>
 </html>
