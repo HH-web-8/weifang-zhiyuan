@@ -1519,21 +1519,40 @@
 
     <script src="js/main.js"></script>
     
-    <!-- 扣子 Chat SDK -->
-    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.1.0-beta.0/libs/cn/index.js"></script>
+    <!-- 扣子智能体 iframe嵌入 -->
+    <div id="coze-chat-overlay" style="display:none; position:fixed; bottom:0; right:0; width:400px; height:600px; z-index:9999; border-radius:12px 0 0 0; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+      <div style="display:flex; justify-content:space-between; align-items:center; background:#1e40af; color:#fff; padding:12px 16px; font-weight:600;">
+        <span>🎓 招生学长 - 智能咨询</span>
+        <button onclick="closeCozeChat()" style="background:none; border:none; color:#fff; font-size:20px; cursor:pointer; line-height:1;">✕</button>
+      </div>
+      <iframe id="coze-iframe" src="" style="width:100%; height:calc(100% - 48px); border:none;"></iframe>
+    </div>
+    <style>
+    @media (max-width: 640px) {
+      #coze-chat-overlay { width:100%!important; height:85vh!important; border-radius:0!important; bottom:0!important; right:0!important; }
+    }
+    </style>
     <script>
-    new CozeWebSDK.WebChatClient({
-        config: {
-            botId: '762933544636293124',
-        },
-        auth: {
-            type: 'token',
-            token: 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImIzYjhkYTRlLWYwMzktNGE2ZS1iNjhmLTdiZjAzMjE0YzMwNyJ9.eyJpc3MiOiJodHRwczovL2FwaS5jb3plLmNuIiwiYXVkIjpbInpBN0hpT0JGWVIxcG9NdDc1OWlZdTQxM0duN3pmWVhQIl0sImV4cCI6ODIxMDI2Njg3Njc5OSwiaWF0IjoxNzc4NzI0NTI5LCJzdWIiOiJzcGlmZmU6Ly9hcGkuY296ZS5jbi93b3JrbG9hZF9pZGVudGl0eS9pZDo3NjI5MzM4OTAzODQwODE3MTg3Iiwic3JjIjoiaW5ib3VuZF9hdXRoX2FjY2Vzc190b2tlbl9pZDo3NjM5NTYzNjg0NTE1MTUxOTA3In0.p33hDLPIMhtT6tRKAQjXuab9udFtXcE82F5Va4c2nqhKV_WXDAZEuGj-miUqZpoWyvNhQFgKOhf8nlTJRuUCrPZR7e1rVauKnIlWLOEeN_VKRpW5bRGx2JtJMNgfe4b6t3wltZndzwUGZPWIn8gdzPDkXiVr4dEP4Q3Cpj9l6WCluNOqvalOif9sSYemrNkuf7VdFSqw4EyfsGBZLyejGtsfOhKktpSmFGuapS1aX09MxHwpxEumLV3LJAJcoSt9fIIM59Az5Dh3azFQ_VcplXiDqVWOFa3tyx9rdCXRi5x9NOwPcXVbBXWHPhSTY31S88DZy-l2E1O-9OOf_tY59Q',
-            onRefreshToken: async () => 'eyJhbGciOiJSUzI1NiIsImtpZCI6ImIzYjhkYTRlLWYwMzktNGE2ZS1iNjhmLTdiZjAzMjE0YzMwNyJ9.eyJpc3MiOiJodHRwczovL2FwaS5jb3plLmNuIiwiYXVkIjpbInpBN0hpT0JGWVIxcG9NdDc1OWlZdTQxM0duN3pmWVhQIl0sImV4cCI6ODIxMDI2Njg3Njc5OSwiaWF0IjoxNzc4NzI0NTI5LCJzdWIiOiJzcGlmZmU6Ly9hcGkuY296ZS5jbi93b3JrbG9hZF9pZGVudGl0eS9pZDo3NjI5MzM4OTAzODQwODE3MTg3Iiwic3JjIjoiaW5ib3VuZF9hdXRoX2FjY2Vzc190b2tlbl9pZDo3NjM5NTYzNjg0NTE1MTUxOTA3In0.p33hDLPIMhtT6tRKAQjXuab9udFtXcE82F5Va4c2nqhKV_WXDAZEuGj-miUqZpoWyvNhQFgKOhf8nlTJRuUCrPZR7e1rVauKnIlWLOEeN_VKRpW5bRGx2JtJMNgfe4b6t3wltZndzwUGZPWIn8gdzPDkXiVr4dEP4Q3Cpj9l6WCluNOqvalOif9sSYemrNkuf7VdFSqw4EyfsGBZLyejGtsfOhKktpSmFGuapS1aX09MxHwpxEumLV3LJAJcoSt9fIIM59Az5Dh3azFQ_VcplXiDqVWOFa3tyx9rdCXRi5x9NOwPcXVbBXWHPhSTY31S88DZy-l2E1O-9OOf_tY59Q',
-        },
-        componentProps: {
-            title: '招生学长 - 智能咨询',
-        },
+    function openCozeChat() {
+      var overlay = document.getElementById('coze-chat-overlay');
+      var iframe = document.getElementById('coze-iframe');
+      if (!iframe.src) {
+        iframe.src = 'https://5sx763qr54.coze.site';
+      }
+      overlay.style.display = 'block';
+    }
+    function closeCozeChat() {
+      document.getElementById('coze-chat-overlay').style.display = 'none';
+    }
+    // 网站上所有"咨询"按钮都绑定到openCozeChat
+    document.addEventListener('DOMContentLoaded', function() {
+      var chatBtns = document.querySelectorAll('[onclick*="openChat"], [onclick*="toggleChat"]');
+      chatBtns.forEach(function(btn) {
+        var oldOnclick = btn.getAttribute('onclick');
+        if (oldOnclick) {
+          btn.setAttribute('onclick', 'openCozeChat()');
+        }
+      });
     });
     </script>
 </body>
