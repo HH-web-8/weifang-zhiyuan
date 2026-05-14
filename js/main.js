@@ -52,10 +52,17 @@ function toggleChat() {
     chatWindow.classList.toggle('hidden');
 }
 
-// 打开聊天窗口
+// 打开聊天窗口（扣子智能体）
 function openChat() {
-    const chatWindow = document.getElementById('chat-window');
-    chatWindow.classList.remove('hidden');
+    // 触发扣子SDK的聊天窗口
+    const cozeBtn = document.querySelector('#coze-chat-widget button, [class*="coze-web-chat"] button');
+    if (cozeBtn) {
+        cozeBtn.click();
+    } else {
+        // 如果扣子SDK还没加载完，尝试直接操作
+        const chatEl = document.querySelector('[class*="coze"]');
+        if (chatEl) chatEl.click();
+    }
 }
 
 // 滚动到顶部
