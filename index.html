@@ -1519,24 +1519,26 @@
 
     <script src="js/main.js"></script>
     
-    <!-- 扣子 Chat SDK -->
-    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.20/libs/cn/index.js"></script>
+    <!-- 扣子智能体 iframe嵌入 -->
+    <div id="coze-chat-overlay" style="display:none; position:fixed; bottom:0; right:0; width:420px; height:650px; z-index:9999; border-radius:12px 0 0 0; overflow:hidden; box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+      <div style="display:flex; justify-content:space-between; align-items:center; background:#1e40af; color:#fff; padding:12px 16px; font-weight:600;">
+        <span>🎓 招生咨询</span>
+        <button onclick="closeCozeChat()" style="background:none; border:none; color:#fff; font-size:20px; cursor:pointer; line-height:1;">✕</button>
+      </div>
+      <iframe id="coze-iframe" src="https://coze-coding-project.tos.coze.site/coze_storage_7629336077718945826/chat_widget_v2_276ca070.html?sign=1781337553-a18365f51b-0-7f68ef0f3c5322da0b2bca2791c0ed3b0226eef60f28cbe027dfc7ace2799f0a" style="width:100%; height:calc(100% - 48px); border:none;" allow="microphone; camera"></iframe>
+    </div>
+    <style>
+    @media (max-width: 640px) {
+      #coze-chat-overlay { width:100%!important; height:85vh!important; border-radius:0!important; bottom:0!important; right:0!important; }
+    }
+    </style>
     <script>
-    var cozeWebSDK = new CozeWebSDK.WebChatClient({
-        config: {
-            bot_id: '7629335446362931240',
-        },
-        componentProps: {
-            title: '招生咨询',
-        },
-        auth: {
-            type: 'token',
-            token: 'pat_nO0af6d1Dtt9eKxAKjKzAI9VFiPRb7B3GK6GJElaUzD9q5IocpWpTfTQGjevH0AV',
-            onRefreshToken: function () {
-                return 'pat_nO0af6d1Dtt9eKxAKjKzAI9VFiPRb7B3GK6GJElaUzD9q5IocpWpTfTQGjevH0AV'
-            }
-        }
-    });
+    function openCozeChat() {
+      document.getElementById('coze-chat-overlay').style.display = 'block';
+    }
+    function closeCozeChat() {
+      document.getElementById('coze-chat-overlay').style.display = 'none';
+    }
     </script>
 </body>
 </html>
