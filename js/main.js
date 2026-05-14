@@ -54,30 +54,17 @@ function toggleChat() {
 
 // 打开聊天窗口（扣子智能体SDK）
 function openChat() {
-    // 尝试触发扣子SDK悬浮球点击
-    var selectors = [
-        '#coze-chat-widget button',
-        '[class*="coze-web-chat"] button',
-        '[class*="CozeWebSDK"] button',
-        'button[class*="chat"]'
-    ];
-    for (var i = 0; i < selectors.length; i++) {
-        var btn = document.querySelector(selectors[i]);
-        if (btn) {
-            btn.click();
-            return;
-        }
-    }
-    // 如果没找到SDK按钮，可能SDK还没加载完，延迟重试
-    setTimeout(function() {
-        for (var i = 0; i < selectors.length; i++) {
-            var btn = document.querySelector(selectors[i]);
-            if (btn) {
-                btn.click();
-                return;
+    // 使用扣子SDK官方方法打开聊天窗口
+    if (typeof cozeWebSDK !== 'undefined' && cozeWebSDK.showChatBot) {
+        cozeWebSDK.showChatBot();
+    } else {
+        // SDK可能还没加载完，延迟重试
+        setTimeout(function() {
+            if (typeof cozeWebSDK !== 'undefined' && cozeWebSDK.showChatBot) {
+                cozeWebSDK.showChatBot();
             }
-        }
-    }, 1500);
+        }, 2000);
+    }
 }
 
 // 滚动到顶部
