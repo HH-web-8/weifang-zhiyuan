@@ -1679,6 +1679,9 @@
             if (!fullReply) {
                 botDiv.innerHTML = formatMsg('抱歉，我暂时无法回复，请稍后再试～ 😅\n\n📞 您也可以直接拨打：13371096986（张老师）');
             } else {
+                // 补充API未返回的链接
+                fullReply = supplementLinks(fullReply);
+                botDiv.innerHTML = formatMsg(fullReply);
                 _chatHistory.push({ role: 'user', content: text });
                 _chatHistory.push({ role: 'assistant', content: fullReply });
             }
@@ -1699,6 +1702,31 @@
         document.getElementById('chatMessages').scrollTop = document.getElementById('chatMessages').scrollHeight;
         return div;
     }
+    // ========== 视频链接补充（API不返回URL，前端自动注入） ==========
+    const _videoLinks = [
+        { keywords: ['航拍','校园环境','校园风光'], url: 'https://weixin.qq.com/sph/Afn1n3U2hB', label: '🎬 校园航拍视频' },
+        { keywords: ['计算机网络','计算机专业'], url: 'https://weixin.qq.com/sph/Afn1n3U2hB', label: '🎬 计算机网络应用专业视频' }
+    ];
+    function supplementLinks(text) {
+        // 检测文本中是否提到视频但API没返回URL，自动补上
+        let extra = '';
+        if (/视频|观看|航拍/.test(text) && !/https?:\/\//.test(text)) {
+            for (const v of _videoLinks) {
+                if (v.keywords.some(k => text.includes(k))) {
+                    extra += '\n👉 ' + v.label + '：' + v.url;
+                }
+            }
+        }
+        // 检测提到官网但没给URL
+        if (/官网|网站/.test(text) && !/https?:\/\//.test(text)) {
+            extra += '\n🌐 学院官网：https://www.gyjsxy.com';
+        }
+        // 检测提到公众号但没给信息
+        if (/公众号|微信/.test(text) && !/sdgyjsxyzjb/.test(text)) {
+            extra += '\n📱 官方微信公众号：山东工业技师学院（sdgyjsxyzjb）';
+        }
+        return text + extra;
+    }
     function formatMsg(text) {
         if (!text) return '';
         let html = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -1706,9 +1734,12 @@
         html = html.replace(/\[([^\]]*)\]\(([^)]+)\)/g, function(m, label, url) {
             return '<a href="' + url + '" target="_blank" rel="noopener">' + (label || url) + '</a>';
         });
-        // 纯URL（排除已经被<a>包裹的，排除尾部标点）
+        // 纯URL → 可点击链接
         html = html.replace(/(?<!href=")(https?:\/\/[^\s<)\]]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+        // 加粗
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+        // 分隔线
+        html = html.replace(/^---$/gm, '<hr style="border:none;border-top:1px solid #e0e0e0;margin:8px 0;">');
         html = html.replace(/\n/g, '<br>');
         return html;
     }
