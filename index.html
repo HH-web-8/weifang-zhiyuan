@@ -1702,7 +1702,12 @@
     function formatMsg(text) {
         if (!text) return '';
         let html = text.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        html = html.replace(/(https?:\/\/[^\s<]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+        // markdown链接 [文字](URL) 必须在纯URL之前处理
+        html = html.replace(/\[([^\]]*)\]\(([^)]+)\)/g, function(m, label, url) {
+            return '<a href="' + url + '" target="_blank" rel="noopener">' + (label || url) + '</a>';
+        });
+        // 纯URL（排除已经被<a>包裹的，排除尾部标点）
+        html = html.replace(/(?<!href=")(https?:\/\/[^\s<)\]]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
         html = html.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
         html = html.replace(/\n/g, '<br>');
         return html;
