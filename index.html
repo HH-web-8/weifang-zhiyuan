@@ -1594,9 +1594,11 @@
     <script>
     // ========== 智能体配置 ==========
     const CHAT_API_BASE = 'https://d2ff6154-e12a-4efa-8a55-802b1882d13e.dev.coze.site';
+    const CHAT_PROJECT_ID = 7629335446362931240;
     let _chatIsOpen = false;
     let _chatIsLoading = false;
     let _chatHistory = [];
+    let _chatSessionId = 'web_' + Math.random().toString(36).substring(2, 10) + '_' + Date.now().toString(36);
 
     function toggleChat() {
         _chatIsOpen = !_chatIsOpen;
@@ -1638,15 +1640,19 @@
         msgArea.appendChild(botDiv);
         let fullReply = '';
         try {
-            const messages = [];
-            for (const msg of _chatHistory) {
-                messages.push({ role: msg.role === 'assistant' ? 'ai' : 'human', type: msg.role === 'assistant' ? 'ai' : 'human', content: msg.content });
-            }
-            messages.push({ role: 'human', type: 'human', content: text });
             const response = await fetch(CHAT_API_BASE + '/stream_run', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ messages: messages }),
+                body: JSON.stringify({
+                    content: {
+                        query: {
+                            prompt: [{ type: 'text', content: { text: text } }]
+                        }
+                    },
+                    type: 'query',
+                    session_id: _chatSessionId,
+                    project_id: CHAT_PROJECT_ID
+                }),
             });
             if (!response.ok) throw new Error('API返回错误: ' + response.status);
             const reader = response.body.getReader();
@@ -1657,7 +1663,7 @@
                 if (done) break;
                 buffer += decoder.decode(value, { stream: true });
                 const lines = buffer.split('\n');
-                buffer = lines.pop(); // 最后一行可能不完整
+                buffer = lines.pop();
                 for (const line of lines) {
                     if (!line.startsWith('data: ')) continue;
                     try {
