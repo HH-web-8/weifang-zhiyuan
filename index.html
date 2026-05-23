@@ -202,6 +202,66 @@
             </div>
         </section>
 
+        <!-- 资讯中心 + 志愿工具 并列首位 -->
+        <section class="py-8 md:py-12 bg-white">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                    <!-- 资讯中心 -->
+                    <div class="bg-gradient-to-br from-gray-50 to-green-50 rounded-2xl p-5 md:p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <div>
+                                <h2 class="text-xl md:text-2xl font-bold text-gray-900">📰 资讯中心</h2>
+                                <p class="text-xs text-gray-500 mt-1">中考高考政策 · 招生动态</p>
+                            </div>
+                            <button onclick="document.getElementById('news-grid').scrollIntoView({behavior:'smooth'})" class="text-primary text-xs font-semibold hover:underline">更多 →</button>
+                        </div>
+                        <div id="news-grid-home" class="space-y-3">
+                            <!-- JS动态加载首页资讯 -->
+                        </div>
+                    </div>
+
+                    <!-- 志愿工具入口 -->
+                    <div onclick="showPage('tools')" class="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-5 md:p-6 cursor-pointer hover:shadow-xl transition-all border-2 border-green-500/30">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-2xl shadow-md">🎯</div>
+                            <div>
+                                <h2 class="text-xl md:text-2xl font-bold text-white">志愿填报工具</h2>
+                                <p class="text-white/80 text-xs mt-0.5">输入模考分数，智能推荐学校</p>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2 mb-3">
+                            <div class="bg-white/15 backdrop-blur-sm rounded-lg p-2.5 text-center">
+                                <div class="text-lg mb-0.5">🎯</div>
+                                <div class="text-white text-xs font-medium">模拟填报</div>
+                            </div>
+                            <div class="bg-white/15 backdrop-blur-sm rounded-lg p-2.5 text-center">
+                                <div class="text-lg mb-0.5">🏫</div>
+                                <div class="text-white text-xs font-medium">学校库</div>
+                            </div>
+                            <div class="bg-white/15 backdrop-blur-sm rounded-lg p-2.5 text-center">
+                                <div class="text-lg mb-0.5">📞</div>
+                                <div class="text-white text-xs font-medium">电话黄页</div>
+                            </div>
+                            <div class="bg-white/15 backdrop-blur-sm rounded-lg p-2.5 text-center">
+                                <div class="text-lg mb-0.5">📊</div>
+                                <div class="text-white text-xs font-medium">一分一段</div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <span class="inline-flex items-center bg-white text-primary px-5 py-2 rounded-lg font-bold text-sm shadow-md">
+                                立即使用
+                                <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
         <!-- 三大路径卡片 -->
         <section class="py-16 md:py-24 bg-gray-50 -mt-1">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -324,62 +384,6 @@
                 </div>
             </div>
         </section>
-
-<!-- 资讯中心 -->
-        <section class="py-12 md:py-16 bg-gradient-to-br from-gray-50 to-green-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center mb-8">
-                    <h2 class="text-2xl md:text-3xl font-bold text-gray-900 mb-2">资讯中心</h2>
-                    <p class="text-sm text-gray-500">中考高考政策 · 招生动态 · 技能成才故事</p>
-                </div>
-                
-                <!-- 资讯卡片网格 -->
-                <div id="news-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mb-6">
-                    <!-- JS动态加载 -->
-                </div>
-                
-                <div class="text-center">
-                    <button onclick="openChat()" class="inline-flex items-center bg-white border-2 border-primary text-primary hover:bg-primary hover:text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all shadow-md">
-                        <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
-                        </svg>
-                        查看更多资讯
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <!-- 中考志愿填报工具入口 -->
-        <section class="py-10 bg-gradient-to-r from-green-600 to-emerald-600">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div onclick="showPage('tools')" class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 md:p-8 cursor-pointer hover:bg-white/15 transition-all border-2 border-white/20">
-                    <div class="flex flex-col md:flex-row items-center gap-4 md:gap-8">
-                        <div class="flex-shrink-0 w-20 h-20 bg-white rounded-2xl flex items-center justify-center text-4xl shadow-lg">
-                            🎯
-                        </div>
-                        <div class="text-center md:text-left flex-1">
-                            <h3 class="text-2xl md:text-3xl font-bold text-white mb-2">中考志愿填报工具</h3>
-                            <p class="text-white/90 text-sm md:text-base mb-3">输入模考分数，智能推荐可报考学校！还有学校库、电话黄页、一分一段表等实用工具</p>
-                            <div class="flex flex-wrap justify-center md:justify-start gap-2">
-                                <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full">🎯 模拟填报</span>
-                                <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full">🏫 学校库</span>
-                                <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full">📞 电话黄页</span>
-                                <span class="bg-white/20 text-white text-xs px-3 py-1 rounded-full">📊 一分一段表</span>
-                            </div>
-                        </div>
-                        <div class="flex-shrink-0">
-                            <span class="inline-flex items-center bg-white text-primary px-6 py-3 rounded-xl font-bold text-lg shadow-lg hover:shadow-xl transition-all">
-                                立即使用
-                                <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                                </svg>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- 2026年潍坊招生政策解读 -->
         <section class="py-12 md:py-16 bg-gradient-to-br from-blue-50 via-white to-green-50">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2370,9 +2374,12 @@
             const response = await fetch('data/news.json');
             const data = await response.json();
             renderNewsCards(data.news);
+            renderHomeNews(data.news);
         } catch (e) {
             console.log('资讯加载失败，使用内联数据');
-            renderNewsCards(getInlineNews());
+            const inlineData = getInlineNews();
+            renderNewsCards(inlineData);
+            renderHomeNews(inlineData);
         }
     }
 
@@ -2434,6 +2441,30 @@
                 tagColor: "orange"
             }
         ];
+    }
+
+    // 渲染首页精简资讯
+    function renderHomeNews(newsList) {
+        const homeGrid = document.getElementById('news-grid-home');
+        if (!homeGrid) return;
+        const tagColors = { blue: 'bg-blue-100 text-blue-700', green: 'bg-green-100 text-green-700', orange: 'bg-orange-100 text-orange-700' };
+        const iconMap = { '政策解读': '📋', '技能成才': '🏆', '招生动态': '📢' };
+        homeGrid.innerHTML = newsList.slice(0, 3).map(news => {
+            const colors = tagColors[news.tagColor] || tagColors.blue;
+            const icon = iconMap[news.tag] || '📌';
+            const dateFormatted = news.date ? news.date.replace(/^(\d{4})-(\d{2})-(\d{2})$/, '$2/$3') : '';
+            return `
+                <div class="bg-white rounded-xl p-3 shadow-sm cursor-pointer hover:shadow-md transition-all flex gap-3 items-start" onclick="openNewsModal(${news.id})">
+                    <span class="text-2xl flex-shrink-0">${icon}</span>
+                    <div class="flex-1 min-w-0">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span class="inline-block ${colors} text-[10px] px-1.5 py-0.5 rounded-full font-medium">${news.tag}</span>
+                            <span class="text-[10px] text-gray-400">${dateFormatted}</span>
+                        </div>
+                        <h4 class="font-semibold text-gray-900 text-sm line-clamp-1 leading-snug">${news.title}</h4>
+                    </div>
+                </div>`;
+        }).join('');
     }
 
     // 渲染资讯卡片
