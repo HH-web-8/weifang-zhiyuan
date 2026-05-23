@@ -125,7 +125,6 @@
                         <a href="#" onclick="showPage('middle-school')" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">中考专区</a>
                         <a href="#" onclick="showPage('high-school')" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">高考专区</a>
                         <a href="#" onclick="showPage('schools')" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors">学校介绍</a>
-                        <a href="#" onclick="showPage('tools')" class="nav-link text-gray-700 hover:text-primary px-3 py-2 text-sm font-medium transition-colors bg-green-50 rounded-lg">🎯 志愿工具</a>
                         <button onclick="openChat()" class="bg-primary hover:bg-primary/90 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors flex items-center">
                             <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
@@ -154,7 +153,6 @@
                 <a href="#" onclick="showPage('middle-school'); toggleMobileMenu();" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-green-50 rounded-md text-base font-medium">中考专区</a>
                 <a href="#" onclick="showPage('high-school'); toggleMobileMenu();" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-green-50 rounded-md text-base font-medium">高考专区</a>
                 <a href="#" onclick="showPage('schools'); toggleMobileMenu();" class="block px-3 py-2 text-gray-700 hover:text-primary hover:bg-green-50 rounded-md text-base font-medium">学校介绍</a>
-                <a href="#" onclick="showPage('tools'); toggleMobileMenu();" class="block px-3 py-2 text-primary hover:bg-green-50 rounded-md text-base font-medium font-bold bg-green-50">🎯 志愿工具</a>
                 <a href="tel:13371096986" class="block px-3 py-2 bg-primary text-white rounded-md text-base font-medium text-center">📞 电话咨询</a>
             </div>
         </div>
@@ -221,35 +219,31 @@
                     </div>
 
                     <!-- 志愿工具入口 -->
-                    <div onclick="showPage('tools')" class="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-5 md:p-6 cursor-pointer hover:shadow-xl transition-all border-2 border-green-500/30">
+                    <div onclick="showPage('middle-school')" class="bg-gradient-to-r from-green-600 to-emerald-600 rounded-2xl p-5 md:p-6 cursor-pointer hover:shadow-xl transition-all border-2 border-green-500/30">
                         <div class="flex items-center gap-3 mb-3">
                             <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-2xl shadow-md">🎯</div>
                             <div>
-                                <h2 class="text-xl md:text-2xl font-bold text-white">志愿填报工具</h2>
-                                <p class="text-white/80 text-xs mt-0.5">输入模考分数，智能推荐学校</p>
+                                <h2 class="text-xl md:text-2xl font-bold text-white">中考专区</h2>
+                                <p class="text-white/80 text-xs mt-0.5">模拟填报+估分+真题一站式</p>
                             </div>
                         </div>
-                        <div class="grid grid-cols-2 gap-2 mb-3">
+                        <div class="grid grid-cols-3 gap-2 mb-3">
                             <div class="bg-white/15 backdrop-blur-sm rounded-lg p-2.5 text-center">
                                 <div class="text-lg mb-0.5">🎯</div>
                                 <div class="text-white text-xs font-medium">模拟填报</div>
                             </div>
                             <div class="bg-white/15 backdrop-blur-sm rounded-lg p-2.5 text-center">
-                                <div class="text-lg mb-0.5">🏫</div>
-                                <div class="text-white text-xs font-medium">学校库</div>
+                                <div class="text-lg mb-0.5">📝</div>
+                                <div class="text-white text-xs font-medium">估分查分</div>
                             </div>
                             <div class="bg-white/15 backdrop-blur-sm rounded-lg p-2.5 text-center">
-                                <div class="text-lg mb-0.5">📞</div>
-                                <div class="text-white text-xs font-medium">电话黄页</div>
-                            </div>
-                            <div class="bg-white/15 backdrop-blur-sm rounded-lg p-2.5 text-center">
-                                <div class="text-lg mb-0.5">📊</div>
-                                <div class="text-white text-xs font-medium">一分一段</div>
+                                <div class="text-lg mb-0.5">📚</div>
+                                <div class="text-white text-xs font-medium">历年真题</div>
                             </div>
                         </div>
                         <div class="text-center">
                             <span class="inline-flex items-center bg-white text-primary px-5 py-2 rounded-lg font-bold text-sm shadow-md">
-                                立即使用
+                                进入专区
                                 <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
                                 </svg>
@@ -753,6 +747,606 @@
                 </div>
             </div>
         </section>
+
+        <!-- 功能导航栏 -->
+        <section class="py-4 bg-gray-50 border-b sticky top-16 z-30">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex overflow-x-auto gap-3 pb-1 scrollbar-hide">
+                    <a href="#tool-nav" class="flex-shrink-0 bg-white shadow-sm rounded-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary hover:text-white transition-all flex items-center gap-1">
+                        🎯 模拟填报
+                    </a>
+                    <a href="#school-lib" class="flex-shrink-0 bg-white shadow-sm rounded-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary hover:text-white transition-all flex items-center gap-1">
+                        🏫 学校库
+                    </a>
+                    <a href="#phone-book" class="flex-shrink-0 bg-white shadow-sm rounded-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary hover:text-white transition-all flex items-center gap-1">
+                        📞 电话黄页
+                    </a>
+                    <a href="#score-table" class="flex-shrink-0 bg-white shadow-sm rounded-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary hover:text-white transition-all flex items-center gap-1">
+                        📊 一分一段表
+                    </a>
+                    <a href="#estimate-score" class="flex-shrink-0 bg-white shadow-sm rounded-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary hover:text-white transition-all flex items-center gap-1">
+                        📝 估分查分
+                    </a>
+                    <a href="#past-exams" class="flex-shrink-0 bg-white shadow-sm rounded-full px-4 py-2 text-sm font-medium text-gray-700 hover:text-primary hover:bg-primary hover:text-white transition-all flex items-center gap-1">
+                        📚 历年真题
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 模拟志愿填报 ========== -->
+        <section id="tool-nav" class="py-8 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-green-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">🎯</span>
+                    模拟志愿填报
+                </h2>
+
+                <!-- 输入表单 -->
+                <div class="bg-gray-50 rounded-2xl p-6 mb-6">
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">升学方向</label>
+                            <select id="mock-study-type" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white">
+                                <option value="pugao">普通高中</option>
+                                <option value="zhijiao">职教高考班</option>
+                                <option value="jigong">技工学校</option>
+                                <option value="34">"3+4"对口贯通</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">模考总分（满分610）</label>
+                            <input type="number" id="mock-score" min="0" max="610" placeholder="输入模考分数" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">户籍区县</label>
+                            <select id="mock-district" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white">
+                                <option value="">选择区县</option>
+                                <option>奎文区</option>
+                                <option>潍城区</option>
+                                <option>寒亭区</option>
+                                <option>坊子区</option>
+                                <option>高新区</option>
+                                <option>昌乐县</option>
+                                <option>临朐县</option>
+                                <option>青州市</option>
+                                <option>诸城市</option>
+                                <option>寿光市</option>
+                                <option>安丘市</option>
+                                <option>高密市</option>
+                                <option>昌邑市</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button onclick="runMockSimulation()" class="w-full mt-4 gradient-green text-white py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-all">
+                        开始模拟
+                    </button>
+                </div>
+
+                <!-- 模拟结果区域 -->
+                <div id="mock-simulate-result" class="hidden">
+                    <!-- 分数不理想引导 -->
+                    <div id="mock-low-score-guide" class="hidden bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-6 mb-6">
+                        <div class="flex flex-col md:flex-row items-center gap-4">
+                            <div class="text-5xl">💡</div>
+                            <div class="flex-1 text-center md:text-left">
+                                <h3 class="text-xl font-bold text-gray-900 mb-2">分数不够普高线？技师+大专双证，98%就业率！</h3>
+                                <p class="text-gray-600">选择山东工业技师学院，免中考分数自主招生，技能成才同样出彩</p>
+                            </div>
+                            <button onclick="openChat()" class="bg-primary hover:bg-green-700 text-white px-6 py-3 rounded-xl font-bold whitespace-nowrap">
+                                咨询山东工业技师学院
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- 稳妥可报 -->
+                    <div id="mock-safe-schools" class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <span class="w-8 h-8 bg-green-500 text-white rounded-lg flex items-center justify-center mr-2 text-lg">🟢</span>
+                            <h3 class="text-xl font-bold text-gray-900">稳妥可报</h3>
+                            <span class="ml-2 text-sm text-gray-500">(录取线低于模考分15分以上)</span>
+                        </div>
+                        <div id="mock-safe-schools-list" class="space-y-3"></div>
+                    </div>
+
+                    <!-- 可以冲刺 -->
+                    <div id="mock-rush-schools" class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <span class="w-8 h-8 bg-yellow-500 text-white rounded-lg flex items-center justify-center mr-2 text-lg">🟡</span>
+                            <h3 class="text-xl font-bold text-gray-900">可以冲刺</h3>
+                            <span class="ml-2 text-sm text-gray-500">(录取线低于模考分0-15分)</span>
+                        </div>
+                        <div id="mock-rush-schools-list" class="space-y-3"></div>
+                    </div>
+
+                    <!-- 需谨慎 -->
+                    <div id="mock-caution-schools" class="mb-6">
+                        <div class="flex items-center mb-4">
+                            <span class="w-8 h-8 bg-red-500 text-white rounded-lg flex items-center justify-center mr-2 text-lg">🔴</span>
+                            <h3 class="text-xl font-bold text-gray-900">需谨慎</h3>
+                            <span class="ml-2 text-sm text-gray-500">(录取线高于模考分)</span>
+                        </div>
+                        <div id="mock-caution-schools-list" class="space-y-3"></div>
+                    </div>
+
+                    <!-- 留资CTA -->
+                    <div class="bg-primary rounded-2xl p-6 text-white text-center">
+                        <h3 class="text-xl font-bold mb-2">📝 获取详细志愿方案</h3>
+                        <p class="text-white/80 mb-4">专业老师根据你的分数，一对一制定志愿填报方案</p>
+                        <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-模拟填报');">
+                            <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 rounded-lg text-gray-900">
+                            <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
+                            <input type="hidden" name="major" id="mock-result-info">
+                            <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+                                获取详细方案
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 学校库 ========== -->
+        <section id="school-lib" class="py-8 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-blue-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">🏫</span>
+                    学校库
+                </h2>
+
+                <!-- 筛选和搜索 -->
+                <div class="bg-white rounded-xl shadow-md p-4 mb-6">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="flex-1">
+                            <input type="text" id="mock-school-search" placeholder="搜索学校名称..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" oninput="filterMockSchools()">
+                        </div>
+                        <div class="flex flex-wrap gap-2">
+                            <button onclick="filterMockSchoolType('all')" class="mock-school-filter-btn px-4 py-2 rounded-lg border-2 border-primary bg-primary text-white text-sm font-medium" data-type="all">全部</button>
+                            <button onclick="filterMockSchoolType('public')" class="mock-school-filter-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-type="public">公办普高</button>
+                            <button onclick="filterMockSchoolType('private')" class="mock-school-filter-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-type="private">民办普高</button>
+                            <button onclick="filterMockSchoolType('zhijiao')" class="mock-school-filter-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-type="zhijiao">职教高考班</button>
+                            <button onclick="filterMockSchoolType('jigong')" class="mock-school-filter-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-type="jigong">技工学校</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 学校列表 -->
+                <div id="mock-school-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
+
+                <p class="text-center text-gray-500 text-sm mt-6">📌 数据持续更新中，仅供参考，具体以官方发布为准</p>
+            </div>
+        </section>
+
+        <!-- ========== 电话黄页 ========== -->
+        <section id="phone-book" class="py-8 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">📞</span>
+                    电话黄页
+                </h2>
+
+                <!-- 搜索 -->
+                <div class="mb-6">
+                    <input type="text" id="mock-phone-search" placeholder="搜索单位名称..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" oninput="filterMockPhones()">
+                </div>
+
+                <!-- 市教育局 -->
+                <div class="mb-8">
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center mr-2 text-sm">市</span>
+                        潍坊市教育局
+                    </h3>
+                    <div class="space-y-3">
+                        <div class="bg-gray-50 rounded-xl p-4 flex items-center justify-between">
+                            <div>
+                                <div class="font-medium text-gray-900">潍坊市教育局</div>
+                                <div class="text-sm text-gray-500">0536-8096361</div>
+                            </div>
+                            <a href="tel:0536-8096361" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                一键拨打
+                            </a>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-4 flex items-center justify-between">
+                            <div>
+                                <div class="font-medium text-gray-900">市教育局基教科</div>
+                                <div class="text-sm text-gray-500">0536-8096355</div>
+                            </div>
+                            <a href="tel:0536-8096355" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                一键拨打
+                            </a>
+                        </div>
+                        <div class="bg-gray-50 rounded-xl p-4 flex items-center justify-between">
+                            <div>
+                                <div class="font-medium text-gray-900">山东工业技师学院</div>
+                                <div class="text-sm text-gray-500">13371096986（张老师）</div>
+                            </div>
+                            <a href="tel:13371096986" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center">
+                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                                </svg>
+                                一键拨打
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 区县教体局 -->
+                <div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
+                        <span class="w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center mr-2 text-sm">区</span>
+                        各区县教体局
+                    </h3>
+                    <div id="mock-phone-list" class="space-y-3"></div>
+                </div>
+
+                <p class="text-center text-gray-500 text-sm mt-6">📌 电话数据来源网络，标注*号需核实，以官方发布为准</p>
+            </div>
+        </section>
+
+        <!-- ========== 一分一段表 ========== -->
+        <section id="score-table" class="py-8 bg-gray-50">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
+                    <span class="w-10 h-10 bg-purple-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">📊</span>
+                    一分一段表
+                </h2>
+
+                <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
+                    <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded mb-6">
+                        <h3 class="font-bold text-purple-700 mb-2">📖 什么是一分一段表？</h3>
+                        <p class="text-gray-600 text-sm">一分一段表是中考成绩公布后，由教育局根据全体考生成绩分布编制的统计表。它显示每个分数有多少考生，以及累计有多少考生达到该分数。可用于查询自己的大致排名。</p>
+                    </div>
+
+                    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded mb-6">
+                        <h3 class="font-bold text-amber-700 mb-2">📌 官方查询渠道</h3>
+                        <p class="text-gray-600 text-sm">潍坊市中考一分一段表通常于每年7月由潍坊市教育局发布。官方查询渠道：潍坊市教育局官网（https://jyj.weifang.gov.cn/）</p>
+                    </div>
+
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-gray-700 mb-2">输入您的中考分数（满分610）</label>
+                        <div class="flex gap-3">
+                            <input type="number" id="mock-score-input" min="0" max="610" placeholder="输入分数" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <button onclick="queryMockScoreRank()" class="bg-primary hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold">
+                                查询排名
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="mock-score-result" class="hidden">
+                        <div class="bg-green-50 rounded-xl p-6 text-center">
+                            <div class="text-5xl font-bold text-green-600 mb-2" id="mock-score-display"></div>
+                            <div class="text-gray-600 mb-4">往年参考：您的分数约在全市前</div>
+                            <div class="text-3xl font-bold text-primary" id="mock-rank-display"></div>
+                            <div class="text-gray-500 text-sm mt-2">⚠️ 往年数据仅供参考，实际排名以当年官方发布为准</div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-gray-100 rounded-xl">
+                        <h4 class="font-bold text-gray-700 mb-2">📋 近三年一分一段表发布时间</h4>
+                        <ul class="text-sm text-gray-600 space-y-1">
+                            <li>• 2025年：7月15日左右发布</li>
+                            <li>• 2024年：7月12日左右发布</li>
+                            <li>• 2023年：7月14日左右发布</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 留资引导 -->
+                <div class="bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl p-6 text-white text-center">
+                    <h3 class="text-xl font-bold mb-2">📝 预约2026一分一段表提醒</h3>
+                    <p class="text-white/80 mb-4">成绩公布后第一时间获取排名分析</p>
+                    <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-一分一段表');">
+                        <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 rounded-lg text-gray-900">
+                        <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
+                        <button type="submit" class="w-full bg-white text-purple-600 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+                            预约提醒
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 估分模块 ========== -->
+        <section id="estimate-score" class="py-8 bg-white">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    <span class="w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">📝</span>
+                    中考评卷估分
+                </h2>
+                <div class="bg-gradient-to-r from-orange-50 to-amber-50 border-l-4 border-orange-500 p-4 rounded mb-6">
+                    <p class="text-gray-600 text-sm">考完试不确定能考多少？根据网上公布的真题答案，逐科估算你的中考成绩！<br><span class="text-orange-600 font-medium">（注：估分仅供参考，以官方公布成绩为准）</span></p>
+                </div>
+
+                <!-- 估分表格 -->
+                <div class="bg-gray-50 rounded-2xl p-6 mb-6">
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between p-3 bg-white rounded-xl">
+                            <div class="flex items-center">
+                                <span class="text-xl mr-3">📖</span>
+                                <span class="font-medium text-gray-900">语文</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-gray-500">满分120</span>
+                                <input type="number" id="score-yuwen" min="0" max="120" placeholder="0" class="w-20 px-3 py-2 border-2 border-gray-200 rounded-lg text-center focus:ring-2 focus:ring-primary focus:border-transparent" oninput="calcEstimateTotal()">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-xl">
+                            <div class="flex items-center">
+                                <span class="text-xl mr-3">📐</span>
+                                <span class="font-medium text-gray-900">数学</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-gray-500">满分120</span>
+                                <input type="number" id="score-shuxue" min="0" max="120" placeholder="0" class="w-20 px-3 py-2 border-2 border-gray-200 rounded-lg text-center focus:ring-2 focus:ring-primary focus:border-transparent" oninput="calcEstimateTotal()">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-xl">
+                            <div class="flex items-center">
+                                <span class="text-xl mr-3">🔤</span>
+                                <span class="font-medium text-gray-900">英语</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-gray-500">满分120</span>
+                                <input type="number" id="score-yingyu" min="0" max="120" placeholder="0" class="w-20 px-3 py-2 border-2 border-gray-200 rounded-lg text-center focus:ring-2 focus:ring-primary focus:border-transparent" oninput="calcEstimateTotal()">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-xl">
+                            <div class="flex items-center">
+                                <span class="text-xl mr-3">⚗️</span>
+                                <span class="font-medium text-gray-900">物理化学（合卷）</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-gray-500">满分120</span>
+                                <input type="number" id="score-wlhx" min="0" max="120" placeholder="0" class="w-20 px-3 py-2 border-2 border-gray-200 rounded-lg text-center focus:ring-2 focus:ring-primary focus:border-transparent" oninput="calcEstimateTotal()">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-xl">
+                            <div class="flex items-center">
+                                <span class="text-xl mr-3">⚖️</span>
+                                <span class="font-medium text-gray-900">道德与法治</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-gray-500">满分80</span>
+                                <input type="number" id="score-ddzz" min="0" max="80" placeholder="0" class="w-20 px-3 py-2 border-2 border-gray-200 rounded-lg text-center focus:ring-2 focus:ring-primary focus:border-transparent" oninput="calcEstimateTotal()">
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between p-3 bg-white rounded-xl">
+                            <div class="flex items-center">
+                                <span class="text-xl mr-3">🏃</span>
+                                <span class="font-medium text-gray-900">体育</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <span class="text-sm text-gray-500">满分50</span>
+                                <input type="number" id="score-tiyu" min="0" max="50" placeholder="0" class="w-20 px-3 py-2 border-2 border-gray-200 rounded-lg text-center focus:ring-2 focus:ring-primary focus:border-transparent" oninput="calcEstimateTotal()">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 总分显示 -->
+                    <div class="mt-6 p-4 bg-primary rounded-xl text-center">
+                        <div class="text-white/80 text-sm mb-1">估算总分</div>
+                        <div class="text-4xl font-bold text-white" id="estimate-total">0</div>
+                        <div class="text-white/60 text-xs mt-1">满分610</div>
+                    </div>
+
+                    <button onclick="goToMockSimulate()" class="w-full mt-4 bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-xl text-lg font-bold transition-all flex items-center justify-center gap-2">
+                        <span>🎯 开始模拟填报</span>
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </button>
+                </div>
+
+                <div class="bg-blue-50 rounded-xl p-4 text-center">
+                    <p class="text-blue-700 text-sm">💡 真题答案发布后我们会及时更新，关注不迷路！</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ========== 历年真题 ========== -->
+        <section id="past-exams" class="py-8 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-4 flex items-center">
+                    <span class="w-10 h-10 bg-blue-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">📚</span>
+                    历年真题练习
+                </h2>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
+                    <p class="text-gray-600 text-sm">练习往年真题，熟悉考试题型和难度</p>
+                </div>
+
+                <!-- 年份和科目选择 -->
+                <div class="mb-6">
+                    <div class="flex flex-wrap gap-2 mb-4">
+                        <button onclick="filterExamYear(2025)" class="exam-year-btn px-4 py-2 rounded-lg border-2 border-primary bg-primary text-white text-sm font-medium" data-year="2025">2025年</button>
+                        <button onclick="filterExamYear(2024)" class="exam-year-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-year="2024">2024年</button>
+                        <button onclick="filterExamYear(2023)" class="exam-year-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-year="2023">2023年</button>
+                    </div>
+                    <div class="grid grid-cols-2 md:grid-cols-5 gap-3" id="exam-subject-grid">
+                        <!-- JS动态渲染 -->
+                    </div>
+                </div>
+
+                <!-- 题目展示区域 -->
+                <div id="exam-questions-area" class="hidden">
+                    <div class="bg-white rounded-2xl shadow-lg p-6">
+                        <div class="flex items-center justify-between mb-4">
+                            <h3 class="text-xl font-bold text-gray-900" id="exam-title">真题练习</h3>
+                            <button onclick="closeExamQuestions()" class="text-gray-500 hover:text-gray-700">✕ 关闭</button>
+                        </div>
+                        <div id="exam-questions-list"></div>
+                        <div class="mt-6 p-4 bg-yellow-50 rounded-xl text-center">
+                            <p class="text-yellow-700 text-sm">⚠️ 更多真题持续更新中，完整试卷请联系老师获取</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 留资获取完整真题 -->
+                <div class="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-6 text-white text-center mt-6">
+                    <h3 class="text-xl font-bold mb-2">📝 获取完整真题试卷</h3>
+                    <p class="text-white/80 mb-4">留下联系方式，老师免费发送全套真题</p>
+                    <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-历年真题');">
+                        <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 rounded-lg text-gray-900">
+                        <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
+                        <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+                            免费获取
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- 历年真题数据 -->
+        <script>
+        const examData = [
+            {
+                year: 2025, subject: '语文', count: 20, difficulty: '中等',
+                icon: '📖', fullScore: 120,
+                questions: [
+                    { id: 1, type: '选择题', question: '下列词语中加点字注音全部正确的一项是（）', options: ['A. 模样(mú) 狡黠(xiá)', 'B. 模样(mó) 狡黠(xiá)', 'C. 模样(mú) 狡黠(jié)', 'D. 模样(mó) 狡黠(jié)'], answer: 'A' },
+                    { id: 2, type: '选择题', question: '下列句子中没有语病的一项是（）', options: ['A. 通过这次活动，使我受益匪浅', 'B. 我们要养成认真学习的好习惯', 'C. 能否坚持到底，是成功的关键', 'D. 为了防止不再发生类似事件，我们加强了管理'], answer: 'B' },
+                    { id: 3, type: '选择题', question: '下列文学常识表述不正确的一项是（）', options: ['A. 《论语》是儒家经典之一', 'B. 《庄子》是道家经典之一', 'C. 《史记》是编年体史书', 'D. 《诗经》是中国最早的诗歌总集'], answer: 'C' }
+                ]
+            },
+            {
+                year: 2025, subject: '数学', count: 18, difficulty: '中等偏上',
+                icon: '📐', fullScore: 120,
+                questions: [
+                    { id: 1, type: '选择题', question: '计算：(-2)³ 的结果是（）', options: ['A. -8', 'B. 8', 'C. -6', 'D. 6'], answer: 'A' },
+                    { id: 2, type: '选择题', question: '下列图形中，既是轴对称图形又是中心对称图形的是（）', options: ['A. 等边三角形', 'B. 平行四边形', 'C. 矩形', 'D. 正五边形'], answer: 'C' },
+                    { id: 3, type: '选择题', question: '若一元二次方程 x² - 3x + k = 0 有两个不相等的实数根，则 k 的取值范围是（）', options: ['A. k < 9/4', 'B. k ≤ 9/4', 'C. k > 9/4', 'D. k ≥ 9/4'], answer: 'A' }
+                ]
+            },
+            {
+                year: 2025, subject: '英语', count: 16, difficulty: '中等',
+                icon: '🔤', fullScore: 120,
+                questions: [
+                    { id: 1, type: '选择题', question: '—I\'m sorry I broke your glass. —__________', options: ['A. You\'re welcome', 'B. It doesn\'t matter', 'C. Thank you', 'D. That\'s right'], answer: 'B' },
+                    { id: 2, type: '选择题', question: 'The book __________ on the desk just now.', options: ['A. has put', 'B. was put', 'C. is put', 'D. can be put'], answer: 'B' },
+                    { id: 3, type: '选择题', question: 'There are many trees on __________ sides of the street.', options: ['A. either', 'B. both', 'C. all', 'D. each'], answer: 'B' }
+                ]
+            },
+            {
+                year: 2025, subject: '物化', count: 15, difficulty: '中等偏难',
+                icon: '⚗️', fullScore: 120,
+                questions: [
+                    { id: 1, type: '选择题', question: '【物理】下列说法正确的是（）', options: ['A. 物体温度越高，内能越大', 'B. 物体温度越高，热量越多', 'C. 物体吸收热量，温度一定升高', 'D. 物体的温度为0℃时，内能为零'], answer: 'A' },
+                    { id: 2, type: '选择题', question: '【化学】下列物质属于纯净物的是（）', options: ['A. 空气', 'B. 海水', 'C. 蒸馏水', 'D. 泥沙水'], answer: 'C' },
+                    { id: 3, type: '选择题', question: '【物理】用滑轮组提升重物时，下列说法正确的是（）', options: ['A. 滑轮组越省力越好', 'B. 动滑轮越重越省力', 'C. 绳子越细越省力', 'D. 滑轮组的机械效率小于100%'], answer: 'D' }
+                ]
+            },
+            {
+                year: 2025, subject: '道法', count: 12, difficulty: '中等',
+                icon: '⚖️', fullScore: 80,
+                questions: [
+                    { id: 1, type: '选择题', question: '我国宪法的核心价值追求是（）', options: ['A. 规范国家权力运行', 'B. 保障公民当家作主', 'C. 规范国家机构运行', 'D. 保障公民合法权益'], answer: 'D' },
+                    { id: 2, type: '选择题', question: '维护国家安全、荣誉和利益是（）', options: ['A. 国家的事', 'B. 成年人做的事', 'C. 每个公民的基本义务', 'D. 军人的职责'], answer: 'C' }
+                ]
+            },
+            {
+                year: 2024, subject: '语文', count: 20, difficulty: '中等',
+                icon: '📖', fullScore: 120,
+                questions: [
+                    { id: 1, type: '选择题', question: '下列词语中没有错别字的一项是（）', options: ['A. 迫不及待 走投无路', 'B. 巧妙绝伦 再接再厉', 'C. 别出心裁 申西合璧', 'D. 相得益彰 变换莫测'], answer: 'B' },
+                    { id: 2, type: '选择题', question: '下列句子中加点成语使用不正确的一项是（）', options: ['A. 这个问题他总是不求甚解', 'B. 妈妈对我关怀得无所不至', 'C. 听了他的话，我恍然大悟', 'D. 他滔滔不绝地讲了起来'], answer: 'B' }
+                ]
+            },
+            {
+                year: 2024, subject: '数学', count: 18, difficulty: '中等',
+                icon: '📐', fullScore: 120,
+                questions: [
+                    { id: 1, type: '选择题', question: '若|a| = -a，则a的取值范围是（）', options: ['A. a > 0', 'B. a < 0', 'C. a ≥ 0', 'D. a ≤ 0'], answer: 'D' },
+                    { id: 2, type: '选择题', question: '圆心角为120°的扇形，半径为3，则弧长为（）', options: ['A. π', 'B. 2π', 'C. 3π', 'D. 4π'], answer: 'B' }
+                ]
+            }
+        ];
+
+        let currentExamYear = 2025;
+
+        function filterExamYear(year) {
+            currentExamYear = year;
+            document.querySelectorAll('.exam-year-btn').forEach(btn => {
+                if (parseInt(btn.dataset.year) === year) {
+                    btn.classList.remove('border-gray-200', 'text-gray-700');
+                    btn.classList.add('border-primary', 'bg-primary', 'text-white');
+                } else {
+                    btn.classList.add('border-gray-200', 'text-gray-700');
+                    btn.classList.remove('border-primary', 'bg-primary', 'text-white');
+                }
+            });
+            renderExamSubjects();
+        }
+
+        function renderExamSubjects() {
+            const grid = document.getElementById('exam-subject-grid');
+            const filtered = examData.filter(e => e.year === currentExamYear);
+            
+            grid.innerHTML = filtered.map(exam => `
+                <div onclick="openExam('${exam.subject}', ${exam.year})" class="bg-white rounded-xl shadow-md p-4 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all text-center border-t-4 border-blue-500">
+                    <div class="text-4xl mb-2">${exam.icon}</div>
+                    <h4 class="font-bold text-gray-900">${exam.subject}</h4>
+                    <p class="text-xs text-gray-500 mt-1">${exam.year}年 · ${exam.count}题</p>
+                    <span class="inline-block mt-2 px-2 py-0.5 ${exam.difficulty === '简单' ? 'bg-green-100 text-green-700' : exam.difficulty === '中等' ? 'bg-yellow-100 text-yellow-700' : 'bg-orange-100 text-orange-700'} text-xs rounded-full">${exam.difficulty}</span>
+                </div>
+            `).join('');
+        }
+
+        function openExam(subject, year) {
+            const exam = examData.find(e => e.subject === subject && e.year === year);
+            if (!exam) return;
+
+            document.getElementById('exam-title').textContent = `${year}年${subject}真题练习`;
+            document.getElementById('exam-questions-list').innerHTML = exam.questions.map(q => `
+                <div class="mb-6 p-4 bg-gray-50 rounded-xl">
+                    <div class="flex items-center gap-2 mb-2">
+                        <span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full">${q.type}</span>
+                        <span class="text-sm text-gray-500">第${q.id}题</span>
+                    </div>
+                    <p class="font-medium text-gray-900 mb-3">${q.question}</p>
+                    <div class="space-y-2">
+                        ${q.options.map(opt => `
+                            <label class="flex items-start gap-2 p-2 rounded-lg hover:bg-white cursor-pointer">
+                                <input type="radio" name="q${q.id}" value="${opt.charAt(0)}" class="mt-1">
+                                <span class="text-gray-700">${opt}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                    <div class="mt-3 pt-3 border-t border-gray-200">
+                        <button onclick="checkAnswer(this, '${q.answer}')" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-all">查看答案</button>
+                        <span class="ml-3 text-sm text-gray-500 answer-reveal hidden">正确答案：<span class="font-bold text-green-600">${q.answer}</span></span>
+                    </div>
+                </div>
+            `).join('');
+
+            document.getElementById('exam-questions-area').classList.remove('hidden');
+            document.getElementById('exam-questions-area').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function checkAnswer(btn, correct) {
+            const container = btn.parentElement;
+            const selected = container.parentElement.querySelector('input[type="radio"]:checked');
+            const reveal = container.querySelector('.answer-reveal');
+            
+            reveal.classList.remove('hidden');
+            btn.classList.add('hidden');
+            
+            if (selected && selected.value === correct) {
+                reveal.innerHTML = '✓ 回答正确！正确答案：<span class="font-bold text-green-600">' + correct + '</span>';
+            }
+        }
+
+        function closeExamQuestions() {
+            document.getElementById('exam-questions-area').classList.add('hidden');
+        }
+
+        // 页面加载时渲染真题列表
+        document.addEventListener('DOMContentLoaded', renderExamSubjects);
+        </script>
 
         <!-- 录取分数线表格 -->
         <section class="py-12 bg-white">
@@ -1651,340 +2245,6 @@
         </section>
     </div>
 
-    <!-- 志愿工具页面 -->
-    <div id="page-tools" class="page-section hidden">
-        <section class="pt-24 pb-8 bg-gradient-to-r from-green-600 to-emerald-600">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center text-white">
-                    <h1 class="text-4xl md:text-5xl font-bold mb-4">🎯 中考志愿填报工具</h1>
-                    <p class="text-xl text-white/90">输入模考分数，智能推荐可报考学校</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- 功能入口卡片 -->
-        <section class="py-8 bg-gray-50">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div onclick="showToolSection('simulate')" class="bg-white rounded-xl shadow-md p-4 text-center cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all border-t-4 border-green-500">
-                        <div class="text-4xl mb-2">🎯</div>
-                        <h3 class="font-bold text-gray-900 text-sm">模拟志愿填报</h3>
-                        <p class="text-xs text-gray-500 mt-1">智能推荐可报学校</p>
-                    </div>
-                    <div onclick="showToolSection('schools')" class="bg-white rounded-xl shadow-md p-4 text-center cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all border-t-4 border-blue-500">
-                        <div class="text-4xl mb-2">🏫</div>
-                        <h3 class="font-bold text-gray-900 text-sm">学校库</h3>
-                        <p class="text-xs text-gray-500 mt-1">查看各校录取线</p>
-                    </div>
-                    <div onclick="showToolSection('phones')" class="bg-white rounded-xl shadow-md p-4 text-center cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all border-t-4 border-orange-500">
-                        <div class="text-4xl mb-2">📞</div>
-                        <h3 class="font-bold text-gray-900 text-sm">电话黄页</h3>
-                        <p class="text-xs text-gray-500 mt-1">招生咨询电话</p>
-                    </div>
-                    <div onclick="showToolSection('score')" class="bg-white rounded-xl shadow-md p-4 text-center cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all border-t-4 border-purple-500">
-                        <div class="text-4xl mb-2">📊</div>
-                        <h3 class="font-bold text-gray-900 text-sm">一分一段表</h3>
-                        <p class="text-xs text-gray-500 mt-1">查排名知位次</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== 模拟志愿填报 ========== -->
-        <section id="section-simulate" class="tool-section py-8 bg-white">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="w-10 h-10 bg-green-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">🎯</span>
-                    模拟志愿填报
-                </h2>
-
-                <!-- 输入表单 -->
-                <div class="bg-gray-50 rounded-2xl p-6 mb-6">
-                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">升学方向</label>
-                            <select id="study-type" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white">
-                                <option value="pugao">普通高中</option>
-                                <option value="zhijiao">职教高考班</option>
-                                <option value="jigong">技工学校</option>
-                                <option value="34">"3+4"对口贯通</option>
-                            </select>
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">模考总分（满分610）</label>
-                            <input type="number" id="mock-score" min="0" max="610" placeholder="输入模考分数" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                        </div>
-                        <div>
-                            <label class="block text-sm font-medium text-gray-700 mb-2">户籍区县</label>
-                            <select id="district" class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent bg-white">
-                                <option value="">选择区县</option>
-                                <option>奎文区</option>
-                                <option>潍城区</option>
-                                <option>寒亭区</option>
-                                <option>坊子区</option>
-                                <option>高新区</option>
-                                <option>昌乐县</option>
-                                <option>临朐县</option>
-                                <option>青州市</option>
-                                <option>诸城市</option>
-                                <option>寿光市</option>
-                                <option>安丘市</option>
-                                <option>高密市</option>
-                                <option>昌邑市</option>
-                            </select>
-                        </div>
-                    </div>
-                    <button onclick="runSimulation()" class="w-full mt-4 gradient-green text-white py-4 rounded-xl text-lg font-bold hover:opacity-90 transition-all">
-                        开始模拟
-                    </button>
-                </div>
-
-                <!-- 模拟结果区域 -->
-                <div id="simulate-result" class="hidden">
-                    <!-- 分数不理想引导 -->
-                    <div id="low-score-guide" class="hidden bg-gradient-to-r from-amber-50 to-orange-50 border-2 border-amber-300 rounded-2xl p-6 mb-6">
-                        <div class="flex flex-col md:flex-row items-center gap-4">
-                            <div class="text-5xl">💡</div>
-                            <div class="flex-1 text-center md:text-left">
-                                <h3 class="text-xl font-bold text-gray-900 mb-2">分数不够普高线？技师+大专双证，98%就业率！</h3>
-                                <p class="text-gray-600">选择山东工业技师学院，免中考分数自主招生，技能成才同样出彩</p>
-                            </div>
-                            <button onclick="openChat()" class="bg-primary hover:bg-green-700 text-white px-6 py-3 rounded-xl font-bold whitespace-nowrap">
-                                咨询山东工业技师学院
-                            </button>
-                        </div>
-                    </div>
-
-                    <!-- 稳妥可报 -->
-                    <div id="safe-schools" class="mb-6">
-                        <div class="flex items-center mb-4">
-                            <span class="w-8 h-8 bg-green-500 text-white rounded-lg flex items-center justify-center mr-2 text-lg">🟢</span>
-                            <h3 class="text-xl font-bold text-gray-900">稳妥可报</h3>
-                            <span class="ml-2 text-sm text-gray-500">(录取线低于模考分15分以上)</span>
-                        </div>
-                        <div id="safe-schools-list" class="space-y-3"></div>
-                    </div>
-
-                    <!-- 可以冲刺 -->
-                    <div id="rush-schools" class="mb-6">
-                        <div class="flex items-center mb-4">
-                            <span class="w-8 h-8 bg-yellow-500 text-white rounded-lg flex items-center justify-center mr-2 text-lg">🟡</span>
-                            <h3 class="text-xl font-bold text-gray-900">可以冲刺</h3>
-                            <span class="ml-2 text-sm text-gray-500">(录取线低于模考分0-15分)</span>
-                        </div>
-                        <div id="rush-schools-list" class="space-y-3"></div>
-                    </div>
-
-                    <!-- 需谨慎 -->
-                    <div id="caution-schools" class="mb-6">
-                        <div class="flex items-center mb-4">
-                            <span class="w-8 h-8 bg-red-500 text-white rounded-lg flex items-center justify-center mr-2 text-lg">🔴</span>
-                            <h3 class="text-xl font-bold text-gray-900">需谨慎</h3>
-                            <span class="ml-2 text-sm text-gray-500">(录取线高于模考分)</span>
-                        </div>
-                        <div id="caution-schools-list" class="space-y-3"></div>
-                    </div>
-
-                    <!-- 留资CTA -->
-                    <div class="bg-primary rounded-2xl p-6 text-white text-center">
-                        <h3 class="text-xl font-bold mb-2">📝 获取详细志愿方案</h3>
-                        <p class="text-white/80 mb-4">专业老师根据你的分数，一对一制定志愿填报方案</p>
-                        <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '志愿工具-模拟填报');">
-                            <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 rounded-lg text-gray-900">
-                            <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
-                            <input type="hidden" name="major" id="sim-result-info">
-                            <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
-                                获取详细方案
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ========== 学校库 ========== -->
-        <section id="section-schools" class="tool-section py-8 bg-gray-50 hidden">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="w-10 h-10 bg-blue-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">🏫</span>
-                    学校库
-                </h2>
-
-                <!-- 筛选和搜索 -->
-                <div class="bg-white rounded-xl shadow-md p-4 mb-6">
-                    <div class="flex flex-col md:flex-row gap-4">
-                        <div class="flex-1">
-                            <input type="text" id="school-search" placeholder="搜索学校名称..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" oninput="filterSchools()">
-                        </div>
-                        <div class="flex flex-wrap gap-2">
-                            <button onclick="filterSchoolType('all')" class="school-filter-btn px-4 py-2 rounded-lg border-2 border-primary bg-primary text-white text-sm font-medium" data-type="all">全部</button>
-                            <button onclick="filterSchoolType('public')" class="school-filter-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-type="public">公办普高</button>
-                            <button onclick="filterSchoolType('private')" class="school-filter-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-type="private">民办普高</button>
-                            <button onclick="filterSchoolType('zhijiao')" class="school-filter-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-type="zhijiao">职教高考班</button>
-                            <button onclick="filterSchoolType('jigong')" class="school-filter-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-type="jigong">技工学校</button>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 学校列表 -->
-                <div id="school-list" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4"></div>
-
-                <p class="text-center text-gray-500 text-sm mt-6">📌 数据持续更新中，仅供参考，具体以官方发布为准</p>
-            </div>
-        </section>
-
-        <!-- ========== 电话黄页 ========== -->
-        <section id="section-phones" class="tool-section py-8 bg-white hidden">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="w-10 h-10 bg-orange-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">📞</span>
-                    电话黄页
-                </h2>
-
-                <!-- 搜索 -->
-                <div class="mb-6">
-                    <input type="text" id="phone-search" placeholder="搜索单位名称..." class="w-full px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" oninput="filterPhones()">
-                </div>
-
-                <!-- 市教育局 -->
-                <div class="mb-8">
-                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-primary text-white rounded-lg flex items-center justify-center mr-2 text-sm">市</span>
-                        潍坊市教育局
-                    </h3>
-                    <div class="space-y-3">
-                        <div class="bg-gray-50 rounded-xl p-4 flex items-center justify-between">
-                            <div>
-                                <div class="font-medium text-gray-900">潍坊市教育局</div>
-                                <div class="text-sm text-gray-500">0536-8096361</div>
-                            </div>
-                            <a href="tel:0536-8096361" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                </svg>
-                                一键拨打
-                            </a>
-                        </div>
-                        <div class="bg-gray-50 rounded-xl p-4 flex items-center justify-between">
-                            <div>
-                                <div class="font-medium text-gray-900">市教育局基教科</div>
-                                <div class="text-sm text-gray-500">0536-8096355</div>
-                            </div>
-                            <a href="tel:0536-8096355" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                </svg>
-                                一键拨打
-                            </a>
-                        </div>
-                        <div class="bg-gray-50 rounded-xl p-4 flex items-center justify-between">
-                            <div>
-                                <div class="font-medium text-gray-900">山东工业技师学院</div>
-                                <div class="text-sm text-gray-500">13371096986（张老师）</div>
-                            </div>
-                            <a href="tel:13371096986" class="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center">
-                                <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
-                                </svg>
-                                一键拨打
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 区县教体局 -->
-                <div>
-                    <h3 class="text-lg font-bold text-gray-900 mb-4 flex items-center">
-                        <span class="w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center mr-2 text-sm">区</span>
-                        各区县教体局
-                    </h3>
-                    <div id="phone-list" class="space-y-3"></div>
-                </div>
-
-                <p class="text-center text-gray-500 text-sm mt-6">📌 电话数据来源网络，标注*号需核实，以官方发布为准</p>
-            </div>
-        </section>
-
-        <!-- ========== 一分一段表 ========== -->
-        <section id="section-score" class="tool-section py-8 bg-gray-50 hidden">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-                <h2 class="text-2xl font-bold text-gray-900 mb-6 flex items-center">
-                    <span class="w-10 h-10 bg-purple-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">📊</span>
-                    一分一段表
-                </h2>
-
-                <div class="bg-white rounded-2xl shadow-lg p-6 mb-6">
-                    <div class="bg-purple-50 border-l-4 border-purple-500 p-4 rounded mb-6">
-                        <h3 class="font-bold text-purple-700 mb-2">📖 什么是一分一段表？</h3>
-                        <p class="text-gray-600 text-sm">一分一段表是中考成绩公布后，由教育局根据全体考生成绩分布编制的统计表。它显示每个分数有多少考生，以及累计有多少考生达到该分数。可用于查询自己的大致排名。</p>
-                    </div>
-
-                    <div class="bg-amber-50 border-l-4 border-amber-500 p-4 rounded mb-6">
-                        <h3 class="font-bold text-amber-700 mb-2">📌 官方查询渠道</h3>
-                        <p class="text-gray-600 text-sm">潍坊市中考一分一段表通常于每年7月由潍坊市教育局发布。官方查询渠道：潍坊市教育局官网（https://jyj.weifang.gov.cn/）</p>
-                    </div>
-
-                    <div class="mb-6">
-                        <label class="block text-sm font-medium text-gray-700 mb-2">输入您的中考分数（满分610）</label>
-                        <div class="flex gap-3">
-                            <input type="number" id="score-input" min="0" max="610" placeholder="输入分数" class="flex-1 px-4 py-3 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
-                            <button onclick="queryScoreRank()" class="bg-primary hover:bg-green-700 text-white px-6 py-3 rounded-lg font-bold">
-                                查询排名
-                            </button>
-                        </div>
-                    </div>
-
-                    <div id="score-result" class="hidden">
-                        <div class="bg-green-50 rounded-xl p-6 text-center">
-                            <div class="text-5xl font-bold text-green-600 mb-2" id="score-display"></div>
-                            <div class="text-gray-600 mb-4">往年参考：您的分数约在全市前</div>
-                            <div class="text-3xl font-bold text-primary" id="rank-display"></div>
-                            <div class="text-gray-500 text-sm mt-2">⚠️ 往年数据仅供参考，实际排名以当年官方发布为准</div>
-                        </div>
-                    </div>
-
-                    <div class="mt-6 p-4 bg-gray-100 rounded-xl">
-                        <h4 class="font-bold text-gray-700 mb-2">📋 近三年一分一段表发布时间</h4>
-                        <ul class="text-sm text-gray-600 space-y-1">
-                            <li>• 2025年：7月15日左右发布</li>
-                            <li>• 2024年：7月12日左右发布</li>
-                            <li>• 2023年：7月14日左右发布</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- 留资引导 -->
-                <div class="bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl p-6 text-white text-center">
-                    <h3 class="text-xl font-bold mb-2">📝 预约2026一分一段表提醒</h3>
-                    <p class="text-white/80 mb-4">成绩公布后第一时间获取排名分析</p>
-                    <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '志愿工具-一分一段表');">
-                        <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 rounded-lg text-gray-900">
-                        <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
-                        <button type="submit" class="w-full bg-white text-purple-600 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
-                            预约提醒
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- 底部CTA -->
-        <section class="py-8 bg-primary">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
-                <h3 class="text-2xl font-bold mb-4">还有其他问题？</h3>
-                <p class="text-white/80 mb-6">专业老师一对一解答，帮你选择最适合的学校</p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <button onclick="openChat()" class="bg-white text-primary px-8 py-3 rounded-xl font-bold hover:bg-gray-100 transition-all">
-                        💬 在线咨询
-                    </button>
-                    <a href="tel:13371096986" class="bg-orange-500 hover:bg-orange-600 text-white px-8 py-3 rounded-xl font-bold transition-all">
-                        📞 13371096986
-                    </a>
-                </div>
-            </div>
-        </section>
-    </div>
-
     <!-- 页脚 -->
     <footer class="bg-gray-900 text-white py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2000,7 +2260,6 @@
                         <li><a href="#" onclick="showPage('middle-school')" class="hover:text-white transition-colors">中考专区</a></li>
                         <li><a href="#" onclick="showPage('high-school')" class="hover:text-white transition-colors">高考专区</a></li>
                         <li><a href="#" onclick="showPage('schools')" class="hover:text-white transition-colors">学校介绍</a></li>
-                        <li><a href="#" onclick="showPage('tools')" class="hover:text-white transition-colors">🎯 志愿工具</a></li>
                     </ul>
                 </div>
                 <div>
@@ -2338,6 +2597,327 @@
         return div;
     }
     function removeTyping(el) { if (el && el.parentNode) el.parentNode.removeChild(el); }
+    </script>
+
+    <!-- 中考专区工具JS -->
+    <script>
+    // ========== 中考专区工具功能 ==========
+    
+    // 学校数据
+    const mockSchoolData = [
+        { id: 1, name: '潍坊一中', type: 'public', category: 'pugao', district: '市区', score: 590, score2023: 585, score2024: 588, phone: '0536-7516601', address: '潍坊市奎文区胜利东街3269号', intro: '潍坊市教育局直属重点高中，山东省规范化学校。' },
+        { id: 2, name: '潍坊中学', type: 'public', category: 'pugao', district: '市区', score: 560, score2023: 555, score2024: 558, phone: '0536-8213910', address: '潍坊市潍城区和平路249号', intro: '潍坊市教育局直属高中，省级教学示范学校。' },
+        { id: 3, name: '潍坊七中', type: 'public', category: 'pugao', district: '市区', score: 520, score2023: 515, score2024: 518, phone: '0536-8367361', address: '潍坊市潍城区仓南街69号', intro: '潍坊市教育局直属高中，艺术教育特色学校。' },
+        { id: 4, name: '潍坊四中', type: 'public', category: 'pugao', district: '坊子区', score: 540, score2023: 535, score2024: 538, phone: '0536-7516101', address: '潍坊市坊子区崇文街26号', intro: '坊子区重点高中，教学成绩优异。' },
+        { id: 5, name: '潍坊北辰中学', type: 'public', category: 'pugao', district: '寒亭区', score: 530, score2023: 525, score2024: 528, phone: '0536-7251001', address: '潍坊市寒亭区民主街与渤海路交叉口', intro: '寒亭区重点高中，新建校区，设施一流。' },
+        { id: 6, name: '寒亭一中', type: 'public', category: 'pugao', district: '寒亭区', score: 480, score2023: 475, score2024: 478, phone: '0536-7261318', address: '潍坊市寒亭区友谊路与益新街交叉口', intro: '寒亭区普通高中。' },
+        { id: 7, name: '潍坊行知中学', type: 'private', category: 'pugao', district: '市区', score: 510, score2023: 505, score2024: 508, phone: '0536-8882111', address: '潍坊市奎文区文化路与福寿街交叉口', intro: '民办普通高中，管理严格。' },
+        { id: 8, name: '青州一中', type: 'public', category: 'pugao', district: '青州市', score: 520, score2023: 515, score2024: 518, phone: '0536-3235080', address: '青州市驼山路3977号', intro: '青州市重点高中。' },
+        { id: 9, name: '寿光一中', type: 'public', category: 'pugao', district: '寿光市', score: 540, score2023: 535, score2024: 538, phone: '0536-5222401', address: '寿光市文庙街与自康路交叉口', intro: '寿光市重点高中。' },
+        { id: 10, name: '诸城一中', type: 'public', category: 'pugao', district: '诸城市', score: 530, score2023: 525, score2024: 528, phone: '0536-6064001', address: '诸城市东武街与人民东路交叉口', intro: '诸城市重点高中。' },
+        { id: 11, name: '高密一中', type: 'public', category: 'pugao', district: '高密市', score: 550, score2023: 545, score2024: 548, phone: '0536-2323001', address: '高密市康成大街与利群路交叉口', intro: '高密市重点高中。' },
+        { id: 12, name: '安丘一中', type: 'public', category: 'pugao', district: '安丘市', score: 510, score2023: 505, score2024: 508, phone: '0536-4221051', address: '安丘市兴安路与人民路交叉口', intro: '安丘市重点高中。' },
+        { id: 13, name: '昌乐二中', type: 'private', category: 'pugao', district: '昌乐县', score: 500, score2023: 495, score2024: 498, phone: '0536-6221201', address: '昌乐县宝都街道永康路', intro: '民办普通高中。' },
+        { id: 14, name: '昌邑一中', type: 'public', category: 'pugao', district: '昌邑市', score: 500, score2023: 495, score2024: 498, phone: '0536-7212501', address: '昌邑市文昌南路与交通街交叉口', intro: '昌邑市重点高中。' },
+        { id: 15, name: '临朐中学', type: 'public', category: 'pugao', district: '临朐县', score: 480, score2023: 475, score2024: 478, phone: '0536-3218101', address: '临朐县朐山路与民主路交叉口', intro: '临朐县重点高中。' },
+        { id: 16, name: '山东工业技师学院', type: 'public', category: 'jigong', district: '潍城/奎文', score: 0, score2023: 0, score2024: 0, phone: '13371096986', address: '潍坊市潍城校区/奎文校区', intro: '省属公办技师学院，世赛金牌院校，免中考分数自主招生。' },
+        { id: 17, name: '潍坊市技师学院', type: 'public', category: 'jigong', district: '市区', score: 0, score2023: 0, score2024: 0, phone: '0536-8975123', address: '潍坊市潍城区西环路11611号', intro: '潍坊市属公办技师学院。' }
+    ];
+
+    // 电话黄页数据
+    const mockPhoneData = [
+        { name: '奎文区教体局', phone: '0536-6036088' },
+        { name: '潍城区教体局', phone: '0536-8188416' },
+        { name: '高新区教体局', phone: '0536-8891090' },
+        { name: '寒亭区教体局', phone: '0536-7251158' },
+        { name: '坊子区教体局', phone: '0536-7662017' },
+        { name: '昌乐县教体局', phone: '0536-6221312' },
+        { name: '临朐县教体局', phone: '0536-3212232' },
+        { name: '青州市教体局', phone: '0536-3235068' },
+        { name: '诸城市教体局', phone: '0536-6062524' },
+        { name: '寿光市教体局', phone: '0536-5221503' },
+        { name: '安丘市教体局', phone: '0536-4221048' },
+        { name: '高密市教体局', phone: '0536-2323572' },
+        { name: '昌邑市教体局', phone: '0536-7212356' }
+    ];
+
+    let currentMockSchoolFilter = 'all';
+    let currentMockSchoolSearch = '';
+    let currentMockPhoneSearch = '';
+
+    // ========== 模拟填报功能 ==========
+    function runMockSimulation() {
+        const score = parseInt(document.getElementById('mock-score').value);
+        const studyType = document.getElementById('mock-study-type').value;
+        
+        if (!score || score < 0 || score > 610) {
+            alert('请输入有效的模考分数（0-610）');
+            return;
+        }
+
+        let schools = mockSchoolData.filter(s => {
+            if (studyType === 'pugao') return s.category === 'pugao';
+            if (studyType === 'zhijiao') return s.category === 'zhijiao';
+            if (studyType === 'jigong') return s.category === 'jigong';
+            if (studyType === '34') return s.category === '34';
+            return true;
+        });
+
+        schools = schools.sort((a, b) => b.score - a.score);
+
+        document.getElementById('mock-safe-schools-list').innerHTML = '';
+        document.getElementById('mock-rush-schools-list').innerHTML = '';
+        document.getElementById('mock-caution-schools-list').innerHTML = '';
+        document.getElementById('mock-low-score-guide').classList.add('hidden');
+
+        const pugaoSchools = schools.filter(s => s.category === 'pugao');
+        const lowestPugaoScore = Math.min(...pugaoSchools.filter(s => s.score > 0).map(s => s.score));
+        
+        if (studyType === 'pugao' && score < lowestPugaoScore) {
+            document.getElementById('mock-low-score-guide').classList.remove('hidden');
+        }
+
+        schools.forEach(school => {
+            if (school.score === 0) return;
+            const diff = score - school.score;
+            const card = createMockSchoolCard(school, diff);
+            
+            if (diff > 15) {
+                document.getElementById('mock-safe-schools-list').innerHTML += card;
+            } else if (diff >= 0) {
+                document.getElementById('mock-rush-schools-list').innerHTML += card;
+            } else {
+                document.getElementById('mock-caution-schools-list').innerHTML += card;
+            }
+        });
+
+        document.getElementById('mock-simulate-result').classList.remove('hidden');
+        document.getElementById('mock-result-info').value = `模考分数:${score} | 升学方向:${studyType}`;
+
+        document.getElementById('mock-safe-schools').classList.toggle('hidden', document.getElementById('mock-safe-schools-list').innerHTML === '');
+        document.getElementById('mock-rush-schools').classList.toggle('hidden', document.getElementById('mock-rush-schools-list').innerHTML === '');
+        document.getElementById('mock-caution-schools').classList.toggle('hidden', document.getElementById('mock-caution-schools-list').innerHTML === '');
+    }
+
+    function createMockSchoolCard(school, diff) {
+        const typeLabel = school.type === 'public' ? '公办' : '民办';
+        const typeClass = school.type === 'public' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700';
+        const scoreStr = school.score > 0 ? `约${school.score}分` : '自主招生';
+        const diffStr = diff > 0 ? `低于您${diff}分` : (diff < 0 ? `高于您${Math.abs(diff)}分` : '与您持平');
+        
+        return `
+            <div class="bg-white border-2 border-gray-100 rounded-xl p-4 hover:border-primary transition-colors">
+                <div class="flex items-start justify-between mb-2">
+                    <div>
+                        <h4 class="font-bold text-gray-900">${school.name}</h4>
+                        <div class="flex items-center gap-2 mt-1">
+                            <span class="px-2 py-0.5 ${typeClass} text-xs rounded-full">${typeLabel}</span>
+                            <span class="text-xs text-gray-500">${school.district}</span>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-lg font-bold text-primary">${scoreStr}</div>
+                        <div class="text-xs text-gray-500">${diffStr}</div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap gap-1 text-xs text-gray-500">
+                    <span>近3年录取线:</span>
+                    <span>${school.score2023 > 0 ? school.score2023 : '-'}</span>
+                    <span>/</span>
+                    <span>${school.score2024 > 0 ? school.score2024 : '-'}</span>
+                    <span>/</span>
+                    <span>${school.score > 0 ? school.score : '-'}</span>
+                </div>
+            </div>
+        `;
+    }
+
+    // ========== 学校库功能 ==========
+    function renderMockSchoolList() {
+        const list = document.getElementById('mock-school-list');
+        if (!list) return;
+
+        let filtered = mockSchoolData;
+        
+        if (currentMockSchoolFilter !== 'all') {
+            filtered = filtered.filter(s => {
+                if (currentMockSchoolFilter === 'public') return s.type === 'public' && s.category === 'pugao';
+                if (currentMockSchoolFilter === 'private') return s.type === 'private' && s.category === 'pugao';
+                if (currentMockSchoolFilter === 'zhijiao') return s.category === 'zhijiao';
+                if (currentMockSchoolFilter === 'jigong') return s.category === 'jigong';
+                return true;
+            });
+        }
+
+        if (currentMockSchoolSearch) {
+            const search = currentMockSchoolSearch.toLowerCase();
+            filtered = filtered.filter(s => s.name.toLowerCase().includes(search) || s.district.toLowerCase().includes(search));
+        }
+
+        if (filtered.length === 0) {
+            list.innerHTML = '<div class="col-span-full text-center py-10 text-gray-500">未找到符合条件的学校</div>';
+            return;
+        }
+
+        list.innerHTML = filtered.map(school => {
+            const typeLabel = school.type === 'public' ? '公办' : '民办';
+            const typeClass = school.type === 'public' ? 'bg-green-100 text-green-700' : 'bg-orange-100 text-orange-700';
+            const catLabel = school.category === 'pugao' ? '普高' : (school.category === 'zhijiao' ? '职教' : '技工');
+            const catClass = school.category === 'pugao' ? 'bg-blue-100 text-blue-700' : (school.category === 'zhijiao' ? 'bg-purple-100 text-purple-700' : 'bg-gray-100 text-gray-700');
+            const scoreStr = school.score > 0 ? `约${school.score}分` : '自主招生';
+            
+            return `
+                <div class="bg-white rounded-xl shadow-md overflow-hidden card-hover">
+                    <div class="p-4">
+                        <div class="flex items-start justify-between mb-2">
+                            <div>
+                                <h4 class="font-bold text-gray-900 text-lg">${school.name}</h4>
+                                <div class="flex items-center gap-2 mt-1">
+                                    <span class="px-2 py-0.5 ${typeClass} text-xs rounded-full">${typeLabel}</span>
+                                    <span class="px-2 py-0.5 ${catClass} text-xs rounded-full">${catLabel}</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <div class="text-xl font-bold text-primary">${scoreStr}</div>
+                                <div class="text-xs text-gray-500">${school.district}</div>
+                            </div>
+                        </div>
+                        <div class="flex flex-wrap gap-1 text-xs text-gray-500 mb-3">
+                            <span>近3年录取:</span>
+                            <span>${school.score2023 > 0 ? school.score2023 : '-'}</span>
+                            <span>/</span>
+                            <span>${school.score2024 > 0 ? school.score2024 : '-'}</span>
+                            <span>/</span>
+                            <span>${school.score > 0 ? school.score : '-'}</span>
+                        </div>
+                        ${school.phone ? `<a href="tel:${school.phone}" class="inline-flex items-center text-sm text-primary hover:underline"><svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>${school.phone}</a>` : ''}
+                    </div>
+                    <div class="border-t px-4 py-3 bg-gray-50">
+                        <details class="text-sm">
+                            <summary class="cursor-pointer font-medium text-gray-700 hover:text-primary">查看详情</summary>
+                            <div class="mt-3 space-y-2 text-gray-600">
+                                <p><strong>地址：</strong>${school.address || '暂无'}</p>
+                                <p><strong>简介：</strong>${school.intro || '暂无'}</p>
+                            </div>
+                        </details>
+                    </div>
+                </div>
+            `;
+        }).join('');
+    }
+
+    function filterMockSchoolType(type) {
+        currentMockSchoolFilter = type;
+        document.querySelectorAll('.mock-school-filter-btn').forEach(btn => {
+            if (btn.dataset.type === type) {
+                btn.classList.remove('border-gray-200', 'text-gray-700');
+                btn.classList.add('border-primary', 'bg-primary', 'text-white');
+            } else {
+                btn.classList.add('border-gray-200', 'text-gray-700');
+                btn.classList.remove('border-primary', 'bg-primary', 'text-white');
+            }
+        });
+        renderMockSchoolList();
+    }
+
+    function filterMockSchools() {
+        currentMockSchoolSearch = document.getElementById('mock-school-search').value;
+        renderMockSchoolList();
+    }
+
+    // ========== 电话黄页功能 ==========
+    function renderMockPhoneList() {
+        const list = document.getElementById('mock-phone-list');
+        if (!list) return;
+
+        let filtered = mockPhoneData;
+        
+        if (currentMockPhoneSearch) {
+            const search = currentMockPhoneSearch.toLowerCase();
+            filtered = filtered.filter(p => p.name.toLowerCase().includes(search));
+        }
+
+        if (filtered.length === 0) {
+            list.innerHTML = '<div class="text-center py-8 text-gray-500">未找到符合条件的电话</div>';
+            return;
+        }
+
+        list.innerHTML = filtered.map(item => `
+            <div class="bg-gray-50 rounded-xl p-4 flex items-center justify-between">
+                <div>
+                    <div class="font-medium text-gray-900">${item.name}</div>
+                    <div class="text-sm text-gray-500">${item.phone} *</div>
+                </div>
+                <a href="tel:${item.phone}" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center">
+                    <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                    </svg>
+                    一键拨打
+                </a>
+            </div>
+        `).join('');
+    }
+
+    function filterMockPhones() {
+        currentMockPhoneSearch = document.getElementById('mock-phone-search').value;
+        renderMockPhoneList();
+    }
+
+    // ========== 一分一段表功能 ==========
+    function queryMockScoreRank() {
+        const score = parseInt(document.getElementById('mock-score-input').value);
+        
+        if (!score || score < 0 || score > 610) {
+            alert('请输入有效的分数（0-610）');
+            return;
+        }
+
+        const totalStudents = 80000;
+        let percentage;
+        if (score >= 580) percentage = 98;
+        else if (score >= 550) percentage = 90;
+        else if (score >= 520) percentage = 80;
+        else if (score >= 480) percentage = 65;
+        else if (score >= 450) percentage = 50;
+        else if (score >= 400) percentage = 35;
+        else if (score >= 350) percentage = 20;
+        else percentage = 10;
+
+        document.getElementById('mock-score-display').textContent = score + '分';
+        document.getElementById('mock-rank-display').textContent = percentage + '%';
+        document.getElementById('mock-score-result').classList.remove('hidden');
+    }
+
+    // ========== 估分功能 ==========
+    function calcEstimateTotal() {
+        const yuwen = parseInt(document.getElementById('score-yuwen').value) || 0;
+        const shuxue = parseInt(document.getElementById('score-shuxue').value) || 0;
+        const yingyu = parseInt(document.getElementById('score-yingyu').value) || 0;
+        const wlhx = parseInt(document.getElementById('score-wlhx').value) || 0;
+        const ddzz = parseInt(document.getElementById('score-ddzz').value) || 0;
+        const tiyu = parseInt(document.getElementById('score-tiyu').value) || 0;
+        
+        const total = yuwen + shuxue + yingyu + wlhx + ddzz + tiyu;
+        document.getElementById('estimate-total').textContent = total;
+    }
+
+    function goToMockSimulate() {
+        const total = parseInt(document.getElementById('estimate-total').textContent) || 0;
+        if (total > 0) {
+            document.getElementById('mock-score').value = total;
+            document.getElementById('tool-nav').scrollIntoView({ behavior: 'smooth' });
+            // 模拟点击开始模拟按钮
+            setTimeout(() => runMockSimulation(), 500);
+        } else {
+            alert('请先输入各科估分');
+        }
+    }
+
+    // 页面加载时初始化学校库和电话黄页
+    document.addEventListener('DOMContentLoaded', function() {
+        renderMockSchoolList();
+        renderMockPhoneList();
+    });
     </script>
 
     <!-- 资讯详情模态框 -->
