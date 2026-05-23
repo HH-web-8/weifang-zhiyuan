@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wfzgk.com/sitemap.xml
+Sitemap: https://wfzgk.com/sitemap_baidu.xml
