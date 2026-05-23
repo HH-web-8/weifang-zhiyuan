@@ -1187,16 +1187,24 @@
                 </div>
 
                 <!-- 留资获取完整真题 -->
-                <div class="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-6 text-white text-center mt-6">
+                <div id="exam-lead-form" class="bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-6 text-white text-center mt-6">
                     <h3 class="text-xl font-bold mb-2">📝 获取完整真题试卷</h3>
                     <p class="text-white/80 mb-4">留下联系方式，老师免费发送全套真题</p>
-                    <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-历年真题');">
+                    <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-历年真题', 'exam');">
                         <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 rounded-lg text-gray-900">
                         <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
-                        <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+                        <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
                             免费获取
                         </button>
                     </form>
+                    <!-- 成功反馈（默认隐藏） -->
+                    <div id="exam-success" class="hidden mt-4 bg-white/20 backdrop-blur-sm rounded-xl p-4">
+                        <div class="text-3xl mb-2">🎉</div>
+                        <p class="font-bold text-lg">提交成功！</p>
+                        <p class="text-white/90 text-sm mt-1">张老师会尽快联系您，发送完整真题试卷</p>
+                        <p class="text-white/70 text-xs mt-2">也可直接拨打 <a href="tel:13371096986" class="underline font-bold">13371096986</a></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -2420,15 +2428,15 @@
         if (_chatIsOpen) toggleChat();
     }
     // ========== 表单提交到飞书（通过扣子编程API触发留资工作流） ==========
-    async function submitToFeishu(form, source) {
+    async function submitToFeishu(form, source, formId) {
         const name = form.name.value.trim();
         const phone = form.phone.value.trim();
-        const major = form.major.value || '未选择';
+        const major = form.major ? (form.major.value || '未选择') : '未选择';
         if (!name || !phone) return;
 
         const btn = form.querySelector('button[type="submit"]');
-        const origText = btn.textContent;
-        btn.textContent = '提交中...';
+        const origHTML = btn.innerHTML;
+        btn.innerHTML = '<svg class="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg> 提交中...';
         btn.disabled = true;
 
         try {
@@ -2444,17 +2452,39 @@
                     project_id: CHAT_PROJECT_ID
                 })
             });
-            // 成功提示
+            // 成功反馈
             form.reset();
-            btn.textContent = '✅ 提交成功！';
-            btn.classList.remove('gradient-green');
-            btn.style.background = '#10B981';
-            setTimeout(() => { btn.textContent = origText; btn.disabled = false; btn.style.background = ''; btn.classList.add('gradient-green'); }, 3000);
+            btn.innerHTML = '✅ 提交成功！';
+            btn.classList.add('bg-green-100', 'text-green-700');
+
+            // 根据表单ID显示不同的成功反馈
+            if (formId === 'exam') {
+                const successEl = document.getElementById('exam-success');
+                if (successEl) { successEl.classList.remove('hidden'); form.style.display = 'none'; }
+            } else {
+                // 通用成功提示
+                const parent = form.parentElement;
+                const msg = document.createElement('div');
+                msg.className = 'mt-3 text-center text-sm font-medium text-green-700 bg-green-50 rounded-lg p-3';
+                msg.innerHTML = '🎉 提交成功！张老师会尽快联系您<br><a href="tel:13371096986" class="underline font-bold">也可直接拨打 13371096986</a>';
+                form.after(msg);
+                form.style.display = 'none';
+            }
+
+            setTimeout(() => {
+                btn.innerHTML = origHTML;
+                btn.disabled = false;
+                btn.classList.remove('bg-green-100', 'text-green-700');
+                btn.style.background = '';
+            }, 5000);
         } catch (e) {
             console.error('提交失败:', e);
-            btn.textContent = origText;
+            btn.innerHTML = origHTML;
             btn.disabled = false;
-            alert('提交失败，请直接拨打 13371096986 联系张老师');
+            // 降级方案：直接打开拨号
+            if (confirm('网络提交失败，是否直接拨打张老师电话？')) {
+                window.location.href = 'tel:13371096986';
+            }
         }
     }
     function sendQuick(text) {
