@@ -870,17 +870,24 @@
                     </div>
 
                     <!-- 留资CTA -->
-                    <div class="bg-primary rounded-2xl p-6 text-white text-center">
+                    <div id="lead-mock" class="bg-primary rounded-2xl p-6 text-white text-center">
                         <h3 class="text-xl font-bold mb-2">📝 获取详细志愿方案</h3>
                         <p class="text-white/80 mb-4">专业老师根据你的分数，一对一制定志愿填报方案</p>
-                        <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-模拟填报');">
+                        <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-模拟填报', 'mock');">
                             <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 rounded-lg text-gray-900">
                             <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
                             <input type="hidden" name="major" id="mock-result-info">
-                            <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+                            <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path></svg>
                                 获取详细方案
                             </button>
                         </form>
+                        <div id="mock-success" class="hidden mt-4 bg-white/20 backdrop-blur-sm rounded-xl p-4">
+                            <div class="text-3xl mb-2">🎉</div>
+                            <p class="font-bold text-lg">提交成功！</p>
+                            <p class="text-white/90 text-sm mt-1">张老师会尽快联系您，制定专属志愿方案</p>
+                            <p class="text-white/70 text-xs mt-2">也可直接拨打 <a href="tel:13371096986" class="underline font-bold">13371096986</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1038,16 +1045,23 @@
                 </div>
 
                 <!-- 留资引导 -->
-                <div class="bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl p-6 text-white text-center">
+                <div id="lead-rank" class="bg-gradient-to-r from-purple-500 to-indigo-500 rounded-2xl p-6 text-white text-center">
                     <h3 class="text-xl font-bold mb-2">📝 预约2026一分一段表提醒</h3>
                     <p class="text-white/80 mb-4">成绩公布后第一时间获取排名分析</p>
-                    <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-一分一段表');">
+                    <form class="max-w-md mx-auto space-y-3" onsubmit="event.preventDefault(); submitToFeishu(this, '中考专区-一分一段表', 'rank');">
                         <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 rounded-lg text-gray-900">
                         <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
-                        <button type="submit" class="w-full bg-white text-purple-600 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all">
+                        <button type="submit" class="w-full bg-white text-purple-600 py-3 rounded-lg font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"></path></svg>
                             预约提醒
                         </button>
                     </form>
+                    <div id="rank-success" class="hidden mt-4 bg-white/20 backdrop-blur-sm rounded-xl p-4">
+                        <div class="text-3xl mb-2">🎉</div>
+                        <p class="font-bold text-lg">预约成功！</p>
+                        <p class="text-white/90 text-sm mt-1">一分一段表公布后，张老师会第一时间联系您</p>
+                        <p class="text-white/70 text-xs mt-2">也可直接拨打 <a href="tel:13371096986" class="underline font-bold">13371096986</a></p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1554,7 +1568,7 @@
                         <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-2">📝 预约咨询</h2>
                         <p class="text-gray-600 text-sm md:text-base">留下您的信息，专业老师将尽快与您联系</p>
                     </div>
-                    <form class="space-y-4" onsubmit="event.preventDefault(); submitToFeishu(this, '中考咨询');">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); submitToFeishu(this, '中考咨询', 'zhongkao');">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 md:py-4 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base md:text-sm min-h-[48px]">
                             <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 md:py-4 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base md:text-sm min-h-[48px]">
@@ -1570,10 +1584,16 @@
                             <option>烹饪/酒店管理</option>
                             <option>其他专业</option>
                         </select>
-                        <button type="submit" class="w-full gradient-green text-white py-3 md:py-4 rounded-lg text-base md:text-lg font-bold hover:opacity-90 transition-all min-h-[48px]">
+                        <button type="submit" class="w-full gradient-green text-white py-3 md:py-4 rounded-lg text-base md:text-lg font-bold hover:opacity-90 transition-all min-h-[48px] flex items-center justify-center gap-2">
                             提交咨询
                         </button>
                     </form>
+                    <div id="zhongkao-success" class="hidden text-center py-6">
+                        <div class="text-5xl mb-3">🎉</div>
+                        <p class="text-xl font-bold text-gray-900 mb-2">提交成功！</p>
+                        <p class="text-gray-600">张老师会尽快与您联系</p>
+                        <a href="tel:13371096986" class="inline-block mt-3 bg-primary text-white px-6 py-2 rounded-lg font-bold hover:opacity-90">📞 13371096986</a>
+                    </div>
                     <p class="text-center text-gray-500 text-xs md:text-sm mt-4">我们尊重您的隐私，不会向第三方透露您的信息</p>
                 </div>
             </div>
@@ -1828,7 +1848,7 @@
                         <h2 class="text-xl md:text-3xl font-bold text-gray-900 mb-2">🎓 高考落榜不可怕，技能成才更出彩</h2>
                         <p class="text-gray-600 text-sm md:text-base">留下您的信息，专业老师将为您定制专属升学方案</p>
                     </div>
-                    <form class="space-y-4" onsubmit="event.preventDefault(); submitToFeishu(this, '高考咨询');">
+                    <form class="space-y-4" onsubmit="event.preventDefault(); submitToFeishu(this, '高考咨询', 'gaokao');">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <input type="text" name="name" placeholder="您的姓名" required class="w-full px-4 py-3 md:py-4 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base md:text-sm min-h-[48px]">
                             <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 md:py-4 border-2 border-gray-200 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-base md:text-sm min-h-[48px]">
@@ -1843,10 +1863,16 @@
                             <option>计算机应用</option>
                             <option>其他专业</option>
                         </select>
-                        <button type="submit" class="w-full gradient-green text-white py-3 md:py-4 rounded-lg text-base md:text-lg font-bold hover:opacity-90 transition-all min-h-[48px]">
+                        <button type="submit" class="w-full gradient-green text-white py-3 md:py-4 rounded-lg text-base md:text-lg font-bold hover:opacity-90 transition-all min-h-[48px] flex items-center justify-center gap-2">
                             获取专属方案
                         </button>
                     </form>
+                    <div id="gaokao-success" class="hidden text-center py-6">
+                        <div class="text-5xl mb-3">🎉</div>
+                        <p class="text-xl font-bold text-gray-900 mb-2">提交成功！</p>
+                        <p class="text-gray-600">张老师会尽快为您定制升学方案</p>
+                        <a href="tel:13371096986" class="inline-block mt-3 bg-primary text-white px-6 py-2 rounded-lg font-bold hover:opacity-90">📞 13371096986</a>
+                    </div>
                     <div class="text-center mt-6">
                         <a href="tel:13371096986" class="inline-flex items-center text-orange-500 font-bold text-base md:text-lg hover:text-orange-600">
                             <svg class="w-5 h-5 md:w-6 md:h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -2458,17 +2484,9 @@
             btn.classList.add('bg-green-100', 'text-green-700');
 
             // 根据表单ID显示不同的成功反馈
-            if (formId === 'exam') {
-                const successEl = document.getElementById('exam-success');
+            if (formId) {
+                const successEl = document.getElementById(formId + '-success');
                 if (successEl) { successEl.classList.remove('hidden'); form.style.display = 'none'; }
-            } else {
-                // 通用成功提示
-                const parent = form.parentElement;
-                const msg = document.createElement('div');
-                msg.className = 'mt-3 text-center text-sm font-medium text-green-700 bg-green-50 rounded-lg p-3';
-                msg.innerHTML = '🎉 提交成功！张老师会尽快联系您<br><a href="tel:13371096986" class="underline font-bold">也可直接拨打 13371096986</a>';
-                form.after(msg);
-                form.style.display = 'none';
             }
 
             setTimeout(() => {
