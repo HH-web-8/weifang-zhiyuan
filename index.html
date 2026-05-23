@@ -1170,8 +1170,9 @@
                     <span class="w-10 h-10 bg-blue-500 text-white rounded-lg flex items-center justify-center mr-3 text-xl">📚</span>
                     历年真题练习
                 </h2>
-                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-6">
-                    <p class="text-gray-600 text-sm">练习往年真题，熟悉考试题型和难度</p>
+                <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded mb-4">
+                    <p class="text-gray-600 text-sm">📌 点击科目卡片进入在线答题，系统自动批改并计算成绩</p>
+                    <p class="text-orange-600 text-sm mt-1">🎯 答题后可一键将成绩填入估分模块</p>
                 </div>
 
                 <!-- 年份和科目选择 -->
@@ -1179,24 +1180,9 @@
                     <div class="flex flex-wrap gap-2 mb-4">
                         <button onclick="filterExamYear(2025)" class="exam-year-btn px-4 py-2 rounded-lg border-2 border-primary bg-primary text-white text-sm font-medium" data-year="2025">2025年</button>
                         <button onclick="filterExamYear(2024)" class="exam-year-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-year="2024">2024年</button>
-                        <button onclick="filterExamYear(2023)" class="exam-year-btn px-4 py-2 rounded-lg border-2 border-gray-200 text-gray-700 text-sm font-medium" data-year="2023">2023年</button>
                     </div>
                     <div class="grid grid-cols-2 md:grid-cols-5 gap-3" id="exam-subject-grid">
                         <!-- JS动态渲染 -->
-                    </div>
-                </div>
-
-                <!-- 题目展示区域 -->
-                <div id="exam-questions-area" class="hidden">
-                    <div class="bg-white rounded-2xl shadow-lg p-6">
-                        <div class="flex items-center justify-between mb-4">
-                            <h3 class="text-xl font-bold text-gray-900" id="exam-title">真题练习</h3>
-                            <button onclick="closeExamQuestions()" class="text-gray-500 hover:text-gray-700">✕ 关闭</button>
-                        </div>
-                        <div id="exam-questions-list"></div>
-                        <div class="mt-6 p-4 bg-yellow-50 rounded-xl text-center">
-                            <p class="text-yellow-700 text-sm">⚠️ 更多真题持续更新中，完整试卷请联系老师获取</p>
-                        </div>
                     </div>
                 </div>
 
@@ -1209,14 +1195,14 @@
                         <input type="tel" name="phone" placeholder="您的电话" required class="w-full px-4 py-3 rounded-lg text-gray-900">
                         <button type="submit" class="w-full bg-white text-primary py-3 rounded-lg font-bold hover:bg-gray-100 transition-all flex items-center justify-center gap-2">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
-                            免费获取
+                            免费获取 + 解锁全部真题
                         </button>
                     </form>
                     <!-- 成功反馈（默认隐藏） -->
                     <div id="exam-success" class="hidden mt-4 bg-white/20 backdrop-blur-sm rounded-xl p-4">
                         <div class="text-3xl mb-2">🎉</div>
                         <p class="font-bold text-lg">提交成功！</p>
-                        <p class="text-white/90 text-sm mt-1">张老师会尽快联系您，发送完整真题试卷</p>
+                        <p class="text-white/90 text-sm mt-1">张老师会尽快联系您，已为您解锁全部真题</p>
                         <p class="text-white/70 text-xs mt-2">也可直接拨打 <a href="tel:13371096986" class="underline font-bold">13371096986</a></p>
                     </div>
                 </div>
@@ -1225,70 +1211,146 @@
 
         <!-- 历年真题数据 -->
         <script>
+        // ========== 历年真题数据（扩充版） ==========
         const examData = [
             {
-                year: 2025, subject: '语文', count: 20, difficulty: '中等',
-                icon: '📖', fullScore: 120,
+                year: 2025, subject: '语文', count: 8, difficulty: '中等',
+                icon: '📖', fullScore: 120, freeCount: 2,
                 questions: [
-                    { id: 1, type: '选择题', question: '下列词语中加点字注音全部正确的一项是（）', options: ['A. 模样(mú) 狡黠(xiá)', 'B. 模样(mó) 狡黠(xiá)', 'C. 模样(mú) 狡黠(jié)', 'D. 模样(mó) 狡黠(jié)'], answer: 'A' },
-                    { id: 2, type: '选择题', question: '下列句子中没有语病的一项是（）', options: ['A. 通过这次活动，使我受益匪浅', 'B. 我们要养成认真学习的好习惯', 'C. 能否坚持到底，是成功的关键', 'D. 为了防止不再发生类似事件，我们加强了管理'], answer: 'B' },
-                    { id: 3, type: '选择题', question: '下列文学常识表述不正确的一项是（）', options: ['A. 《论语》是儒家经典之一', 'B. 《庄子》是道家经典之一', 'C. 《史记》是编年体史书', 'D. 《诗经》是中国最早的诗歌总集'], answer: 'C' }
+                    { id: 1, type: '选择题', question: '下列词语中加点字注音全部正确的一项是', options: ['A. 模样(mú) 狡黠(xiá)', 'B. 模样(mó) 狡黠(xiá)', 'C. 模样(mú) 狡黠(jié)', 'D. 模样(mó) 狡黠(jié)'], answer: 'A' },
+                    { id: 2, type: '选择题', question: '下列句子中没有语病的一项是', options: ['A. 通过这次活动，使我受益匪浅', 'B. 我们要养成认真学习的好习惯', 'C. 能否坚持到底，是成功的关键', 'D. 为了防止不再发生类似事件，我们加强了管理'], answer: 'B' },
+                    { id: 3, type: '选择题', question: '下列文学常识表述不正确的一项是', options: ['A. 《论语》是儒家经典之一', 'B. 《庄子》是道家经典之一', 'C. 《史记》是编年体史书', 'D. 《诗经》是中国最早的诗歌总集'], answer: 'C' },
+                    { id: 4, type: '选择题', question: '下列词语中没有错别字的一项是', options: ['A. 锋芒必露 妇孺皆知', 'B. 锋芒毕露 妇孺皆知', 'C. 锋芒毕露 妇儒皆知', 'D. 锋芒必露 妇儒皆知'], answer: 'B' },
+                    { id: 5, type: '选择题', question: '下列句子中加点成语使用正确的一项是', options: ['A. 这篇文章写得别具匠心，言简意赅', 'B. 他在考试中取得了好成绩，令人叹为观止', 'C. 这道题太难了，我简直叹为观止', 'D. 他的成绩一落千丈，令人叹为观止'], answer: 'A' },
+                    { id: 6, type: '选择题', question: '依次填入下面一段文字横线处的语句，衔接最恰当的一项是：读书是一种心灵的旅行，____，____，____，____。①让你在喧嚣中保持宁静 ②让你在迷茫中找到方向 ③让你在平凡中发现美好 ④让你在困境中获得力量', options: ['A. ③①②④', 'B. ②③①④', 'C. ①②③④', 'D. ④①②③'], answer: 'C' },
+                    { id: 7, type: '选择题', question: '下列关于修辞手法的判断，正确的一项是', options: ['A. "感时花溅泪，恨别鸟惊心"用了夸张', 'B. "忽如一夜春风来，千树万树梨花开"用了比喻', 'C. "千里冰封，万里雪飘"用了对偶', 'D. "谁言寸草心，报得三春晖"用了拟人'], answer: 'B' },
+                    { id: 8, type: '选择题', question: '下列有关文言文的说法，不正确的一项是', options: ['A. "之"可用作代词、助词、动词', 'B. "而"可表顺承、转折、修饰关系', 'C. "以"只能作介词使用', 'D. "其"可作代词、副词'], answer: 'C' }
                 ]
             },
             {
-                year: 2025, subject: '数学', count: 18, difficulty: '中等偏上',
-                icon: '📐', fullScore: 120,
+                year: 2025, subject: '数学', count: 8, difficulty: '中等偏上',
+                icon: '📐', fullScore: 120, freeCount: 2,
                 questions: [
-                    { id: 1, type: '选择题', question: '计算：(-2)³ 的结果是（）', options: ['A. -8', 'B. 8', 'C. -6', 'D. 6'], answer: 'A' },
-                    { id: 2, type: '选择题', question: '下列图形中，既是轴对称图形又是中心对称图形的是（）', options: ['A. 等边三角形', 'B. 平行四边形', 'C. 矩形', 'D. 正五边形'], answer: 'C' },
-                    { id: 3, type: '选择题', question: '若一元二次方程 x² - 3x + k = 0 有两个不相等的实数根，则 k 的取值范围是（）', options: ['A. k < 9/4', 'B. k ≤ 9/4', 'C. k > 9/4', 'D. k ≥ 9/4'], answer: 'A' }
+                    { id: 1, type: '选择题', question: '计算：(-2)³ 的结果是', options: ['A. -8', 'B. 8', 'C. -6', 'D. 6'], answer: 'A' },
+                    { id: 2, type: '选择题', question: '下列图形中，既是轴对称图形又是中心对称图形的是', options: ['A. 等边三角形', 'B. 平行四边形', 'C. 矩形', 'D. 正五边形'], answer: 'C' },
+                    { id: 3, type: '选择题', question: '若 x²-5x+6=0，则 x 的值为', options: ['A. 2或3', 'B. -2或-3', 'C. 2或-3', 'D. -2或3'], answer: 'A' },
+                    { id: 4, type: '选择题', question: '在Rt△ABC中，∠C=90°，AC=3，BC=4，则AB的长为', options: ['A. 5', 'B. 6', 'C. 7', 'D. √7'], answer: 'A' },
+                    { id: 5, type: '选择题', question: '一个扇形的弧长为2π，半径为3，则该扇形的面积为', options: ['A. 3π', 'B. 6π', 'C. 9π', 'D. 12π'], answer: 'A' },
+                    { id: 6, type: '选择题', question: '已知点A(2,3)在反比例函数y=k/x的图象上，则k的值为', options: ['A. 6', 'B. 5', 'C. 1.5', 'D. -6'], answer: 'A' },
+                    { id: 7, type: '选择题', question: '某校对八年级200名学生进行视力检查，频率分布直方图中，4.0~4.5这一组的频率为0.2，则该组的人数为', options: ['A. 20', 'B. 30', 'C. 40', 'D. 50'], answer: 'C' },
+                    { id: 8, type: '选择题', question: '如图，AB是⊙O的直径，弦CD⊥AB于点E，若CD=8，BE=2，则⊙O的半径为', options: ['A. 5', 'B. 4', 'C. 3', 'D. 2'], answer: 'A' }
                 ]
             },
             {
-                year: 2025, subject: '英语', count: 16, difficulty: '中等',
-                icon: '🔤', fullScore: 120,
+                year: 2025, subject: '英语', count: 6, difficulty: '中等',
+                icon: '🔤', fullScore: 120, freeCount: 2,
                 questions: [
-                    { id: 1, type: '选择题', question: '—I\'m sorry I broke your glass. —__________', options: ['A. You\'re welcome', 'B. It doesn\'t matter', 'C. Thank you', 'D. That\'s right'], answer: 'B' },
-                    { id: 2, type: '选择题', question: 'The book __________ on the desk just now.', options: ['A. has put', 'B. was put', 'C. is put', 'D. can be put'], answer: 'B' },
-                    { id: 3, type: '选择题', question: 'There are many trees on __________ sides of the street.', options: ['A. either', 'B. both', 'C. all', 'D. each'], answer: 'B' }
+                    { id: 1, type: '选择题', question: 'Choose the correct word: She ____ to school every day.', options: ['A. go', 'B. goes', 'C. going', 'D. went'], answer: 'B' },
+                    { id: 2, type: '选择题', question: 'Which is correct? "I have never seen ____ interesting movie."', options: ['A. so a', 'B. such a', 'C. so an', 'D. such an'], answer: 'D' },
+                    { id: 3, type: '选择题', question: 'The book ____ by him last year is very popular.', options: ['A. written', 'B. writing', 'C. wrote', 'D. write'], answer: 'A' },
+                    { id: 4, type: '选择题', question: 'He asked me ____ I would go with him.', options: ['A. that', 'B. what', 'C. if', 'D. which'], answer: 'C' },
+                    { id: 5, type: '选择题', question: 'Not only he but also I ____ interested in music.', options: ['A. am', 'B. is', 'C. are', 'D. be'], answer: 'A' },
+                    { id: 6, type: '选择题', question: 'The teacher told us ____ in class.', options: ['A. not talk', 'B. don\'t talk', 'C. not to talk', 'D. to not talk'], answer: 'C' }
                 ]
             },
             {
-                year: 2025, subject: '物化', count: 15, difficulty: '中等偏难',
-                icon: '⚗️', fullScore: 120,
+                year: 2025, subject: '物化', count: 6, difficulty: '中等偏上',
+                icon: '🔬', fullScore: 120, freeCount: 2,
                 questions: [
-                    { id: 1, type: '选择题', question: '【物理】下列说法正确的是（）', options: ['A. 物体温度越高，内能越大', 'B. 物体温度越高，热量越多', 'C. 物体吸收热量，温度一定升高', 'D. 物体的温度为0℃时，内能为零'], answer: 'A' },
-                    { id: 2, type: '选择题', question: '【化学】下列物质属于纯净物的是（）', options: ['A. 空气', 'B. 海水', 'C. 蒸馏水', 'D. 泥沙水'], answer: 'C' },
-                    { id: 3, type: '选择题', question: '【物理】用滑轮组提升重物时，下列说法正确的是（）', options: ['A. 滑轮组越省力越好', 'B. 动滑轮越重越省力', 'C. 绳子越细越省力', 'D. 滑轮组的机械效率小于100%'], answer: 'D' }
+                    { id: 1, type: '选择题', question: '下列变化中属于化学变化的是', options: ['A. 冰雪融化', 'B. 酒精挥发', 'C. 铁生锈', 'D. 矿石粉碎'], answer: 'C' },
+                    { id: 2, type: '选择题', question: '一个物体放在水平桌面上，下列哪对力是平衡力', options: ['A. 物体的重力和桌面对物体的支持力', 'B. 物体对桌面的压力和桌面对物体的支持力', 'C. 物体的重力和物体对桌面的压力', 'D. 桌子的重力和地面对桌子的支持力'], answer: 'A' },
+                    { id: 3, type: '选择题', question: '下列物质的用途，利用其化学性质的是', options: ['A. 干冰用于人工降雨', 'B. 金刚石用于切割玻璃', 'C. 氧气用于炼钢', 'D. 铜丝用作导线'], answer: 'C' },
+                    { id: 4, type: '选择题', question: '关于惯性，下列说法正确的是', options: ['A. 只有运动的物体才有惯性', 'B. 物体速度越大惯性越大', 'C. 惯性是物体的一种属性，与运动状态无关', 'D. 太空中物体没有惯性'], answer: 'C' },
+                    { id: 5, type: '选择题', question: '下列实验操作正确的是', options: ['A. 稀释浓硫酸时将水倒入浓硫酸中', 'B. 用燃着的酒精灯点燃另一只酒精灯', 'C. 给试管中的液体加热时，试管口不对着人', 'D. 闻气体气味时直接将鼻子凑到瓶口'], answer: 'C' },
+                    { id: 6, type: '选择题', question: '一个标有"6V 3W"的小灯泡，接在3V的电源上，其实际功率为', options: ['A. 3W', 'B. 1.5W', 'C. 0.75W', 'D. 6W'], answer: 'C' }
                 ]
             },
             {
-                year: 2025, subject: '道法', count: 12, difficulty: '中等',
-                icon: '⚖️', fullScore: 80,
+                year: 2025, subject: '道法', count: 6, difficulty: '中等',
+                icon: '⚖️', fullScore: 80, freeCount: 2,
                 questions: [
-                    { id: 1, type: '选择题', question: '我国宪法的核心价值追求是（）', options: ['A. 规范国家权力运行', 'B. 保障公民当家作主', 'C. 规范国家机构运行', 'D. 保障公民合法权益'], answer: 'D' },
-                    { id: 2, type: '选择题', question: '维护国家安全、荣誉和利益是（）', options: ['A. 国家的事', 'B. 成年人做的事', 'C. 每个公民的基本义务', 'D. 军人的职责'], answer: 'C' }
+                    { id: 1, type: '选择题', question: '我国宪法规定，中华人民共和国的一切权力属于', options: ['A. 公民', 'B. 人民', 'C. 人民代表大会', 'D. 中国共产党'], answer: 'B' },
+                    { id: 2, type: '选择题', question: '下列行为属于正确行使公民权利的是', options: ['A. 在网络上随意发布他人隐私', 'B. 依法参加人大代表选举投票', 'C. 故意损坏公共财物', 'D. 拒绝履行受教育义务'], answer: 'B' },
+                    { id: 3, type: '选择题', question: '我国的基本经济制度是', options: ['A. 公有制为主体、多种所有制经济共同发展', 'B. 私有制经济为主体', 'C. 纯公有制经济', 'D. 混合所有制经济'], answer: 'A' },
+                    { id: 4, type: '选择题', question: '全国人民代表大会是我国的', options: ['A. 最高行政机关', 'B. 最高审判机关', 'C. 最高国家权力机关', 'D. 最高监察机关'], answer: 'C' },
+                    { id: 5, type: '选择题', question: '下列属于公民基本义务的是', options: ['A. 依法纳税', 'B. 参加公益活动', 'C. 体育锻炼', 'D. 旅游出行'], answer: 'A' },
+                    { id: 6, type: '选择题', question: '当合法权益受到侵害时，正确的维权途径是', options: ['A. 以暴制暴', 'B. 忍气吞声', 'C. 通过法律途径解决', 'D. 私自扣押对方财物'], answer: 'C' }
                 ]
             },
             {
-                year: 2024, subject: '语文', count: 20, difficulty: '中等',
-                icon: '📖', fullScore: 120,
+                year: 2024, subject: '语文', count: 6, difficulty: '中等',
+                icon: '📖', fullScore: 120, freeCount: 2,
                 questions: [
-                    { id: 1, type: '选择题', question: '下列词语中没有错别字的一项是（）', options: ['A. 迫不及待 走投无路', 'B. 巧妙绝伦 再接再厉', 'C. 别出心裁 申西合璧', 'D. 相得益彰 变换莫测'], answer: 'B' },
-                    { id: 2, type: '选择题', question: '下列句子中加点成语使用不正确的一项是（）', options: ['A. 这个问题他总是不求甚解', 'B. 妈妈对我关怀得无所不至', 'C. 听了他的话，我恍然大悟', 'D. 他滔滔不绝地讲了起来'], answer: 'B' }
+                    { id: 1, type: '选择题', question: '下列加点字读音全部正确的一项是', options: ['A. 酝酿(niàng) 应和(hè)', 'B. 酝酿(niàng) 应和(hé)', 'C. 酝酿(liàng) 应和(hè)', 'D. 酝酿(liàng) 应和(hé)'], answer: 'A' },
+                    { id: 2, type: '选择题', question: '下列句子中标点符号使用正确的一项是', options: ['A. 我不知道他去哪里了？', 'B. "行，"他说："就这么办。"', 'C. 小河对岸三、四里外是浅山。', 'D. 她轻轻地唱起了《摇篮曲》。'], answer: 'D' },
+                    { id: 3, type: '选择题', question: '下列有关名著的表述不正确的一项是', options: ['A. 《朝花夕拾》是鲁迅的散文集', 'B. 《西游记》是中国古典四大名著之一', 'C. 《钢铁是怎样炼成的》是奥斯特洛夫斯基的作品', 'D. 《水浒传》中武松的绰号是"豹子头"'], answer: 'D' },
+                    { id: 4, type: '选择题', question: '"沉舟侧畔千帆过，病树前头万木春"蕴含的哲理是', options: ['A. 新事物必将取代旧事物', 'B. 旧事物不可战胜', 'C. 自然界变化无常', 'D. 人生短暂应珍惜'], answer: 'A' },
+                    { id: 5, type: '选择题', question: '下列词语中感情色彩与其他三个不同的一项是', options: ['A. 鼓励', 'B. 鼓舞', 'C. 煽动', 'D. 激励'], answer: 'C' },
+                    { id: 6, type: '选择题', question: '将下列句子组成语意连贯的一段话，排序正确的是：①古人对月亮情有独钟 ②留下了许多脍炙人口的诗篇 ③中秋节便是其中最盛大的节日 ④还设立了与月亮有关的节日', options: ['A. ①②④③', 'B. ①④③②', 'C. ①②③④', 'D. ④①②③'], answer: 'B' }
                 ]
             },
             {
-                year: 2024, subject: '数学', count: 18, difficulty: '中等',
-                icon: '📐', fullScore: 120,
+                year: 2024, subject: '数学', count: 6, difficulty: '中等偏上',
+                icon: '📐', fullScore: 120, freeCount: 2,
                 questions: [
-                    { id: 1, type: '选择题', question: '若|a| = -a，则a的取值范围是（）', options: ['A. a > 0', 'B. a < 0', 'C. a ≥ 0', 'D. a ≤ 0'], answer: 'D' },
-                    { id: 2, type: '选择题', question: '圆心角为120°的扇形，半径为3，则弧长为（）', options: ['A. π', 'B. 2π', 'C. 3π', 'D. 4π'], answer: 'B' }
+                    { id: 1, type: '选择题', question: '-3的绝对值是', options: ['A. -3', 'B. 3', 'C. -1/3', 'D. 1/3'], answer: 'B' },
+                    { id: 2, type: '选择题', question: '下列运算正确的是', options: ['A. a²+a³=a⁵', 'B. (a²)³=a⁶', 'C. a²·a³=a⁶', 'D. a⁶÷a²=a³'], answer: 'B' },
+                    { id: 3, type: '选择题', question: '不等式组 x>1, x<3 的解集是', options: ['A. x>1', 'B. x<3', 'C. 1<x<3', 'D. 无解'], answer: 'C' },
+                    { id: 4, type: '选择题', question: '一个多边形的内角和为720°，则这个多边形的边数为', options: ['A. 5', 'B. 6', 'C. 7', 'D. 8'], answer: 'B' },
+                    { id: 5, type: '选择题', question: '数据2,3,5,5,5的中位数和众数分别是', options: ['A. 5和5', 'B. 5和3', 'C. 4和5', 'D. 3和5'], answer: 'A' },
+                    { id: 6, type: '选择题', question: '将抛物线y=x²向右平移2个单位，再向上平移1个单位，得到的抛物线解析式为', options: ['A. y=(x-2)²+1', 'B. y=(x+2)²+1', 'C. y=(x-2)²-1', 'D. y=(x+2)²-1'], answer: 'A' }
+                ]
+            },
+            {
+                year: 2024, subject: '英语', count: 5, difficulty: '中等',
+                icon: '🔤', fullScore: 120, freeCount: 2,
+                questions: [
+                    { id: 1, type: '选择题', question: 'She ____ to the park yesterday.', options: ['A. go', 'B. goes', 'C. went', 'D. going'], answer: 'C' },
+                    { id: 2, type: '选择题', question: 'The boy ____ is standing there is my brother.', options: ['A. which', 'B. who', 'C. whom', 'D. whose'], answer: 'B' },
+                    { id: 3, type: '选择题', question: 'I will wait ____ he comes back.', options: ['A. until', 'B. because', 'C. if', 'D. though'], answer: 'A' },
+                    { id: 4, type: '选择题', question: 'The bridge ____ last year.', options: ['A. built', 'B. was built', 'C. is built', 'D. builds'], answer: 'B' },
+                    { id: 5, type: '选择题', question: 'He runs ____ than his brother.', options: ['A. fast', 'B. faster', 'C. fastest', 'D. more fast'], answer: 'B' }
                 ]
             }
         ];
 
         let currentExamYear = 2025;
+        let examUnlocked = localStorage.getItem('wfzgk_exam_unlocked') === 'true';
+
+        // 科目名称映射到估分模块input ID
+        const subjectToScoreId = {
+            '语文': 'score-yuwen',
+            '数学': 'score-shuxue',
+            '英语': 'score-yingyu',
+            '物化': 'score-wlhx',
+            '道法': 'score-ddzz'
+        };
+
+        // 检查并更新解锁状态UI
+        function checkExamUnlocked() {
+            examUnlocked = localStorage.getItem('wfzgk_exam_unlocked') === 'true';
+            updateExamLeadForm();
+            if (typeof renderExamSubjects === 'function') {
+                renderExamSubjects();
+            }
+        }
+
+        // 更新留资表单区域显示
+        function updateExamLeadForm() {
+            const leadForm = document.getElementById('exam-lead-form');
+            if (!leadForm) return;
+            
+            if (examUnlocked) {
+                leadForm.innerHTML = `
+                    <div class="text-center py-4">
+                        <div class="text-4xl mb-2">✅</div>
+                        <h3 class="text-xl font-bold mb-2">已解锁 ✓ 全部真题</h3>
+                        <p class="text-white/80 text-sm">您已解锁全部历年真题，可以免费在线练习</p>
+                    </div>
+                `;
+                leadForm.className = 'bg-gradient-to-r from-green-500 to-emerald-500 rounded-2xl p-6 text-white text-center mt-6';
+            }
+        }
 
         function filterExamYear(year) {
             currentExamYear = year;
@@ -1308,66 +1370,376 @@
             const grid = document.getElementById('exam-subject-grid');
             const filtered = examData.filter(e => e.year === currentExamYear);
             
-            grid.innerHTML = filtered.map(exam => `
-                <div onclick="openExam('${exam.subject}', ${exam.year})" class="bg-white rounded-xl shadow-md p-4 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all text-center border-t-4 border-blue-500">
+            grid.innerHTML = filtered.map(exam => {
+                const isUnlocked = examUnlocked;
+                const lockClass = isUnlocked ? '' : 'opacity-60';
+                
+                return `
+                <div onclick="${isUnlocked ? `openExamQuiz('${exam.subject}', ${exam.year})` : 'showExamLeadTip()'}" 
+                     class="bg-white rounded-xl shadow-md p-4 cursor-pointer hover:shadow-lg hover:-translate-y-1 transition-all text-center border-t-4 border-blue-500 ${lockClass}">
                     <div class="text-4xl mb-2">${exam.icon}</div>
                     <h4 class="font-bold text-gray-900">${exam.subject}</h4>
-                    <p class="text-xs text-gray-500 mt-1">${exam.year}年 · ${exam.count}题</p>
-                    <span class="inline-block mt-2 px-2 py-0.5 ${exam.difficulty === '简单' ? 'bg-green-100 text-green-700' : exam.difficulty === '中等' ? 'bg-yellow-100 text-yellow-700' : 'bg-orange-100 text-orange-700'} text-xs rounded-full">${exam.difficulty}</span>
+                    <p class="text-xs text-gray-500 mt-1">${exam.year}年 · ${exam.count}道选择题</p>
+                    <div class="flex flex-wrap gap-1 justify-center mt-2">
+                        <span class="px-2 py-0.5 ${exam.difficulty === '简单' ? 'bg-green-100 text-green-700' : exam.difficulty === '中等' ? 'bg-yellow-100 text-yellow-700' : 'bg-orange-100 text-orange-700'} text-xs rounded-full">${exam.difficulty}</span>
+                        <span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full">前${exam.freeCount}题免费</span>
+                    </div>
+                    <div class="mt-3 ${isUnlocked ? 'text-green-600' : 'text-gray-400'}">
+                        ${isUnlocked ? '✅ 已解锁' : '🔒 点击做题'}
+                    </div>
                 </div>
-            `).join('');
+                `;
+            }).join('');
         }
 
-        function openExam(subject, year) {
+        function showExamLeadTip() {
+            alert('留资后解锁全部真题！\n\n填写下方表单，即可免费获得全部真题练习资格。');
+            document.getElementById('exam-lead-form').scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+
+        // 答题状态管理
+        let currentExam = null;
+        let currentQuestionIndex = 0;
+        let userAnswers = {};
+
+        function openExamQuiz(subject, year) {
             const exam = examData.find(e => e.subject === subject && e.year === year);
             if (!exam) return;
-
-            document.getElementById('exam-title').textContent = `${year}年${subject}真题练习`;
-            document.getElementById('exam-questions-list').innerHTML = exam.questions.map(q => `
-                <div class="mb-6 p-4 bg-gray-50 rounded-xl">
-                    <div class="flex items-center gap-2 mb-2">
-                        <span class="px-2 py-0.5 bg-blue-100 text-blue-700 text-xs rounded-full">${q.type}</span>
-                        <span class="text-sm text-gray-500">第${q.id}题</span>
+            
+            currentExam = exam;
+            currentQuestionIndex = 0;
+            userAnswers = {};
+            
+            // 创建答题模态框
+            const modal = document.createElement('div');
+            modal.id = 'exam-quiz-modal';
+            modal.className = 'fixed inset-0 bg-black/50 z-[10000] flex items-center justify-center p-2 md:p-4';
+            modal.innerHTML = `
+                <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[95vh] md:max-h-[90vh] overflow-hidden flex flex-col shadow-2xl">
+                    <!-- 头部 -->
+                    <div class="bg-gradient-to-r from-blue-600 to-blue-700 text-white p-4 flex items-center justify-between flex-shrink-0">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">${exam.icon}</span>
+                            <div>
+                                <h3 class="font-bold text-lg">${year}年${subject}真题</h3>
+                                <p class="text-white/80 text-xs">满分${exam.fullScore}分</p>
+                            </div>
+                        </div>
+                        <button onclick="closeExamQuiz()" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-xl font-bold transition-colors">
+                            ✕
+                        </button>
                     </div>
-                    <p class="font-medium text-gray-900 mb-3">${q.question}</p>
-                    <div class="space-y-2">
-                        ${q.options.map(opt => `
-                            <label class="flex items-start gap-2 p-2 rounded-lg hover:bg-white cursor-pointer">
-                                <input type="radio" name="q${q.id}" value="${opt.charAt(0)}" class="mt-1">
-                                <span class="text-gray-700">${opt}</span>
-                            </label>
-                        `).join('')}
+                    
+                    <!-- 进度条 -->
+                    <div class="bg-gray-100 p-3 flex-shrink-0">
+                        <div class="flex justify-between text-sm text-gray-600 mb-2">
+                            <span id="quiz-progress">第${currentQuestionIndex + 1}题</span>
+                            <span id="quiz-total">共${exam.questions.length}题</span>
+                        </div>
+                        <div class="w-full bg-gray-300 rounded-full h-2">
+                            <div id="quiz-progress-bar" class="bg-blue-600 h-2 rounded-full transition-all duration-300" style="width: ${((currentQuestionIndex + 1) / exam.questions.length) * 100}%"></div>
+                        </div>
                     </div>
-                    <div class="mt-3 pt-3 border-t border-gray-200">
-                        <button onclick="checkAnswer(this, '${q.answer}')" class="px-4 py-2 bg-primary text-white rounded-lg text-sm font-medium hover:bg-green-700 transition-all">查看答案</button>
-                        <span class="ml-3 text-sm text-gray-500 answer-reveal hidden">正确答案：<span class="font-bold text-green-600">${q.answer}</span></span>
+                    
+                    <!-- 题目区域 -->
+                    <div id="quiz-content" class="flex-1 overflow-y-auto p-4 md:p-6">
+                        <!-- JS动态填充 -->
+                    </div>
+                    
+                    <!-- 底部按钮 -->
+                    <div class="bg-gray-50 p-4 flex items-center justify-between flex-shrink-0 border-t">
+                        <button id="quiz-prev-btn" onclick="prevQuestion()" class="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                            ← 上一题
+                        </button>
+                        <div class="flex gap-2">
+                            <button id="quiz-next-btn" onclick="nextQuestion()" class="px-6 py-2 rounded-lg bg-blue-600 text-white font-medium hover:bg-blue-700 transition-colors">
+                                下一题 →
+                            </button>
+                            <button id="quiz-submit-btn" onclick="submitQuiz()" class="hidden px-6 py-2 rounded-lg bg-green-600 text-white font-medium hover:bg-green-700 transition-colors">
+                                提交答卷
+                            </button>
+                        </div>
                     </div>
                 </div>
-            `).join('');
-
-            document.getElementById('exam-questions-area').classList.remove('hidden');
-            document.getElementById('exam-questions-area').scrollIntoView({ behavior: 'smooth' });
+            `;
+            
+            document.body.appendChild(modal);
+            renderQuestion();
+            updateNavButtons();
         }
 
-        function checkAnswer(btn, correct) {
-            const container = btn.parentElement;
-            const selected = container.parentElement.querySelector('input[type="radio"]:checked');
-            const reveal = container.querySelector('.answer-reveal');
+        function renderQuestion() {
+            if (!currentExam) return;
+            const q = currentExam.questions[currentQuestionIndex];
+            const container = document.getElementById('quiz-content');
+            const selectedAnswer = userAnswers[q.id];
             
-            reveal.classList.remove('hidden');
-            btn.classList.add('hidden');
+            container.innerHTML = `
+                <div class="mb-6">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="px-3 py-1 bg-blue-100 text-blue-700 text-sm rounded-full">${q.type}</span>
+                        <span class="text-gray-500 text-sm">第${q.id}题</span>
+                    </div>
+                    <p class="text-lg font-medium text-gray-900 mb-6">${q.question}</p>
+                    <div class="space-y-3">
+                        ${q.options.map(opt => {
+                            const optKey = opt.charAt(0);
+                            const isSelected = selectedAnswer === optKey;
+                            return `
+                            <label class="flex items-center gap-3 p-4 rounded-xl cursor-pointer transition-all border-2 ${isSelected ? 'border-green-500 bg-green-50' : 'border-gray-200 hover:border-blue-300 hover:bg-blue-50'}">
+                                <input type="radio" name="quiz-option" value="${optKey}" ${isSelected ? 'checked' : ''} 
+                                    onchange="selectAnswer(${q.id}, '${optKey}')"
+                                    class="w-5 h-5 text-green-600">
+                                <span class="text-gray-800">${opt}</span>
+                            </label>
+                            `;
+                        }).join('')}
+                    </div>
+                </div>
+            `;
             
-            if (selected && selected.value === correct) {
-                reveal.innerHTML = '✓ 回答正确！正确答案：<span class="font-bold text-green-600">' + correct + '</span>';
+            document.getElementById('quiz-progress').textContent = `第${currentQuestionIndex + 1}题`;
+            document.getElementById('quiz-progress-bar').style.width = `${((currentQuestionIndex + 1) / currentExam.questions.length) * 100}%`;
+        }
+
+        function selectAnswer(questionId, answer) {
+            userAnswers[questionId] = answer;
+        }
+
+        function prevQuestion() {
+            if (currentQuestionIndex > 0) {
+                currentQuestionIndex--;
+                renderQuestion();
+                updateNavButtons();
             }
         }
 
-        function closeExamQuestions() {
-            document.getElementById('exam-questions-area').classList.add('hidden');
+        function nextQuestion() {
+            if (currentQuestionIndex < currentExam.questions.length - 1) {
+                currentQuestionIndex++;
+                renderQuestion();
+                updateNavButtons();
+            }
+        }
+
+        function updateNavButtons() {
+            const prevBtn = document.getElementById('quiz-prev-btn');
+            const nextBtn = document.getElementById('quiz-next-btn');
+            const submitBtn = document.getElementById('quiz-submit-btn');
+            
+            if (prevBtn) {
+                prevBtn.disabled = currentQuestionIndex === 0;
+            }
+            
+            if (currentQuestionIndex === currentExam.questions.length - 1) {
+                if (nextBtn) nextBtn.classList.add('hidden');
+                if (submitBtn) submitBtn.classList.remove('hidden');
+            } else {
+                if (nextBtn) nextBtn.classList.remove('hidden');
+                if (submitBtn) submitBtn.classList.add('hidden');
+            }
+        }
+
+        function submitQuiz() {
+            const unanswered = currentExam.questions.filter(q => !userAnswers[q.id]).length;
+            if (unanswered > 0) {
+                if (!confirm(`还有 ${unanswered} 道题未作答，确定要提交吗？`)) {
+                    return;
+                }
+            } else {
+                if (!confirm('确认提交答卷？')) return;
+            }
+            showQuizResult();
+        }
+
+        function showQuizResult() {
+            if (!currentExam) return;
+            
+            // 计算成绩
+            let correct = 0;
+            let wrong = 0;
+            let unanswered = 0;
+            
+            currentExam.questions.forEach(q => {
+                if (userAnswers[q.id] === undefined) {
+                    unanswered++;
+                } else if (userAnswers[q.id] === q.answer) {
+                    correct++;
+                } else {
+                    wrong++;
+                }
+            });
+            
+            const total = currentExam.questions.length;
+            const score = Math.round((correct / total) * currentExam.fullScore);
+            const accuracy = Math.round((correct / total) * 100);
+            
+            const modal = document.getElementById('exam-quiz-modal');
+            if (!modal) return;
+            
+            modal.innerHTML = `
+                <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[95vh] md:max-h-[90vh] overflow-hidden flex flex-col shadow-2xl">
+                    <!-- 头部 -->
+                    <div class="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4 flex items-center justify-between flex-shrink-0">
+                        <div class="flex items-center gap-3">
+                            <span class="text-2xl">🏆</span>
+                            <div>
+                                <h3 class="font-bold text-lg">答题结果</h3>
+                                <p class="text-white/80 text-xs">${currentExam.year}年${currentExam.subject}</p>
+                            </div>
+                        </div>
+                        <button onclick="closeExamQuiz()" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-xl font-bold transition-colors">
+                            ✕
+                        </button>
+                    </div>
+                    
+                    <!-- 分数展示 -->
+                    <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 text-center flex-shrink-0">
+                        <div class="text-5xl font-bold text-green-600 mb-2">${score}</div>
+                        <div class="text-gray-600 mb-2">满分 ${currentExam.fullScore} 分</div>
+                        <div class="w-full bg-gray-200 rounded-full h-3 mb-4 max-w-xs mx-auto">
+                            <div class="bg-green-500 h-3 rounded-full transition-all" style="width: ${accuracy}%"></div>
+                        </div>
+                        <div class="flex justify-center gap-6 text-sm">
+                            <span class="text-green-600">✅ 答对 ${correct} 题</span>
+                            <span class="text-red-600">❌ 答错 ${wrong} 题</span>
+                            <span class="text-gray-500">⬜ 未答 ${unanswered} 题</span>
+                        </div>
+                    </div>
+                    
+                    <!-- 逐题回顾 -->
+                    <div class="flex-1 overflow-y-auto p-4 md:p-6">
+                        <h4 class="font-bold text-gray-900 mb-4">📝 逐题回顾</h4>
+                        <div class="space-y-4">
+                            ${currentExam.questions.map(q => {
+                                const userAns = userAnswers[q.id];
+                                const isCorrect = userAns === q.answer;
+                                const isUnanswered = userAns === undefined;
+                                
+                                let resultClass = 'bg-gray-50';
+                                let resultIcon = '⬜';
+                                let userAnsDisplay = isUnanswered ? '未作答' : userAns;
+                                
+                                if (isUnanswered) {
+                                    resultClass = 'bg-gray-100 border-l-4 border-gray-400';
+                                } else if (isCorrect) {
+                                    resultClass = 'bg-green-50 border-l-4 border-green-500';
+                                    resultIcon = '✅';
+                                } else {
+                                    resultClass = 'bg-red-50 border-l-4 border-red-500';
+                                    resultIcon = '❌';
+                                }
+                                
+                                return `
+                                <div class="${resultClass} rounded-xl p-4">
+                                    <div class="flex items-start gap-2 mb-2">
+                                        <span class="text-lg">${resultIcon}</span>
+                                        <div class="flex-1">
+                                            <span class="text-sm text-gray-500">第${q.id}题</span>
+                                            <p class="font-medium text-gray-900 mt-1">${q.question}</p>
+                                        </div>
+                                    </div>
+                                    <div class="ml-6 space-y-1 text-sm">
+                                        ${!isUnanswered && !isCorrect ? `<div class="text-red-600">✗ 您的答案：${userAnsDisplay}</div>` : ''}
+                                        ${isUnanswered ? '' : `<div class="text-green-600">✓ 正确答案：${q.answer}</div>`}
+                                        ${isUnanswered ? '<div class="text-gray-500 italic">（此题未作答）</div>' : ''}
+                                    </div>
+                                </div>
+                                `;
+                            }).join('')}
+                        </div>
+                    </div>
+                    
+                    <!-- 底部按钮 -->
+                    <div class="bg-gray-50 p-4 flex flex-wrap items-center justify-center gap-3 flex-shrink-0 border-t">
+                        <button onclick="fillScoreToEstimate(${score})" class="px-4 py-2 rounded-lg bg-orange-500 text-white font-medium hover:bg-orange-600 transition-colors flex items-center gap-2">
+                            🎯 将成绩填入估分
+                        </button>
+                        <button onclick="retakeQuiz()" class="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-colors">
+                            🔄 再做一次
+                        </button>
+                        <button onclick="closeExamQuiz()" class="px-4 py-2 rounded-lg bg-gray-600 text-white font-medium hover:bg-gray-700 transition-colors">
+                            关闭
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function fillScoreToEstimate(score) {
+            if (!currentExam) return;
+            
+            const scoreId = subjectToScoreId[currentExam.subject];
+            if (scoreId) {
+                const input = document.getElementById(scoreId);
+                if (input) {
+                    input.value = score;
+                    input.focus();
+                    // 触发计算总分
+                    if (typeof calcEstimateTotal === 'function') {
+                        calcEstimateTotal();
+                    }
+                    
+                    alert(`✅ 已将 ${currentExam.subject} 成绩 ${score} 分填入估分模块！\n\n请前往"估分查分"模块查看。`);
+                    closeExamQuiz();
+                    
+                    // 滚动到估分模块
+                    document.getElementById('estimate-score')?.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                    alert(`已将 ${currentExam.subject} 成绩 ${score} 分填入剪贴板，请手动粘贴到估分模块。\n\n或者联系张老师获取帮助：13371096986`);
+                    navigator.clipboard?.writeText(score.toString());
+                }
+            } else {
+                alert(`${currentExam.subject} 成绩：${score} 分（满分${currentExam.fullScore}分）`);
+            }
+        }
+
+        function retakeQuiz() {
+            userAnswers = {};
+            currentQuestionIndex = 0;
+            if (currentExam) {
+                const modal = document.getElementById('exam-quiz-modal');
+                if (modal) {
+                    modal.innerHTML = '';
+                    modal.remove();
+                }
+                openExamQuiz(currentExam.subject, currentExam.year);
+            }
+        }
+
+        function closeExamQuiz() {
+            const modal = document.getElementById('exam-quiz-modal');
+            if (modal) {
+                modal.remove();
+            }
+            currentExam = null;
+        }
+
+        // 监听真题留资表单提交成功
+        function setupExamLeadForm() {
+            const form = document.querySelector('#exam-lead-form form');
+            if (form) {
+                const originalONSUBMIT = form.onsubmit;
+                form.addEventListener('submit', function(e) {
+                    // 延迟检查成功状态
+                    setTimeout(function() {
+                        const successEl = document.getElementById('exam-success');
+                        if (successEl && !successEl.classList.contains('hidden')) {
+                            // 留资成功，解锁真题
+                            localStorage.setItem('wfzgk_exam_unlocked', 'true');
+                            checkExamUnlocked();
+                        }
+                    }, 100);
+                });
+            }
         }
 
         // 页面加载时渲染真题列表
-        document.addEventListener('DOMContentLoaded', renderExamSubjects);
+        document.addEventListener('DOMContentLoaded', function() {
+            renderExamSubjects();
+            updateExamLeadForm();
+            setupExamLeadForm();
+        });
         </script>
 
         <!-- 录取分数线表格 -->
@@ -2487,6 +2859,17 @@
             if (formId) {
                 const successEl = document.getElementById(formId + '-success');
                 if (successEl) { successEl.classList.remove('hidden'); form.style.display = 'none'; }
+            }
+
+            // 如果是历年真题表单留资，自动解锁真题
+            if (formId === 'exam') {
+                localStorage.setItem('wfzgk_exam_unlocked', 'true');
+                // 延迟更新UI，确保DOM已更新
+                setTimeout(function() {
+                    if (typeof checkExamUnlocked === 'function') {
+                        checkExamUnlocked();
+                    }
+                }, 100);
             }
 
             setTimeout(() => {
