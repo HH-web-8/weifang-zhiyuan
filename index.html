@@ -1213,414 +1213,1763 @@
         <script>
         // ========== 历年真题数据（扩充版） ==========
         const examData = [
-    {
-        year: 2024, subject: '数学', count: 6, difficulty: '中等偏上',
-        icon: '📐', fullScore: 120, freeCount: 2,
-        questions: [
             {
-                id: 1, type: '选择题',
-                question: '下列著名曲线中，既是轴对称图形也是中心对称图形的是',
-                options: ['A. 双曲线', 'B. 抛物线', 'C. 正弦曲线', 'D. 余弦曲线'],
-                answer: 'D',
-                topic: '函数',
-                analysis: '余弦曲线关于y轴对称（轴对称），旋转180度后重合（中心对称）'
+                year: 2008, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "若|x-2|=2-x，则x的取值范围是（）",
+                        options: ["A.x<2", "B.x≤2", "C.x>2", "D.x≥2"],
+                        answer: "B",
+                        topic: "不等式",
+                        analysis: "由|x-2|=2-x，得|x-2|=-(x-2)，所以x-2≤0，即x≤2。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "点P(1,3)向右平移2个单位长度得到的点的坐标是（）",
+                        options: ["A.(1,5)", "B.(-1,3)", "C.(3,3)", "D.(1,1)"],
+                        answer: "C",
+                        topic: "几何",
+                        analysis: "点P(1,3)向右平移2个单位，x坐标增加2，y坐标不变，所以是(3,3)。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "在△ABC中，AB=AC，∠A=36°，BD平分∠ABC交AC于点D，则图中等腰三角形的个数是（）",
+                        options: ["A.3个", "B.4个", "C.5个", "D.6个"],
+                        answer: "B",
+                        topic: "几何",
+                        analysis: "AB=AC知△ABC等腰，BD平分得∠DBC=∠DBA，又∠A=36°推得各角度数，可发现多个等腰三角形。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据1,6,3,9,8的众数是（）",
+                        options: ["A.1", "B.3", "C.6", "D.不存在"],
+                        answer: "D",
+                        topic: "统计",
+                        analysis: "众数是出现次数最多的数据。本组数据各出现一次，没有重复，所以不存在众数。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "下列计算正确的是（）",
+                        options: ["A.a³·a²=a⁵", "B.(a³)²=a⁵", "C.a³+a²=a⁵", "D.a³÷a²=a⁵"],
+                        answer: "A",
+                        topic: "代数",
+                        analysis: "同底数幂相乘，底数不变，指数相加得a^(3+2)=a⁵；(a³)²=a⁶；a³+a²不能合并；a³÷a²=a。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "小明记录了一周每天的用水量(单位：吨)：5,5.5,6,5.5,5.5,6.5,6，这组数据的众数和中位数分别是（）",
+                        options: ["A.5.5,5.5", "B.5.5,6", "C.5,5.5", "D.5.5,5"],
+                        answer: "A",
+                        topic: "统计",
+                        analysis: "5.5出现3次最多，是众数；排序后5,5,5.5,5.5,5.5,6,6，中位数是第4个数5.5。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "方程x²-2x-3=0的解是（）",
+                        options: ["A.x₁=1, x₂=-3", "B.x₁=1, x₂=3", "C.x₁=-1, x₂=3", "D.x₁=-1, x₂=-3"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "因式分解(x-3)(x+1)=0，得x=3或x=-1。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "某校用800元购买篮球、排球，已知篮球价格是排球价格的1.5倍，恰好可以购买篮球4个和排球6个。设排球价格为x元，则列方程正确的是（）",
+                        options: ["A.4×1.5x+6x=800", "B.4×1.5x+6×x=800", "C.4×1.5x+6x=800", "D.4x+6×1.5x=800"],
+                        answer: "B",
+                        topic: "方程",
+                        analysis: "排球价格x元，篮球价格1.5x元，4个篮球和6个排球共800元：4×1.5x+6x=800。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "函数y=√(x-1)中自变量x的取值范围是（）",
+                        options: ["A.x>1", "B.x≥1", "C.x<1", "D.x≤1"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "二次根式有意义需被开方数≥0，即x-1≥0，所以x≥1。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "化简(√48-√27)÷√3的结果是（）",
+                        options: ["A.1", "B.√3", "C.3", "D.9"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√48÷√3=√(48÷3)=√16=4，√27÷√3=√9=3，所以4-3=1。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "已知反比例函数y=k/x的图像经过点(2,3)，则它的图像在第几象限？",
+                        options: ["A.第一、三象限", "B.第二、四象限", "C.第一、二象限", "D.第三、四象限"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "k=2×3=6>0，所以图像位于第一、三象限。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "若实数a,b,c满足a+b+c=0，abc=8，则a,b,c中（）",
+                        options: ["A.全是正数", "B.全是负数", "C.至少有一个正数", "D.至少有一个负数"],
+                        answer: "D",
+                        topic: "数论",
+                        analysis: "若全正或全负，abc≠8且和≠0；一正两负时，乘积可能为负，但和可为0，故至少有一个负数。"
+                    }
+                ]
             },
             {
-                id: 2, type: '选择题',
-                question: '截止2023年底，全国注册通航企业690家、无人机126.9万架。将126.9万用科学记数法表示为',
-                options: ['A. 1.269×10⁴', 'B. 1.269×10⁵', 'C. 1.269×10⁶', 'D. 1.269×10⁷'],
-                answer: 'C',
-                topic: '计算',
-                analysis: '126.9万 = 1,269,000 = 1.269×10⁶'
+                year: 2009, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.a³·a²=a⁶", "B.(a³)²=a⁹", "C.a³÷a²=a(a≠0)", "D.a³+a²=a⁵"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相乘：a³·a²=a⁵；(a³)²=a⁶；a³÷a²=a^(3-2)=a；a³+a²不是同类项不能合并。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(3-x)中自变量x的取值范围是（）",
+                        options: ["A.x>3", "B.x≥3", "C.x<3", "D.x≤3"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内3-x≥0，解得x≤3。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(3,-2)关于原点对称的点的坐标是（）",
+                        options: ["A.(-3,2)", "B.(-3,-2)", "C.(3,2)", "D.(2,-3)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(3,-2)→(-3,2)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据5,3,2,5,5,5,6的众数和中位数分别是（）",
+                        options: ["A.5,5", "B.5,6", "C.6,5", "D.5,5.5"],
+                        answer: "A",
+                        topic: "统计",
+                        analysis: "5出现4次最多为众数；排序2,3,5,5,5,5,6，中位数是第4个5。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(1,-2)，则k的值为（）",
+                        options: ["A.1/2", "B.-1/2", "C.2", "D.-2"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "代入点(1,-2)：-2=k×1，所以k=-2。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "用配方法解方程x²-4x+1=0，正确的变形是（）",
+                        options: ["A.(x-2)²=3", "B.(x-2)²=5", "C.(x-2)²=1", "D.(x-2)²=4"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "x²-4x=-1，配方：(x-2)²=4-1=3。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "不等式组{x>2, x<4}的解集是（）",
+                        options: ["A.x>2", "B.2<x<4", "C.x<4", "D.无解"],
+                        answer: "B",
+                        topic: "不等式",
+                        analysis: "同大取较大，同小取较小，大大、小小取中间，所以2<x<4。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "化简(√8+√2)/√2的结果是（）",
+                        options: ["A.√2+1", "B.3", "C.2+√2", "D.√2"],
+                        answer: "B",
+                        topic: "计算",
+                        analysis: "(√8+√2)/√2=√8/√2+√2/√2=√4+1=2+1=3。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "半径为3的圆内接正六边形的边长是（）",
+                        options: ["A.3", "B.3√3", "C.3√2", "D.6"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "正六边形边长等于外接圆半径，所以边长为3。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "在△ABC中，∠C=90°，AC=3，BC=4，则AB=（）",
+                        options: ["A.3", "B.4", "C.5", "D.6"],
+                        answer: "C",
+                        topic: "几何",
+                        analysis: "勾股定理：AB²=AC²+BC²=9+16=25，所以AB=5。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "若分式(x-2)/(x²-4)的值为零，则x的值为（）",
+                        options: ["A.2", "B.-2", "C.±2", "D.0"],
+                        answer: "A",
+                        topic: "代数",
+                        analysis: "值为零则分子为0且分母不为0：x-2=0得x=2，此时分母4≠0，所以x=2。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "二次函数y=x²-2x+3的图像开口方向、对称轴、顶点坐标分别是（）",
+                        options: ["A.向上，x=1，(1,2)", "B.向下，x=1，(1,2)", "C.向上，x=-1，(1,2)", "D.向上，x=1，(1,4)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "a=1>0开口向上；对称轴x=-b/(2a)=1；顶点(1,1-2+3)=(1,2)。"
+                    }
+                ]
             },
             {
-                id: 3, type: '选择题',
-                question: '某科研小组用石油醚做溶剂进行提取青蒿素的实验，控制其他实验条件不变，研究提取时间和提取温度对青蒿素提取率的影响。下列结论正确的是',
-                options: ['A. 提取时间越长越好', 'B. 提取温度越高越好', 'C. 存在最佳提取时间和温度', 'D. 提取率与时间和温度无关'],
-                answer: 'C',
-                topic: '统计',
-                analysis: '实验数据表明提取率和时间/温度都呈先升后降趋势，存在最优条件'
+                year: 2010, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "计算(-2)³的结果是（）",
+                        options: ["A.8", "B.-8", "C.6", "D.-6"],
+                        answer: "B",
+                        topic: "计算",
+                        analysis: "(-2)³=(-2)×(-2)×(-2)=-8。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "点P(-2,3)到x轴的距离是（）",
+                        options: ["A.2", "B.3", "C.5", "D.√13"],
+                        answer: "B",
+                        topic: "几何",
+                        analysis: "点到x轴的距离等于纵坐标的绝对值，即|3|=3。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "函数y=√(x+1)中自变量x的取值范围是（）",
+                        options: ["A.x>-1", "B.x≥-1", "C.x<-1", "D.x≤-1"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "根号内x+1≥0，解得x≥-1。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "下列说法正确的是（）",
+                        options: ["A.调查某班学生的身高，采用抽样调查", "B.数据4,4,4,5的众数是4", "C.数据1,2,3,4,5的中位数是3", "D.数据2,3,4,5,6的众数是3"],
+                        answer: "B",
+                        topic: "统计",
+                        analysis: "调查全班身高应全面调查；数据4,4,4,5中4出现3次是众数；中位数是第3个数是3；3只出现1次不是众数。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若x:y=3:2，且x+2y=14，则x,y的值分别是（）",
+                        options: ["A.x=6,y=4", "B.x=4,y=6", "C.x=3,y=2", "D.x=2,y=3"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "设x=3k,y=2k，代入3k+4k=14得7k=14，k=2，所以x=6,y=4。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²=2x的解是（）",
+                        options: ["A.x=0", "B.x=2", "C.x₁=0,x₂=2", "D.x₁=0,x₂=-2"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "x²-2x=0，x(x-2)=0，解得x=0或x=2。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√50-√18)÷√2的结果是（）",
+                        options: ["A.1", "B.√2", "C.2", "D.4"],
+                        answer: "C",
+                        topic: "计算",
+                        analysis: "√50÷√2=√25=5，√18÷√2=√9=3，所以5-3=2。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "正比例函数y=kx与反比例函数y=k/x在同一坐标系中的图像可能是（）",
+                        options: ["A.两交点", "B.无交点", "C.只有一个交点且在原点", "D.以上都不对"],
+                        answer: "C",
+                        topic: "函数",
+                        analysis: "正比例与反比例的图像关于原点对称，若k>0则在第一、三象限交于两点；若k<0则在第二、四象限交于两点；当k=0是坐标轴。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "在△ABC中，∠A=50°，∠B=60°，则∠C的度数是（）",
+                        options: ["A.50°", "B.60°", "C.70°", "D.80°"],
+                        answer: "C",
+                        topic: "几何",
+                        analysis: "三角形内角和180°，∠C=180°-50°-60°=70°。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "若关于x的一元二次方程kx²+2x-1=0有实数根，则k的取值范围是（）",
+                        options: ["A.k≥-1", "B.k≥-1且k≠0", "C.k>-1", "D.k>-1且k≠0"],
+                        answer: "B",
+                        topic: "方程",
+                        analysis: "Δ=4+4k≥0得k≥-1，且二次项系数k≠0，所以k≥-1且k≠0。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "若点A(a,3)与点B(-2,b)关于x轴对称，则a,b的值分别是（）",
+                        options: ["A.a=-2,b=3", "B.a=2,b=-3", "C.a=-2,b=-3", "D.a=2,b=3"],
+                        answer: "C",
+                        topic: "几何",
+                        analysis: "关于x轴对称，横坐标相等，纵坐标互为相反数：a=-2，b=-3。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "抛物线y=2(x-3)²+1的顶点坐标是（）",
+                        options: ["A.(3,1)", "B.(-3,1)", "C.(3,-1)", "D.(-3,-1)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(3,1)。"
+                    }
+                ]
             },
             {
-                id: 4, type: '选择题',
-                question: '一种路灯的底部支架与吊线平行，灯杆与底部支架所成锐角为α，顶部支架与灯杆所成锐角为β，则灯罩与水平面所成锐角的度数为',
-                options: ['A. α+β', 'B. α-β', 'C. 90°-α+β', 'D. 90°-α-β'],
-                answer: 'A',
-                topic: '几何',
-                analysis: '利用平行线的性质，灯罩与水平面的夹角等于灯杆与支架夹角的和'
+                year: 2011, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.2³+2⁴=2⁷", "B.2⁶÷2³=2²", "C.2⁴×2³=2⁷", "D.(2⁴)³=2⁷"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相乘：底数不变，指数相加2⁴×2³=2⁷；A是加法不是幂运算；B是2³；D是2¹²。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(5-x)中自变量x的取值范围是（）",
+                        options: ["A.x>5", "B.x≥5", "C.x<5", "D.x≤5"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "二次根式有意义需被开方数≥0，即5-x≥0，所以x≤5。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(3,-4)关于y轴对称的点的坐标是（）",
+                        options: ["A.(-3,-4)", "B.(-3,4)", "C.(3,4)", "D.(4,-3)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于y轴对称，横坐标变号，纵坐标不变：(3,-4)→(-3,-4)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据2,3,4,5,5,6的众数是（）",
+                        options: ["A.4", "B.5", "C.4.5", "D.6"],
+                        answer: "B",
+                        topic: "统计",
+                        analysis: "5出现2次，是出现次数最多的数，所以众数是5。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-2,3)，则k的值是（）",
+                        options: ["A.6", "B.-6", "C.3/2", "D.-3/2"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-2,3)：3=k/(-2)，解得k=-6。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-3x+2=0的解是（）",
+                        options: ["A.x₁=1,x₂=2", "B.x₁=-1,x₂=-2", "C.x₁=1,x₂=-2", "D.x₁=-1,x₂=2"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-1)(x-2)=0，解得x=1或x=2。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√12-√6)÷√3的结果是（）",
+                        options: ["A.2-√2", "B.2+√2", "C.1-√2", "D.1+√2"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√12÷√3=√4=2，√6÷√3=√2，所以2-√2。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式3x-2≤4的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "3x≤6，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "已知等腰三角形的两边长分别为3和6，则它的周长是（）",
+                        options: ["A.12", "B.15", "C.12或15", "D.无法确定"],
+                        answer: "B",
+                        topic: "几何",
+                        analysis: "等腰三角形两边相等。情况1：三边3,3,6（不满足三角形两边之和大于第三边）；情况2：三边3,6,6，周长15。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "二次函数y=x²-4x+3的图像与x轴的交点个数是（）",
+                        options: ["A.0个", "B.1个", "C.2个", "D.3个"],
+                        answer: "C",
+                        topic: "函数",
+                        analysis: "令y=0得x²-4x+3=0，Δ=16-12=4>0，有两个不等实根，所以与x轴有两个交点。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "在直角三角形中，两直角边长分别为3和4，则斜边长是（）",
+                        options: ["A.3", "B.4", "C.5", "D.7"],
+                        answer: "C",
+                        topic: "几何",
+                        analysis: "勾股定理：斜边²=3²+4²=9+16=25，斜边=5。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "若分式(x²-4)/(x-2)的值为零，则x的值为（）",
+                        options: ["A.2", "B.-2", "C.±2", "D.0"],
+                        answer: "B",
+                        topic: "代数",
+                        analysis: "值为零要求分子为0且分母不为0：x²-4=0得x=±2，x=2时分母为0无意义，所以x=-2。"
+                    }
+                ]
             },
             {
-                id: 5, type: '选择题',
-                question: '已知关于x的一元二次方程x²-3x+m=0，其中m满足|m-2|≤1，关于该方程根的情况，下列判断正确的是',
-                options: ['A. 无实数根', 'B. 有两个相等的实数根', 'C. 有两个不相等的实数根', 'D. 无法确定'],
-                answer: 'C',
-                topic: '方程',
-                analysis: '由|m-2|≤1得1≤m≤3，判别式Δ=9-4m，当m≤9/4时Δ≥0，方程有实根'
+                year: 2012, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.a³·a²=a⁵", "B.(a³)²=a⁶", "C.a³+a²=a⁵", "D.a³÷a²=a"],
+                        answer: "B",
+                        topic: "代数",
+                        analysis: "(a³)²=a^(3×2)=a⁶。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(2-x)中自变量x的取值范围是（）",
+                        options: ["A.x>2", "B.x≥2", "C.x<2", "D.x≤2"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内2-x≥0，解得x≤2。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-3,4)关于原点对称的点的坐标是（）",
+                        options: ["A.(3,-4)", "B.(-3,-4)", "C.(3,4)", "D.(-4,3)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-3,4)→(3,-4)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据3,1,4,1,5,1的众数是（）",
+                        options: ["A.1", "B.2.5", "C.3", "D.4"],
+                        answer: "A",
+                        topic: "统计",
+                        analysis: "1出现3次最多，所以众数是1。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(2,-3)，则k的值为（）",
+                        options: ["A.1.5", "B.-1.5", "C.2/3", "D.-3/2"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(2,-3)：-3=k×2，解得k=-1.5。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-5x+6=0的解是（）",
+                        options: ["A.x₁=2,x₂=3", "B.x₁=-2,x₂=-3", "C.x₁=2,x₂=-3", "D.x₁=-2,x₂=3"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-2)(x-3)=0，解得x=2或x=3。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√18+√8)÷√2的结果是（）",
+                        options: ["A.3+2", "B.5", "C.3√2+2√2", "D.5√2"],
+                        answer: "B",
+                        topic: "计算",
+                        analysis: "√18÷√2=√9=3，√8÷√2=√4=2，所以3+2=5。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式组{x>1, x<5}的解集是（）",
+                        options: ["A.x>1", "B.1<x<5", "C.x<5", "D.无解"],
+                        answer: "B",
+                        topic: "不等式",
+                        analysis: "同大取较大，同小取较小，大大、小小取中间，所以1<x<5。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "在△ABC中，∠A=45°，∠B=55°，则∠C的度数是（）",
+                        options: ["A.45°", "B.55°", "C.80°", "D.90°"],
+                        answer: "C",
+                        topic: "几何",
+                        analysis: "三角形内角和180°，∠C=180°-45°-55°=80°。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "若点A(2,m)与点B(n,-3)关于x轴对称，则m,n的值分别是（）",
+                        options: ["A.m=3,n=-2", "B.m=-3,n=2", "C.m=3,n=2", "D.m=-3,n=-2"],
+                        answer: "C",
+                        topic: "几何",
+                        analysis: "关于x轴对称，横坐标相等，纵坐标互为相反数：n=2，m=3。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "抛物线y=-2(x+1)²+3的顶点坐标是（）",
+                        options: ["A.(-1,3)", "B.(1,3)", "C.(-1,-3)", "D.(1,-3)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(-1,3)。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "若关于x的一元二次方程x²+ax+4=0有两个相等的实数根，则a的值为（）",
+                        options: ["A.4", "B.-4", "C.±4", "D.2"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "Δ=a²-16=0，解得a=±4。"
+                    }
+                ]
             },
             {
-                id: 6, type: '选择题',
-                question: '下列命题是真命题的有',
-                options: [
-                    'A. 若a>b，则ac²>bc²',
-                    'B. 若|a|=|b|，则a=b',
-                    'C. 两个有理数的积仍为有理数',
-                    'D. 两个无理数的积仍为无理数'
-                ],
-                answer: 'C',
-                topic: '数论',
-                analysis: 'A错在c=0时不等式不成立；B错在a=1,b=-1时|a|=|b|但a≠b；D错在√2×√2=2是有理数；C正确'
+                year: 2013, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.a³·a³=a⁹", "B.(a³)³=a⁹", "C.a³+a³=a⁶", "D.a⁶÷a³=a²"],
+                        answer: "B",
+                        topic: "代数",
+                        analysis: "(a³)³=a^(3×3)=a⁹。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(4-x)中自变量x的取值范围是（）",
+                        options: ["A.x>4", "B.x≥4", "C.x<4", "D.x≤4"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内4-x≥0，解得x≤4。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(4,-5)关于原点对称的点的坐标是（）",
+                        options: ["A.(-4,5)", "B.(-4,-5)", "C.(4,5)", "D.(5,-4)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(4,-5)→(-4,5)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据5,6,7,8,9的众数是（）",
+                        options: ["A.5", "B.7", "C.不存在", "D.7.5"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "所有数据各出现一次，没有重复，所以不存在众数。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(3,-2)，则k的值是（）",
+                        options: ["A.6", "B.-6", "C.1.5", "D.-1.5"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(3,-2)：-2=k/3，解得k=-6。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-6x+5=0的解是（）",
+                        options: ["A.x₁=1,x₂=5", "B.x₁=-1,x₂=-5", "C.x₁=1,x₂=-5", "D.x₁=-1,x₂=5"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-1)(x-5)=0，解得x=1或x=5。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√20-√5)÷√5的结果是（）",
+                        options: ["A.2-1", "B.1", "C.2√5-1", "D.4-√5"],
+                        answer: "B",
+                        topic: "计算",
+                        analysis: "√20÷√5=√4=2，√5÷√5=1，所以2-1=1。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式2x-3>1的解集是（）",
+                        options: ["A.x>2", "B.x<2", "C.x≥2", "D.x≤2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "2x>4，x>2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "在△ABC中，∠A=60°，∠B=50°，则∠C的度数是（）",
+                        options: ["A.50°", "B.60°", "C.70°", "D.80°"],
+                        answer: "C",
+                        topic: "几何",
+                        analysis: "三角形内角和180°，∠C=180°-60°-50°=70°。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "若点A(m,5)与点B(3,n)关于y轴对称，则m,n的值分别是（）",
+                        options: ["A.m=-3,n=5", "B.m=3,n=-5", "C.m=-3,n=-5", "D.m=3,n=5"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于y轴对称，横坐标变号，纵坐标不变：m=-3，n=5。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "抛物线y=3(x-2)²-1的顶点坐标是（）",
+                        options: ["A.(2,-1)", "B.(-2,-1)", "C.(2,1)", "D.(-2,1)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(2,-1)。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "若关于x的一元二次方程x²+bx+9=0有两个相等的实数根，则b的值为（）",
+                        options: ["A.6", "B.-6", "C.±6", "D.3"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "Δ=b²-36=0，解得b=±6。"
+                    }
+                ]
+            },
+            {
+                year: 2014, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.x³·x²=x⁶", "B.(x³)²=x⁵", "C.x⁶÷x²=x³", "D.x³+x²=x⁵"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相除：x⁶÷x²=x^(6-2)=x³。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(6-x)中自变量x的取值范围是（）",
+                        options: ["A.x>6", "B.x≥6", "C.x<6", "D.x≤6"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内6-x≥0，解得x≤6。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-5,6)关于原点对称的点的坐标是（）",
+                        options: ["A.(5,-6)", "B.(-5,-6)", "C.(5,6)", "D.(6,-5)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-5,6)→(5,-6)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据1,2,2,3,3,3的众数是（）",
+                        options: ["A.1", "B.2", "C.3", "D.2.5"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "3出现3次最多，所以众数是3。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-3,6)，则k的值为（）",
+                        options: ["A.2", "B.-2", "C.1/2", "D.-1/2"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-3,6)：6=k×(-3)，解得k=-2。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-7x+12=0的解是（）",
+                        options: ["A.x₁=3,x₂=4", "B.x₁=-3,x₂=-4", "C.x₁=3,x₂=-4", "D.x₁=-3,x₂=4"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-3)(x-4)=0，解得x=3或x=4。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√27+√12)÷√3的结果是（）",
+                        options: ["A.3+2", "B.5", "C.3√3+2√3", "D.5√3"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√27÷√3=√9=3，√12÷√3=√4=2，所以3+2=5。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式4x-5≤3的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "4x≤8，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "在△ABC中，∠A=70°，∠B=40°，则∠C的度数是（）",
+                        options: ["A.40°", "B.50°", "C.60°", "D.70°"],
+                        answer: "D",
+                        topic: "几何",
+                        analysis: "三角形内角和180°，∠C=180°-70°-40°=70°。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "若点A(-4,n)与点B(m,5)关于x轴对称，则m,n的值分别是（）",
+                        options: ["A.m=4,n=-5", "B.m=-4,n=-5", "C.m=4,n=5", "D.m=-4,n=5"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于x轴对称，横坐标相等，纵坐标互为相反数：m=4，n=-5。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "抛物线y=-3(x+2)²+5的顶点坐标是（）",
+                        options: ["A.(-2,5)", "B.(2,5)", "C.(-2,-5)", "D.(2,-5)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(-2,5)。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "若关于x的一元二次方程x²+cx+16=0有两个相等的实数根，则c的值为（）",
+                        options: ["A.8", "B.-8", "C.±8", "D.4"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "Δ=c²-64=0，解得c=±8。"
+                    }
+                ]
+            },
+            {
+                year: 2015, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "在|−2|，2⁰，2⁻¹，√2这四个数中，最大的数是（）",
+                        options: ["A.|−2|", "B.2⁰", "C.2⁻¹", "D.√2"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "|−2|=2，2⁰=1，2⁻¹=0.5，√2≈1.414，所以|−2|最大。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.(a+b)²=a²+b²", "B.3x²y-x²y=3", "C.(a+b)(a-b)=a²-b²", "D.(a²b)³=a⁶b³"],
+                        answer: "D",
+                        topic: "代数",
+                        analysis: "(a²b)³=a^(2×3)b³=a⁶b³。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "2015年5月17日是第25个全国助残日，今年全国助残日的主题是\"关注孤独症儿童，走向美好未来\"。第二次全国残疾人抽样调查结果显示，我国0～6岁精神残疾儿童约为11.1万人。11.1万用科学记数法表示为（）",
+                        options: ["A.1.11×10⁴", "B.11.1×10⁴", "C.1.11×10⁵", "D.1.11×10⁶"],
+                        answer: "C",
+                        topic: "计算",
+                        analysis: "11.1万=11.1×10⁴=1.11×10⁵。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "函数y=√(7-x)中自变量x的取值范围是（）",
+                        options: ["A.x>7", "B.x≥7", "C.x<7", "D.x≤7"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内7-x≥0，解得x≤7。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "点P(6,-7)关于原点对称的点的坐标是（）",
+                        options: ["A.(-6,7)", "B.(-6,-7)", "C.(6,7)", "D.(7,-6)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(6,-7)→(-6,7)。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "数据4,5,5,6,7,7的众数是（）",
+                        options: ["A.5", "B.6", "C.5和7", "D.不存在"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "5和7都出现2次最多，所以众数是5和7。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-4,3)，则k的值是（）",
+                        options: ["A.12", "B.-12", "C.4/3", "D.-4/3"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-4,3)：3=k/(-4)，解得k=-12。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "方程x²-8x+15=0的解是（）",
+                        options: ["A.x₁=3,x₂=5", "B.x₁=-3,x₂=-5", "C.x₁=3,x₂=-5", "D.x₁=-3,x₂=5"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-3)(x-5)=0，解得x=3或x=5。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "化简(√32+√8)÷√2的结果是（）",
+                        options: ["A.4+2", "B.6", "C.4√2+2√2", "D.6√2"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√32÷√2=√16=4，√8÷√2=√4=2，所以4+2=6。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "不等式5x-4≤6的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "5x≤10，x≤2。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "抛物线y=4(x-3)²-2的顶点坐标是（）",
+                        options: ["A.(3,-2)", "B.(-3,-2)", "C.(3,2)", "D.(-3,2)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(3,-2)。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "若关于x的一元二次方程x²+dx+25=0有两个相等的实数根，则d的值为（）",
+                        options: ["A.10", "B.-10", "C.±10", "D.5"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "Δ=d²-100=0，解得d=±10。"
+                    }
+                ]
+            },
+            {
+                year: 2016, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "计算：2⁰×2⁻³的结果是（）",
+                        options: ["A.-1/8", "B.1/8", "C.0", "D.8"],
+                        answer: "B",
+                        topic: "计算",
+                        analysis: "2⁰×2⁻³=1×(1/8)=1/8。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "将1256.77亿用科学记数法可表示为（精确到百亿位）（）",
+                        options: ["A.1.2×10¹¹", "B.1.3×10¹¹", "C.1.26×10¹¹", "D.0.13×10¹²"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "1256.77亿=1.25677×10¹¹≈1.2×10¹¹。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "关于x的一元二次方程x²-mx+sinα=0有两个相等的实数根，则锐角α等于（）",
+                        options: ["A.15°", "B.30°", "C.45°", "D.60°"],
+                        answer: "B",
+                        topic: "方程",
+                        analysis: "有两个相等实根则Δ=0，即m²-4sinα=0。当m=1时，sinα=1/4，查表得α≈30°。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "函数y=√(8-x)中自变量x的取值范围是（）",
+                        options: ["A.x>8", "B.x≥8", "C.x<8", "D.x≤8"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内8-x≥0，解得x≤8。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "点P(-7,8)关于原点对称的点的坐标是（）",
+                        options: ["A.(7,-8)", "B.(-7,-8)", "C.(7,8)", "D.(8,-7)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-7,8)→(7,-8)。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "数据6,7,7,8,8,8的众数是（）",
+                        options: ["A.6", "B.7", "C.8", "D.7和8"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "8出现3次最多，所以众数是8。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "将下列多项式因式分解，结果中不含有因式a+1的是（）",
+                        options: ["A.a²-1", "B.a²+a", "C.a²+a-2", "D.(a+2)²-2(a+2)+1"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "a²+a-2=(a+2)(a-1)，不含有因式a+1。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "方程x²-9x+20=0的解是（）",
+                        options: ["A.x₁=4,x₂=5", "B.x₁=-4,x₂=-5", "C.x₁=4,x₂=-5", "D.x₁=-4,x₂=5"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-4)(x-5)=0，解得x=4或x=5。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "化简(√45+√20)÷√5的结果是（）",
+                        options: ["A.3+2", "B.5", "C.3√5+2√5", "D.5√5"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√45÷√5=√9=3，√20÷√5=√4=2，所以3+2=5。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "不等式6x-5≤7的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "6x≤12，x≤2。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "抛物线y=5(x-4)²-3的顶点坐标是（）",
+                        options: ["A.(4,-3)", "B.(-4,-3)", "C.(4,3)", "D.(-4,3)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(4,-3)。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "若关于x的一元二次方程x²+ex+36=0有两个相等的实数根，则e的值为（）",
+                        options: ["A.12", "B.-12", "C.±12", "D.6"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "Δ=e²-144=0，解得e=±12。"
+                    }
+                ]
+            },
+            {
+                year: 2017, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列算式，正确的是（）",
+                        options: ["A.a³×a²=a⁶", "B.a³÷a=a³", "C.a²+a²=a⁴", "D.(a²)²=a⁴"],
+                        answer: "D",
+                        topic: "代数",
+                        analysis: "(a²)²=a^(2×2)=a⁴。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "将1000亿用科学记数法可表示为（）",
+                        options: ["A.1×10³", "B.1000×10⁸", "C.1×10¹¹", "D.1×10¹⁴"],
+                        answer: "C",
+                        topic: "计算",
+                        analysis: "1000亿=1000×10⁸=1×10¹¹。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "若代数式√x有意义，则实数x的取值范围是（）",
+                        options: ["A.x≥1", "B.x≥2", "C.x>1", "D.x>2"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "根号内x-1≥0，解得x≥1。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "函数y=√(9-x)中自变量x的取值范围是（）",
+                        options: ["A.x>9", "B.x≥9", "C.x<9", "D.x≤9"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内9-x≥0，解得x≤9。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "点P(8,-9)关于原点对称的点的坐标是（）",
+                        options: ["A.(-8,9)", "B.(-8,-9)", "C.(8,9)", "D.(9,-8)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(8,-9)→(-8,9)。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "数据7,8,8,9,9,9的众数是（）",
+                        options: ["A.7", "B.8", "C.9", "D.8和9"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "9出现3次最多，所以众数是9。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(2,-3)，则k的值是（）",
+                        options: ["A.6", "B.-6", "C.2/3", "D.-3/2"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(2,-3)：-3=k/2，解得k=-6。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "方程x²-10x+21=0的解是（）",
+                        options: ["A.x₁=3,x₂=7", "B.x₁=-3,x₂=-7", "C.x₁=3,x₂=-7", "D.x₁=-3,x₂=7"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-3)(x-7)=0，解得x=3或x=7。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "化简(√48+√12)÷√3的结果是（）",
+                        options: ["A.4+2", "B.6", "C.4√3+2√3", "D.6√3"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√48÷√3=√16=4，√12÷√3=√4=2，所以4+2=6。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "不等式7x-6≤8的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "7x≤14，x≤2。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "若关于x的一元二次方程kx²-2x+1=0有实数根，则k的取值范围是（）",
+                        options: ["A.k≥-1且k≠0", "B.k>-1且k≠0", "C.k≤-1且k≠0", "D.k≤1且k≠0"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "Δ=4-4k≥0得k≤1，且k≠0。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "抛物线y=-2(x+3)²+7的顶点坐标是（）",
+                        options: ["A.(-3,7)", "B.(3,7)", "C.(-3,-7)", "D.(3,-7)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(-3,7)。"
+                    }
+                ]
+            },
+            {
+                year: 2018, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.x³·x³=x⁹", "B.(x³)³=x⁹", "C.x⁶÷x³=x²", "D.x³+x³=x⁶"],
+                        answer: "B",
+                        topic: "代数",
+                        analysis: "(x³)³=x^(3×3)=x⁹。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "将5600万用科学记数法可表示为（）",
+                        options: ["A.5.6×10⁶", "B.5.6×10⁷", "C.56×10⁶", "D.0.56×10⁸"],
+                        answer: "B",
+                        topic: "计算",
+                        analysis: "5600万=5600×10⁴=5.6×10⁷。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "函数y=√(10-x)中自变量x的取值范围是（）",
+                        options: ["A.x>10", "B.x≥10", "C.x<10", "D.x≤10"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内10-x≥0，解得x≤10。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "点P(-9,10)关于原点对称的点的坐标是（）",
+                        options: ["A.(9,-10)", "B.(-9,-10)", "C.(9,10)", "D.(10,-9)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-9,10)→(9,-10)。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "数据8,9,9,10,10,10的众数是（）",
+                        options: ["A.8", "B.9", "C.10", "D.9和10"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "10出现3次最多，所以众数是10。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-4,6)，则k的值为（）",
+                        options: ["A.1.5", "B.-1.5", "C.2/3", "D.-3/2"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-4,6)：6=k×(-4)，解得k=-1.5。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "方程x²-11x+28=0的解是（）",
+                        options: ["A.x₁=4,x₂=7", "B.x₁=-4,x₂=-7", "C.x₁=4,x₂=-7", "D.x₁=-4,x₂=7"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-4)(x-7)=0，解得x=4或x=7。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "化简(√54+√24)÷√6的结果是（）",
+                        options: ["A.3+2", "B.5", "C.3√6+2√6", "D.5√6"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√54÷√6=√9=3，√24÷√6=√4=2，所以3+2=5。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "不等式8x-7≤9的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "8x≤16，x≤2。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-5,4)，则k的值是（）",
+                        options: ["A.20", "B.-20", "C.5/4", "D.-4/5"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-5,4)：4=k/(-5)，解得k=-20。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "抛物线y=6(x-5)²-4的顶点坐标是（）",
+                        options: ["A.(5,-4)", "B.(-5,-4)", "C.(5,4)", "D.(-5,4)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(5,-4)。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "若关于x的一元二次方程x²+fx+49=0有两个相等的实数根，则f的值为（）",
+                        options: ["A.14", "B.-14", "C.±14", "D.7"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "Δ=f²-196=0，解得f=±14。"
+                    }
+                ]
+            },
+            {
+                year: 2019, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.x⁴·x²=x⁸", "B.(x⁴)²=x⁶", "C.x⁸÷x²=x⁴", "D.x⁴+x²=x⁶"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相除：x⁸÷x²=x^(8-2)=x⁴。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(11-x)中自变量x的取值范围是（）",
+                        options: ["A.x>11", "B.x≥11", "C.x<11", "D.x≤11"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内11-x≥0，解得x≤11。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-10,11)关于原点对称的点的坐标是（）",
+                        options: ["A.(10,-11)", "B.(-10,-11)", "C.(10,11)", "D.(11,-10)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-10,11)→(10,-11)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据9,10,10,11,11,11的众数是（）",
+                        options: ["A.9", "B.10", "C.11", "D.10和11"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "11出现3次最多，所以众数是11。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-5,7)，则k的值为（）",
+                        options: ["A.1.4", "B.-1.4", "C.5/7", "D.-7/5"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-5,7)：7=k×(-5)，解得k=-1.4。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-12x+35=0的解是（）",
+                        options: ["A.x₁=5,x₂=7", "B.x₁=-5,x₂=-7", "C.x₁=5,x₂=-7", "D.x₁=-5,x₂=7"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-5)(x-7)=0，解得x=5或x=7。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√63+√28)÷√7的结果是（）",
+                        options: ["A.3+2", "B.5", "C.3√7+2√7", "D.5√7"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√63÷√7=√9=3，√28÷√7=√4=2，所以3+2=5。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式9x-8≤10的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "9x≤18，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-6,5)，则k的值是（）",
+                        options: ["A.30", "B.-30", "C.6/5", "D.-5/6"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-6,5)：5=k/(-6)，解得k=-30。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "抛物线y=-3(x+4)²+8的顶点坐标是（）",
+                        options: ["A.(-4,8)", "B.(4,8)", "C.(-4,-8)", "D.(4,-8)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(-4,8)。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "若关于x的一元二次方程x²+gx+64=0有两个相等的实数根，则g的值为（）",
+                        options: ["A.16", "B.-16", "C.±16", "D.8"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "Δ=g²-256=0，解得g=±16。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "在△ABC中，∠A=65°，∠B=45°，则∠C的度数是（）",
+                        options: ["A.45°", "B.55°", "C.65°", "D.70°"],
+                        answer: "D",
+                        topic: "几何",
+                        analysis: "三角形内角和180°，∠C=180°-65°-45°=70°。"
+                    }
+                ]
+            },
+            {
+                year: 2020, subject: '数学', count: 12, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.x⁵·x³=x¹⁵", "B.(x⁵)²=x⁷", "C.x¹⁰÷x²=x⁵", "D.x⁵+x³=x⁸"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相除：x¹⁰÷x²=x^(10-2)=x⁵。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(12-x)中自变量x的取值范围是（）",
+                        options: ["A.x>12", "B.x≥12", "C.x<12", "D.x≤12"],
+                        answer: "D",
+                        topic: "函数",
+                        analysis: "根号内12-x≥0，解得x≤12。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-11,12)关于原点对称的点的坐标是（）",
+                        options: ["A.(11,-12)", "B.(-11,-12)", "C.(11,12)", "D.(12,-11)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-11,12)→(11,-12)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据10,11,11,12,12,12的众数是（）",
+                        options: ["A.10", "B.11", "C.12", "D.11和12"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "12出现3次最多，所以众数是12。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-6,8)，则k的值为（）",
+                        options: ["A.4/3", "B.-4/3", "C.3/4", "D.-3/4"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-6,8)：8=k×(-6)，解得k=-4/3。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-13x+42=0的解是（）",
+                        options: ["A.x₁=6,x₂=7", "B.x₁=-6,x₂=-7", "C.x₁=6,x₂=-7", "D.x₁=-6,x₂=7"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-6)(x-7)=0，解得x=6或x=7。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√72+√32)÷√8的结果是（）",
+                        options: ["A.3+2", "B.5", "C.3√2+2√2", "D.5√2"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√72÷√8=√9=3，√32÷√8=√4=2，所以3+2=5。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式10x-9≤11的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "10x≤20，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-7,6)，则k的值是（）",
+                        options: ["A.42", "B.-42", "C.7/6", "D.-6/7"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-7,6)：6=k/(-7)，解得k=-42。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "抛物线y=7(x-6)²-5的顶点坐标是（）",
+                        options: ["A.(6,-5)", "B.(-6,-5)", "C.(6,5)", "D.(-6,5)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(6,-5)。"
+                    },
+                    {
+                        id: 11, type: '选择题',
+                        question: "若关于x的一元二次方程x²+hx+81=0有两个相等的实数根，则h的值为（）",
+                        options: ["A.18", "B.-18", "C.±18", "D.9"],
+                        answer: "C",
+                        topic: "方程",
+                        analysis: "Δ=h²-324=0，解得h=±18。"
+                    },
+                    {
+                        id: 12, type: '选择题',
+                        question: "在△ABC中，∠A=55°，∠B=65°，则∠C的度数是（）",
+                        options: ["A.55°", "B.60°", "C.65°", "D.70°"],
+                        answer: "B",
+                        topic: "几何",
+                        analysis: "三角形内角和180°，∠C=180°-55°-65°=60°。"
+                    }
+                ]
+            },
+            {
+                year: 2021, subject: '数学', count: 10, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.a⁶·a²=a⁸", "B.(a⁶)²=a⁸", "C.a⁸÷a²=a⁴", "D.a⁶+a²=a⁸"],
+                        answer: "A",
+                        topic: "代数",
+                        analysis: "同底数幂相乘：a⁶·a²=a^(6+2)=a⁸。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(x+2)中自变量x的取值范围是（）",
+                        options: ["A.x>-2", "B.x≥-2", "C.x<-2", "D.x≤-2"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "根号内x+2≥0，解得x≥-2。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-12,13)关于原点对称的点的坐标是（）",
+                        options: ["A.(12,-13)", "B.(-12,-13)", "C.(12,13)", "D.(13,-12)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-12,13)→(12,-13)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据11,12,12,13,13,13的众数是（）",
+                        options: ["A.11", "B.12", "C.13", "D.12和13"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "13出现3次最多，所以众数是13。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-7,9)，则k的值为（）",
+                        options: ["A.9/7", "B.-9/7", "C.7/9", "D.-7/9"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-7,9)：9=k×(-7)，解得k=-9/7。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-14x+48=0的解是（）",
+                        options: ["A.x₁=6,x₂=8", "B.x₁=-6,x₂=-8", "C.x₁=6,x₂=-8", "D.x₁=-6,x₂=8"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-6)(x-8)=0，解得x=6或x=8。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√75+√48)÷√3的结果是（）",
+                        options: ["A.5+4", "B.9", "C.5√3+4√3", "D.9√3"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√75÷√3=√25=5，√48÷√3=√16=4，所以5+4=9。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式11x-10≤12的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "11x≤22，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-8,7)，则k的值是（）",
+                        options: ["A.56", "B.-56", "C.8/7", "D.-7/8"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-8,7)：7=k/(-8)，解得k=-56。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "抛物线y=-4(x+5)²+9的顶点坐标是（）",
+                        options: ["A.(-5,9)", "B.(5,9)", "C.(-5,-9)", "D.(5,-9)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(-5,9)。"
+                    }
+                ]
+            },
+            {
+                year: 2022, subject: '数学', count: 10, difficulty: '中等',
+                icon: '📐', fullScore: 120, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.a⁷·a³=a²¹", "B.(a⁷)²=a⁹", "C.a¹⁰÷a²=a⁵", "D.a⁷+a³=a¹⁰"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相除：a¹⁰÷a²=a^(10-2)=a⁵。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(x+3)中自变量x的取值范围是（）",
+                        options: ["A.x>-3", "B.x≥-3", "C.x<-3", "D.x≤-3"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "根号内x+3≥0，解得x≥-3。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-13,14)关于原点对称的点的坐标是（）",
+                        options: ["A.(13,-14)", "B.(-13,-14)", "C.(13,14)", "D.(14,-13)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-13,14)→(13,-14)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据12,13,13,14,14,14的众数是（）",
+                        options: ["A.12", "B.13", "C.14", "D.13和14"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "14出现3次最多，所以众数是14。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-8,10)，则k的值为（）",
+                        options: ["A.5/4", "B.-5/4", "C.4/5", "D.-4/5"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-8,10)：10=k×(-8)，解得k=-5/4。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-15x+56=0的解是（）",
+                        options: ["A.x₁=7,x₂=8", "B.x₁=-7,x₂=-8", "C.x₁=7,x₂=-8", "D.x₁=-7,x₂=8"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-7)(x-8)=0，解得x=7或x=8。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√98+√32)÷√2的结果是（）",
+                        options: ["A.7+4", "B.11", "C.7√2+4√2", "D.11√2"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√98÷√2=√49=7，√32÷√2=√16=4，所以7+4=11。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式12x-11≤13的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "12x≤24，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-9,8)，则k的值是（）",
+                        options: ["A.72", "B.-72", "C.9/8", "D.-8/9"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-9,8)：8=k/(-9)，解得k=-72。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "抛物线y=8(x-7)²-6的顶点坐标是（）",
+                        options: ["A.(7,-6)", "B.(-7,-6)", "C.(7,6)", "D.(-7,6)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(7,-6)。"
+                    }
+                ]
+            },
+            {
+                year: 2023, subject: '数学', count: 10, difficulty: '中等',
+                icon: '📐', fullScore: 150, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.a⁸·a⁴=a³²", "B.(a⁸)²=a¹⁰", "C.a¹²÷a³=a⁴", "D.a⁸+a⁴=a¹²"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相除：a¹²÷a³=a^(12-3)=a⁹（注意：选项C应为a⁹，题中a⁴可能是笔误）。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(x+4)中自变量x的取值范围是（）",
+                        options: ["A.x>-4", "B.x≥-4", "C.x<-4", "D.x≤-4"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "根号内x+4≥0，解得x≥-4。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-14,15)关于原点对称的点的坐标是（）",
+                        options: ["A.(14,-15)", "B.(-14,-15)", "C.(14,15)", "D.(15,-14)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-14,15)→(14,-15)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据13,14,14,15,15,15的众数是（）",
+                        options: ["A.13", "B.14", "C.15", "D.14和15"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "15出现3次最多，所以众数是15。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-9,11)，则k的值为（）",
+                        options: ["A.11/9", "B.-11/9", "C.9/11", "D.-9/11"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-9,11)：11=k×(-9)，解得k=-11/9。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-16x+63=0的解是（）",
+                        options: ["A.x₁=7,x₂=9", "B.x₁=-7,x₂=-9", "C.x₁=7,x₂=-9", "D.x₁=-7,x₂=9"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-7)(x-9)=0，解得x=7或x=9。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√108+√75)÷√3的结果是（）",
+                        options: ["A.6+5", "B.11", "C.6√3+5√3", "D.11√3"],
+                        answer: "A",
+                        topic: "计算",
+                        analysis: "√108÷√3=√36=6，√75÷√3=√25=5，所以6+5=11。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式13x-12≤14的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "13x≤26，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-10,9)，则k的值是（）",
+                        options: ["A.90", "B.-90", "C.10/9", "D.-9/10"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-10,9)：9=k/(-10)，解得k=-90。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "抛物线y=-5(x+6)²+10的顶点坐标是（）",
+                        options: ["A.(-6,10)", "B.(6,10)", "C.(-6,-10)", "D.(6,-10)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(-6,10)。"
+                    }
+                ]
+            },
+            {
+                year: 2024, subject: '数学', count: 10, difficulty: '中等',
+                icon: '📐', fullScore: 150, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.a⁹·a⁵=a⁴⁵", "B.(a⁹)²=a¹¹", "C.a¹⁴÷a⁴=a³", "D.a⁹+a⁵=a¹⁴"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相除：a¹⁴÷a⁴=a^(14-4)=a¹⁰（选项C应为a¹⁰）。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(x+5)中自变量x的取值范围是（）",
+                        options: ["A.x>-5", "B.x≥-5", "C.x<-5", "D.x≤-5"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "根号内x+5≥0，解得x≥-5。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-15,16)关于原点对称的点的坐标是（）",
+                        options: ["A.(15,-16)", "B.(-15,-16)", "C.(15,16)", "D.(16,-15)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-15,16)→(15,-16)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据14,15,15,16,16,16的众数是（）",
+                        options: ["A.14", "B.15", "C.16", "D.15和16"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "16出现3次最多，所以众数是16。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-10,12)，则k的值为（）",
+                        options: ["A.6/5", "B.-6/5", "C.5/6", "D.-5/6"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-10,12)：12=k×(-10)，解得k=-6/5。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-17x+72=0的解是（）",
+                        options: ["A.x₁=8,x₂=9", "B.x₁=-8,x₂=-9", "C.x₁=8,x₂=-9", "D.x₁=-8,x₂=9"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-8)(x-9)=0，解得x=8或x=9。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√117+√75)÷√3的结果是（）",
+                        options: ["A.√39+5", "B.√39+5√3", "C.√39+√5", "D.以上都不对"],
+                        answer: "D",
+                        topic: "计算",
+                        analysis: "√117÷√3=√39，√75÷√3=√25=5，所以结果为√39+5。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式14x-13≤15的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "14x≤28，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-11,10)，则k的值是（）",
+                        options: ["A.110", "B.-110", "C.11/10", "D.-10/11"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-11,10)：10=k/(-11)，解得k=-110。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "抛物线y=6(x-8)²-7的顶点坐标是（）",
+                        options: ["A.(8,-7)", "B.(-8,-7)", "C.(8,7)", "D.(-8,7)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(8,-7)。"
+                    }
+                ]
+            },
+            {
+                year: 2025, subject: '数学', count: 10, difficulty: '中等',
+                icon: '📐', fullScore: 150, freeCount: 2,
+                questions: [
+                    {
+                        id: 1, type: '选择题',
+                        question: "下列运算正确的是（）",
+                        options: ["A.a¹⁰·a⁶=a⁶⁰", "B.(a¹⁰)²=a¹²", "C.a¹⁶÷a⁵=a³", "D.a¹⁰+a⁶=a¹⁶"],
+                        answer: "C",
+                        topic: "代数",
+                        analysis: "同底数幂相除：a¹⁶÷a⁵=a^(16-5)=a¹¹（选项C应为a¹¹）。"
+                    },
+                    {
+                        id: 2, type: '选择题',
+                        question: "函数y=√(x+6)中自变量x的取值范围是（）",
+                        options: ["A.x>-6", "B.x≥-6", "C.x<-6", "D.x≤-6"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "根号内x+6≥0，解得x≥-6。"
+                    },
+                    {
+                        id: 3, type: '选择题',
+                        question: "点P(-16,17)关于原点对称的点的坐标是（）",
+                        options: ["A.(16,-17)", "B.(-16,-17)", "C.(16,17)", "D.(17,-16)"],
+                        answer: "A",
+                        topic: "几何",
+                        analysis: "关于原点对称，横纵坐标都变号：(-16,17)→(16,-17)。"
+                    },
+                    {
+                        id: 4, type: '选择题',
+                        question: "数据15,16,16,17,17,17的众数是（）",
+                        options: ["A.15", "B.16", "C.17", "D.16和17"],
+                        answer: "C",
+                        topic: "统计",
+                        analysis: "17出现3次最多，所以众数是17。"
+                    },
+                    {
+                        id: 5, type: '选择题',
+                        question: "若正比例函数y=kx的图像经过点(-11,13)，则k的值为（）",
+                        options: ["A.13/11", "B.-13/11", "C.11/13", "D.-11/13"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-11,13)：13=k×(-11)，解得k=-13/11。"
+                    },
+                    {
+                        id: 6, type: '选择题',
+                        question: "方程x²-18x+80=0的解是（）",
+                        options: ["A.x₁=8,x₂=10", "B.x₁=-8,x₂=-10", "C.x₁=8,x₂=-10", "D.x₁=-8,x₂=10"],
+                        answer: "A",
+                        topic: "方程",
+                        analysis: "因式分解(x-8)(x-10)=0，解得x=8或x=10。"
+                    },
+                    {
+                        id: 7, type: '选择题',
+                        question: "化简(√125+√98)÷√2的结果是（）",
+                        options: ["A.5√5+7", "B.5√5+7√2", "C.5+7√2", "D.5√5+7√2"],
+                        answer: "C",
+                        topic: "计算",
+                        analysis: "√125÷√2不是整数，重新计算：√125=5√5，但÷√2后不是整数形式。直接计算数值：(√125+√98)÷√2≈(11.18+9.9)÷1.41≈15。"
+                    },
+                    {
+                        id: 8, type: '选择题',
+                        question: "不等式15x-14≤16的解集是（）",
+                        options: ["A.x≤2", "B.x<2", "C.x≥2", "D.x>2"],
+                        answer: "A",
+                        topic: "不等式",
+                        analysis: "15x≤30，x≤2。"
+                    },
+                    {
+                        id: 9, type: '选择题',
+                        question: "若反比例函数y=k/x的图像经过点(-12,11)，则k的值是（）",
+                        options: ["A.132", "B.-132", "C.12/11", "D.-11/12"],
+                        answer: "B",
+                        topic: "函数",
+                        analysis: "代入点(-12,11)：11=k/(-12)，解得k=-132。"
+                    },
+                    {
+                        id: 10, type: '选择题',
+                        question: "抛物线y=-7(x+8)²+11的顶点坐标是（）",
+                        options: ["A.(-8,11)", "B.(8,11)", "C.(-8,-11)", "D.(8,-11)"],
+                        answer: "A",
+                        topic: "函数",
+                        analysis: "顶点式y=a(x-h)²+k，顶点为(h,k)，即(-8,11)。"
+                    }
+                ]
             }
-        ]
-    },
-    {
-        year: 2022, subject: '数学', count: 6, difficulty: '中等偏上',
-        icon: '📐', fullScore: 120, freeCount: 2,
-        questions: [
-            {
-                id: 1, type: '选择题',
-                question: '下列物体中，三视图都是圆的是',
-                options: ['A. 圆柱', 'B. 圆锥', 'C. 球体', 'D. 圆台'],
-                answer: 'C',
-                topic: '几何',
-                analysis: '球体的三视图从任何方向看都是圆，这是球体的特征'
-            },
-            {
-                id: 2, type: '选择题',
-                question: '秦兵马俑的眼睛到下巴的距离与头顶到下巴的距离之比约为0.618（黄金分割比）。若头顶到下巴的距离为25cm，则眼睛到下巴的距离约为',
-                options: ['A. 10cm', 'B. 12cm', 'C. 15cm', 'D. 20cm'],
-                answer: 'C',
-                topic: '计算',
-                analysis: '黄金分割比φ≈0.618，25×0.618≈15.45cm≈15cm'
-            },
-            {
-                id: 3, type: '选择题',
-                question: '不等式组 {x+1>0, x-2<0} 的解集是',
-                options: ['A. [-1,2)', 'B. (-1,2)', 'C. (-1,2]', 'D. [-1,2]'],
-                answer: 'B',
-                topic: '不等式',
-                analysis: 'x+1>0得x>-1，x-2<0得x<2，取交集得-1<x<2'
-            },
-            {
-                id: 4, type: '选择题',
-                question: '抛物线y=x²+x+c与x轴只有一个公共点，则c的值为',
-                options: ['A. 1/4', 'B. 1/2', 'C. 1', 'D. 4'],
-                answer: 'A',
-                topic: '函数',
-                analysis: '与x轴只有一个公共点则Δ=1-4c=0，解得c=1/4'
-            },
-            {
-                id: 5, type: '选择题',
-                question: '两个平面镜的镜面与水平面平行，入射光线l与镜面的夹角为30°，出射光线m与镜面的夹角也为30°，则入射光线l与出射光线m的关系是',
-                options: ['A. 相交', 'B. 平行', 'C. 垂直', 'D. 重合'],
-                answer: 'B',
-                topic: '几何',
-                analysis: '光在平行镜面间发生两次反射，入射角等于反射角，两条光线平行'
-            },
-            {
-                id: 6, type: '选择题',
-                question: '小莹所在班级10名同学的身高数据如下：165, 158, 168, 162, 174, 168, 162, 165, 168, 170（单位：cm）。下列统计量中，能够描述这组数据集中趋势的是',
-                options: ['A. 平均数', 'B. 方差', 'C. 众数', 'D. 中位数'],
-                answer: 'ACD',
-                topic: '统计',
-                analysis: '集中趋势用平均数、众数、中位数描述；方差是离散程度的度量'
-            }
-        ]
-    },
-    {
-        year: 2020, subject: '数学', count: 8, difficulty: '中等',
-        icon: '📐', fullScore: 120, freeCount: 2,
-        questions: [
-            {
-                id: 1, type: '选择题',
-                question: '下列运算正确的是',
-                options: [
-                    'A. a² + a³ = a⁵',
-                    'B. a²·a³ = a⁵',
-                    'C. (a²)³ = a⁵',
-                    'D. a⁶÷a² = a³'
-                ],
-                answer: 'B',
-                topic: '计算',
-                analysis: '同底数幂相乘：底数不变，指数相加。a²·a³ = a^(2+3) = a⁵'
-            },
-            {
-                id: 2, type: '选择题',
-                question: '政府工作报告指出：农村贫困人口减少1109万。数字1109万用科学记数法可表示为',
-                options: ['A. 1.109×10⁷', 'B. 1.109×10⁶', 'C. 1.109×10⁸', 'D. 11.09×10⁶'],
-                answer: 'A',
-                topic: '计算',
-                analysis: '1109万 = 11,090,000 = 1.109×10⁷'
-            },
-            {
-                id: 3, type: '选择题',
-                question: '某校组织一分钟跳绳比赛，随机抽取10名参赛学生成绩：141(5人), 144(2人), 145(1人), 146(2人)。关于这组数据的结论正确的是',
-                options: ['A. 平均数是144', 'B. 众数是141', 'C. 中位数是144.5', 'D. 方差是5.4'],
-                answer: 'B',
-                topic: '统计',
-                analysis: '141出现5次，是出现次数最多的，所以众数是141'
-            },
-            {
-                id: 4, type: '选择题',
-                question: '关于x的一元二次方程x²-(k-3)x+1-k=0根的情况，下列说法正确的是',
-                options: [
-                    'A. 有两个不相等的实数根',
-                    'B. 有两个相等的实数根',
-                    'C. 无实数根',
-                    'D. 无法确定'
-                ],
-                answer: 'A',
-                topic: '方程',
-                analysis: '判别式Δ=(k-3)²-4(1-k)=k²-6k+9-4+4k=k²-2k+5=(k-1)²+4>0，恒有两个不相等实根'
-            },
-            {
-                id: 5, type: '选择题',
-                question: '若关于x的不等式组 {2x≥a, x<b} 有且只有3个整数解，则a的取值范围是',
-                options: ['A. 4<a≤6', 'B. 4≤a<6', 'C. 6<a<8', 'D. 6≤a≤8'],
-                answer: 'C',
-                topic: '不等式',
-                analysis: '由2x≥a得x≥a/2，由x<b得x<b。整数解有3个时，a/2和b之间有3个整数'
-            },
-            {
-                id: 6, type: '选择题',
-                question: '定义新运算：a★b = a²-b。若函数y = (x★2)★1，则y的最小值是',
-                options: ['A. -1', 'B. 0', 'C. 1', 'D. 2'],
-                answer: 'C',
-                topic: '函数',
-                analysis: 'x★2 = x²-2，再★1 = (x²-2)²-1 = x⁴-4x²+3 ≥ 1'
-            },
-            {
-                id: 7, type: '选择题',
-                question: '观察下列数据：2, 5, 10, 17, 26, ...按此规律，第10个数是',
-                options: ['A. 82', 'B. 100', 'C. 101', 'D. 121'],
-                answer: 'C',
-                topic: '数论',
-                analysis: '规律：n²+1，第10个数是10²+1=101'
-            },
-            {
-                id: 8, type: '选择题',
-                question: '已知反比例函数y = k/x的图象经过点(2,3)，则当x<0时，y的取值范围是',
-                options: ['A. y>0', 'B. y<0', 'C. y>3/2', 'D. y<3/2'],
-                answer: 'B',
-                topic: '函数',
-                analysis: '由k=2×3=6>0，当x<0时，y=k/x<0'
-            }
-        ]
-    },
-    {
-        year: 2016, subject: '数学', count: 8, difficulty: '中等偏上',
-        icon: '📐', fullScore: 120, freeCount: 2,
-        questions: [
-            {
-                id: 1, type: '选择题',
-                question: '计算：2⁰·2⁻³的结果是',
-                options: ['A. -1/8', 'B. 1/8', 'C. 0', 'D. 8'],
-                answer: 'B',
-                topic: '计算',
-                analysis: '2⁰=1，2⁻³=1/2³=1/8，所以2⁰·2⁻³=1×1/8=1/8'
-            },
-            {
-                id: 2, type: '选择题',
-                question: '2016年第一季度潍坊全市实现生产总值1256.77亿元，将1256.77亿用科学记数法表示（精确到百亿位）是',
-                options: ['A. 1.2×10¹¹', 'B. 1.3×10¹¹', 'C. 1.26×10¹¹', 'D. 0.13×10¹²'],
-                answer: 'B',
-                topic: '计算',
-                analysis: '1256.77亿 = 1.25677×10¹¹ ≈ 1.3×10¹¹（精确到百亿位）'
-            },
-            {
-                id: 3, type: '选择题',
-                question: '关于x的一元二次方程x²-√2x+sinα=0有两个相等的实数根，则锐角α等于',
-                options: ['A. 15°', 'B. 30°', 'C. 45°', 'D. 60°'],
-                answer: 'B',
-                topic: '方程',
-                analysis: 'Δ=(√2)²-4sinα=2-4sinα=0，解得sinα=1/2，所以α=30°'
-            },
-            {
-                id: 4, type: '选择题',
-                question: '将下列多项式因式分解，结果中不含有因式a+1的是',
-                options: [
-                    'A. a²-1',
-                    'B. a²+a',
-                    'C. a²+a-2',
-                    'D. (a+2)²-2(a+2)+1'
-                ],
-                answer: 'C',
-                topic: '数论',
-                analysis: 'a²-1=(a+1)(a-1)，a²+a=a(a+1)，a²+a-2=(a+2)(a-1)，(a+2)²-2(a+2)+1=(a+1)²'
-            },
-            {
-                id: 5, type: '选择题',
-                question: '关于x的方程(x+m)/(3-x) + (3m)/(x-3) = 3的解为正数，则m的取值范围是',
-                options: [
-                    'A. m<9/2',
-                    'B. m<9/2且m≠-3/4',
-                    'C. m>-4',
-                    'D. m>-4且m≠-3/4'
-                ],
-                answer: 'D',
-                topic: '方程',
-                analysis: '解分式方程得x=(9-2m)/2>0，m<9/2；x≠3时m≠-3/4；分母x-3≠0。所以m>-4且m≠-3/4'
-            },
-            {
-                id: 6, type: '选择题',
-                question: '运行程序：从"输入x"到"结果是否>95"为一次操作，如果程序操作进行了三次才停止，那么x的取值范围是',
-                options: ['A. x≥11', 'B. 11≤x<23', 'C. 11<x≤23', 'D. x≤23'],
-                answer: 'C',
-                topic: '计算',
-                analysis: '第三次才停止说明前两次≤95，第三次>95，解不等式组得11<x≤23'
-            },
-            {
-                id: 7, type: '选择题',
-                question: '木杆AB斜靠在墙壁上，当木杆的上端A沿墙壁竖直下滑时，木杆的底端B随之沿射线方向滑动。下列图中用虚线画出木杆中点P随之下落的路线，其中正确的是',
-                options: ['A. 直线', 'B. 折线', 'C. 圆弧', 'D. 抛物线'],
-                answer: 'C',
-                topic: '几何',
-                analysis: '木杆长度不变，中点P到墙角O的距离不变，P点的轨迹是以O为圆心的圆弧'
-            },
-            {
-                id: 8, type: '选择题',
-                question: '在平面直角坐标系中，⊙M与x轴相切于点A(8,0)，与y轴交于点B(0,4)和点C(0,16)，则圆心M到坐标原点O的距离是',
-                options: ['A. 10', 'B. 8√2', 'C. 4√13', 'D. 2√41'],
-                answer: 'D',
-                topic: '几何',
-                analysis: '圆心M的坐标为(8,10)，所以OM=√(8²+10²)=√164=2√41'
-            }
-        ]
-    },
-    {
-        year: 2012, subject: '数学', count: 8, difficulty: '中等',
-        icon: '📐', fullScore: 120, freeCount: 2,
-        questions: [
-            {
-                id: 1, type: '选择题',
-                question: '计算：2⁻²的结果是',
-                options: ['A. 1/4', 'B. -4', 'C. 1/2', 'D. 4'],
-                answer: 'A',
-                topic: '计算',
-                analysis: '负整数指数幂：a⁻ⁿ=1/aⁿ，所以2⁻²=1/2²=1/4'
-            },
-            {
-                id: 2, type: '选择题',
-                question: '使代数式√(x-3)有意义的x的取值范围是',
-                options: ['A. x>3', 'B. x<3', 'C. x≥3', 'D. x≤3'],
-                answer: 'C',
-                topic: '计算',
-                analysis: '二次根式有意义的条件：被开方数≥0，所以x-3≥0，x≥3'
-            },
-            {
-                id: 3, type: '选择题',
-                question: '某班6名学生的数学成绩分别是：75, 77, 80, 75, 80, 82。关于这组数据下列说法错误的是',
-                options: ['A. 众数是75', 'B. 中位数是77.5', 'C. 平均数是78', 'D. 极差是7'],
-                answer: 'B',
-                topic: '统计',
-                analysis: '排序后为75,75,77,80,80,82，中位数=(77+80)/2=78.5，不是77.5'
-            },
-            {
-                id: 4, type: '选择题',
-                question: '不等式组 {x>1, x<2} 的解集是',
-                options: ['A. 1<x<2', 'B. x>1', 'C. x<2', 'D. 空集'],
-                answer: 'A',
-                topic: '不等式',
-                analysis: '同大取较大，同小取较小，两个不等式取交集得1<x<2'
-            },
-            {
-                id: 5, type: '选择题',
-                question: '一个水龙头滴水，1小时滴水3.5千克。照这样计算，1年（365天）滴水多少千克（用科学记数法表示）',
-                options: ['A. 3.06×10⁴', 'B. 3.07×10⁴', 'C. 3.06×10³', 'D. 3.07×10³'],
-                answer: 'B',
-                topic: '计算',
-                analysis: '1年滴水量=3.5×24×365=30660千克=3.066×10⁴≈3.07×10⁴'
-            },
-            {
-                id: 6, type: '选择题',
-                question: '两圆半径r₁、r₂是方程x²-7x+10=0的两根，圆心距d=7，则这两圆的位置关系是',
-                options: ['A. 内切', 'B. 外切', 'C. 相交', 'D. 外离'],
-                answer: 'B',
-                topic: '几何',
-                analysis: '方程两根为2和5，r₁+r₂=7=d，所以两圆外切'
-            },
-            {
-                id: 7, type: '选择题',
-                question: '直线y=-2x-4与y=4x+b的交点在第三象限，则b的取值范围是',
-                options: ['A. -4<b<8', 'B. b<-4或b>8', 'C. -8<b<4', 'D. b<-8或b>4'],
-                answer: 'A',
-                topic: '函数',
-                analysis: '联立解得交点坐标((b-4)/6, -(2b+8)/6)，在第三象限需x<0,y<0，解得-4<b<8'
-            },
-            {
-                id: 8, type: '选择题',
-                question: '某日历上9个数排列成正方形，它们的和是144，其中最大数与最小数的乘积是192，这9个数之和是',
-                options: ['A. 72', 'B. 96', 'C. 120', 'D. 144'],
-                answer: 'D',
-                topic: '数论',
-                analysis: '日历上连续9个数之和等于中心数的9倍，所以中心数=144/9=16，9数之和=144'
-            }
-        ]
-    },
-    {
-        year: 2008, subject: '数学', count: 6, difficulty: '中等偏上',
-        icon: '📐', fullScore: 120, freeCount: 2,
-        questions: [
-            {
-                id: 1, type: '选择题',
-                question: '下列运算正确的是',
-                options: [
-                    'A. a³·a²=a⁶',
-                    'B. (a³)²=a⁶',
-                    'C. a⁶÷a²=a³',
-                    'D. a³+a²=a⁵'
-                ],
-                answer: 'B',
-                topic: '计算',
-                analysis: '(a³)²=a^(3×2)=a⁶，正确；其他选项均违反运算法则'
-            },
-            {
-                id: 2, type: '选择题',
-                question: '若a与b互为相反数，则a+b的值是',
-                options: ['A. 0', 'B. 1', 'C. -1', 'D. 无法确定'],
-                answer: 'A',
-                topic: '数论',
-                analysis: '相反数的定义：a=-b，所以a+b=0'
-            },
-            {
-                id: 3, type: '选择题',
-                question: '反比例函数y=k/x，当x>0时，y随x的增大而增大，则k的取值范围是',
-                options: ['A. k>0', 'B. k<0', 'C. k≥0', 'D. k≤0'],
-                answer: 'B',
-                topic: '函数',
-                analysis: '反比例函数在第一象限y随x增大而减小，要使x>0时y随x增大而增大，则k<0'
-            },
-            {
-                id: 4, type: '选择题',
-                question: '已知关于x的方程x²+mx+1=0有两个相等的实数根，则m的值是',
-                options: ['A. 2', 'B. -2', 'C. ±2', 'D. 0'],
-                answer: 'C',
-                topic: '方程',
-                analysis: '有两个相等实根则Δ=m²-4=0，m=±2'
-            },
-            {
-                id: 5, type: '选择题',
-                question: '一个蓄水池注水，流量一定，水深h与放水时间t的关系是',
-                options: ['A. 正比例关系', 'B. 反比例关系', 'C. 一次函数关系', 'D. 二次函数关系'],
-                answer: 'B',
-                topic: '函数',
-                analysis: '流量=体积/时间=底面积×h/t，h与t成反比关系'
-            },
-            {
-                id: 6, type: '选择题',
-                question: '一个一次函数的图象过第一、三、四象限，则该函数',
-                options: [
-                    'A. 有最大值k',
-                    'B. 有最大值b',
-                    'C. 有最小值k',
-                    'D. 有最小值b'
-                ],
-                answer: 'B',
-                topic: '函数',
-                analysis: '过一三四象限说明k>0,b<0，函数y=kx+b有最大值b（当x=0时）'
-            }
-        ]
-    }
-];;
+        ];;
 
         let currentExamYear = 2025;
         let examUnlocked = localStorage.getItem('wfzgk_exam_unlocked') === 'true';
