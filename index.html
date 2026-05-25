@@ -1213,257 +1213,414 @@
         <script>
         // ========== 历年真题数据（扩充版） ==========
         const examData = [
+    {
+        year: 2024, subject: '数学', count: 6, difficulty: '中等偏上',
+        icon: '📐', fullScore: 120, freeCount: 2,
+        questions: [
             {
-                year: 2025, subject: '语文', count: 20, difficulty: '中等',
-                icon: '📖', fullScore: 120, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: '下列词语中加点字注音全部正确的一项是', options: ['A. 模样(mú) 狡黠(xiá)', 'B. 模样(mó) 狡黠(xiá)', 'C. 模样(mú) 狡黠(jié)', 'D. 模样(mó) 狡黠(jié)'], answer: 'A' },
-                    { id: 2, type: '选择题', question: '下列句子中没有语病的一项是', options: ['A. 通过这次活动，使我受益匪浅', 'B. 我们要养成认真学习的好习惯', 'C. 能否坚持到底，是成功的关键', 'D. 为了防止不再发生类似事件，我们加强了管理'], answer: 'B' },
-                    { id: 3, type: '选择题', question: '下列文学常识表述不正确的一项是', options: ['A. 《论语》是儒家经典之一', 'B. 《庄子》是道家经典之一', 'C. 《史记》是编年体史书', 'D. 《诗经》是中国最早的诗歌总集'], answer: 'C' },
-                    { id: 4, type: '选择题', question: '下列词语中没有错别字的一项是', options: ['A. 锋芒必露 妇孺皆知', 'B. 锋芒毕露 妇孺皆知', 'C. 锋芒毕露 妇儒皆知', 'D. 锋芒必露 妇儒皆知'], answer: 'B' },
-                    { id: 5, type: '选择题', question: '下列句子中加点成语使用正确的一项是', options: ['A. 这篇文章写得别具匠心，言简意赅', 'B. 他在考试中取得了好成绩，令人叹为观止', 'C. 这道题太难了，我简直叹为观止', 'D. 他的成绩一落千丈，令人叹为观止'], answer: 'A' },
-                    { id: 6, type: '选择题', question: '依次填入下面一段文字横线处的语句，衔接最恰当的一项是：读书是一种心灵的旅行，____，____，____，____。①让你在喧嚣中保持宁静 ②让你在迷茫中找到方向 ③让你在平凡中发现美好 ④让你在困境中获得力量', options: ['A. ③①②④', 'B. ②③①④', 'C. ①②③④', 'D. ④①②③'], answer: 'C' },
-                    { id: 7, type: '选择题', question: '下列关于修辞手法的判断，正确的一项是', options: ['A. "感时花溅泪，恨别鸟惊心"用了夸张', 'B. "忽如一夜春风来，千树万树梨花开"用了比喻', 'C. "千里冰封，万里雪飘"用了对偶', 'D. "谁言寸草心，报得三春晖"用了拟人'], answer: 'B' },
-                    { id: 8, type: '选择题', question: '下列有关文言文的说法，不正确的一项是', options: ['A. "之"可用作代词、助词、动词', 'B. "而"可表顺承、转折、修饰关系', 'C. "以"只能作介词使用', 'D. "其"可作代词、副词'], answer: 'C' },
-                    { id: 9, type: '选择题', question: '下列句子中修辞手法判断不正确的一项是', options: ['A. "她的眼睛像星星一样明亮"——比喻', 'B. "他的声音像雷鸣般响亮"——夸张', 'C. "春天来了，花儿张开了笑脸"——拟人', 'D. "飞流直下三千尺"——对偶'], answer: 'D' },
-                    { id: 10, type: '选择题', question: '下列词语中加点字读音完全相同的一组是', options: ['A. 供给 供给制', 'B. 参差 人参', 'C. 方便 便宜', 'D. 弹道 弹钢琴'], answer: 'A' },
-                    { id: 11, type: '选择题', question: '下列句子中加点词语使用不正确的一项是', options: ['A. 这个问题比较复杂，需要我们集思广益', 'B. 他的演讲振聋发聩，全场掌声雷动', 'C. 面对困难，我们要首当其冲，迎难而上', 'D. 经过老师的点拨，我恍然大悟'], answer: 'C' },
-                    { id: 12, type: '选择题', question: '下列关于文学作品的表述，不正确的一项是', options: ['A. 《骆驼祥子》是老舍的代表作品', 'B. 《童年》是高尔基的自传体小说', 'C. 《海底两万里》是凡尔纳的科幻小说', 'D. 《简·爱》的作者是狄更斯'], answer: 'D' },
-                    { id: 13, type: '选择题', question: '对下列句子使用的表达方式判断正确的一项是', options: ['A. 她有一双炯炯有神的大眼睛。——描写', 'B. 我们要珍惜时间。——议论', 'C. 春天来了，柳树发芽了。——抒情', 'D. 请把门关上。——说明'], answer: 'A' },
-                    { id: 14, type: '选择题', question: '下列句子中"之"的用法与其他三项不同的是', options: ['A. 何陋之有', 'B. 莲之爱，同予者何人', 'C. 送杜少府之任蜀州', 'D. 亲戚畔之'], answer: 'C' },
-                    { id: 15, type: '选择题', question: '下列句子顺序排列最连贯的一项是：①那声音大得惊人②忽然传来一声巨响③打破了夜晚的宁静④像是什么东西倒塌了', options: ['A. ①②④③', 'B. ②①④③', 'C. ③①②④', 'D. ④②①③'], answer: 'B' },
-                    { id: 16, type: '选择题', question: '下列文学常识搭配不正确的一项是', options: ['A. 《岳阳楼记》——范仲淹——宋代', 'B. 《醉翁亭记》——欧阳修——唐代', 'C. 《爱莲说》——周敦颐——宋代', 'D. 《小石潭记》——柳宗元——唐代'], answer: 'B' },
-                    { id: 17, type: '选择题', question: '对下列文言句式判断正确的一项是', options: ['A. "何陋之有"是宾语前置句', 'B. "温故而知新"是状语后置句', 'C. "甚矣，汝之不惠"是定语后置句', 'D. "一鼓作气，再而衰，三而竭"是判断句'], answer: 'A' },
-                    { id: 18, type: '选择题', question: '下列句子中没有通假字的一项是', options: ['A. 学而时习之，不亦说乎', 'B. 窈窕淑女，君子好逑', 'C. 困于心，衡于虑，而后作', 'D. 策之不以其道'], answer: 'D' },
-                    { id: 19, type: '选择题', question: '下列关于古代文化常识的表述，不正确的一项是', options: ['A. "弱冠"指男子二十岁左右的年纪', 'B. "桑梓"代指家乡', 'C. "浮图"指和尚', 'D. "庙堂"指寺庙'], answer: 'D' },
-                    { id: 20, type: '选择题', question: '下列句子中"而"字用法相同的两项是：①学而时习之②温故而知新③人而不仁④择其善者而从之', options: ['A. ①②', 'B. ②④', 'C. ③④', 'D. ①③'], answer: 'B' }
-                ]
+                id: 1, type: '选择题',
+                question: '下列著名曲线中，既是轴对称图形也是中心对称图形的是',
+                options: ['A. 双曲线', 'B. 抛物线', 'C. 正弦曲线', 'D. 余弦曲线'],
+                answer: 'D',
+                topic: '函数',
+                analysis: '余弦曲线关于y轴对称（轴对称），旋转180度后重合（中心对称）'
             },
             {
-                year: 2025, subject: '数学', count: 20, difficulty: '中等偏上',
-                icon: '📐', fullScore: 120, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: '计算：(-2)³ 的结果是', options: ['A. -8', 'B. 8', 'C. -6', 'D. 6'], answer: 'A' },
-                    { id: 2, type: '选择题', question: '下列图形中，既是轴对称图形又是中心对称图形的是', options: ['A. 等边三角形', 'B. 平行四边形', 'C. 矩形', 'D. 正五边形'], answer: 'C' },
-                    { id: 3, type: '选择题', question: '若 x²-5x+6=0，则 x 的值为', options: ['A. 2或3', 'B. -2或-3', 'C. 2或-3', 'D. -2或3'], answer: 'A' },
-                    { id: 4, type: '选择题', question: '在Rt△ABC中，∠C=90°，AC=3，BC=4，则AB的长为', options: ['A. 5', 'B. 6', 'C. 7', 'D. √7'], answer: 'A' },
-                    { id: 5, type: '选择题', question: '一个扇形的弧长为2π，半径为3，则该扇形的面积为', options: ['A. 3π', 'B. 6π', 'C. 9π', 'D. 12π'], answer: 'A' },
-                    { id: 6, type: '选择题', question: '已知点A(2,3)在反比例函数y=k/x的图象上，则k的值为', options: ['A. 6', 'B. 5', 'C. 1.5', 'D. -6'], answer: 'A' },
-                    { id: 7, type: '选择题', question: '某校对八年级200名学生进行视力检查，频率分布直方图中，4.0~4.5这一组的频率为0.2，则该组的人数为', options: ['A. 20', 'B. 30', 'C. 40', 'D. 50'], answer: 'C' },
-                    { id: 8, type: '选择题', question: '如图，AB是⊙O的直径，弦CD⊥AB于点E，若CD=8，BE=2，则⊙O的半径为', options: ['A. 5', 'B. 4', 'C. 3', 'D. 2'], answer: 'A' },
-                    { id: 9, type: '选择题', question: '二次函数y=x²-2x+3的最小值是', options: ['A. 1', 'B. 2', 'C. 3', 'D. 4'], answer: 'B' },
-                    { id: 10, type: '选择题', question: '已知等腰三角形的两边长分别为3和6，则它的周长为', options: ['A. 12', 'B. 15', 'C. 12或15', 'D. 无法确定'], answer: 'B' },
-                    { id: 11, type: '选择题', question: '在平面直角坐标系中，点P(-2,3)关于x轴对称的点的坐标是', options: ['A. (-2,-3)', 'B. (2,3)', 'C. (2,-3)', 'D. (-2,3)'], answer: 'A' },
-                    { id: 12, type: '选择题', question: '下列事件中，属于随机事件的是', options: ['A. 明天太阳从东方升起', 'B. 抛一枚硬币，正面朝上', 'C. 地球绕着太阳转', 'D. 一年有365天'], answer: 'B' },
-                    { id: 13, type: '选择题', question: '若一个多边形的内角和是它外角和的3倍，则这个多边形是', options: ['A. 五边形', 'B. 六边形', 'C. 七边形', 'D. 八边形'], answer: 'D' },
-                    { id: 14, type: '选择题', question: '若分式(x-1)/(x²-4)有意义，则x的取值范围是', options: ['A. x≠±2', 'B. x≠2', 'C. x≠-2', 'D. x≠1'], answer: 'A' },
-                    { id: 15, type: '选择题', question: '如图，在△ABC中，D是BC的中点，E是AD的中点，△ABC的面积是8，则△ABE的面积是', options: ['A. 2', 'B. 4', 'C. 1', 'D. 3'], answer: 'A' },
-                    { id: 16, type: '选择题', question: '正比例函数y=kx与反比例函数y=k/x在同一坐标系中的图象大致是', options: ['A. 两个都在第一、三象限', 'B. 两个都在第二、四象限', 'C. 一三象限和二四象限', 'D. 无法确定'], answer: 'C' },
-                    { id: 17, type: '选择题', question: '一组数据2,3,3,4,5,5,5的众数和中位数分别是', options: ['A. 5和4', 'B. 5和3', 'C. 3和4', 'D. 3和5'], answer: 'A' },
-                    { id: 18, type: '选择题', question: '圆心角为60°，半径为6的扇形面积是', options: ['A. 6π', 'B. 12π', 'C. 18π', 'D. 36π'], answer: 'A' },
-                    { id: 19, type: '选择题', question: '已知一次函数y=kx+b的图象经过点(0,1)和(2,5)，则k和b的值分别是', options: ['A. k=2,b=1', 'B. k=1,b=2', 'C. k=3,b=1', 'D. k=1,b=3'], answer: 'A' },
-                    { id: 20, type: '选择题', question: '若方程x²-3x+1=0的两根为x₁、x₂，则x₁²+x₂²的值为', options: ['A. 7', 'B. 9', 'C. 5', 'D. 11'], answer: 'A' }
-                ]
+                id: 2, type: '选择题',
+                question: '截止2023年底，全国注册通航企业690家、无人机126.9万架。将126.9万用科学记数法表示为',
+                options: ['A. 1.269×10⁴', 'B. 1.269×10⁵', 'C. 1.269×10⁶', 'D. 1.269×10⁷'],
+                answer: 'C',
+                topic: '计算',
+                analysis: '126.9万 = 1,269,000 = 1.269×10⁶'
             },
             {
-                year: 2025, subject: '英语', count: 20, difficulty: '中等',
-                icon: '🔤', fullScore: 120, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: 'Choose the correct word: She ____ to school every day.', options: ['A. go', 'B. goes', 'C. going', 'D. went'], answer: 'B' },
-                    { id: 2, type: '选择题', question: 'Which is correct? "I have never seen ____ interesting movie."', options: ['A. so a', 'B. such a', 'C. so an', 'D. such an'], answer: 'D' },
-                    { id: 3, type: '选择题', question: 'The book ____ by him last year is very popular.', options: ['A. written', 'B. writing', 'C. wrote', 'D. write'], answer: 'A' },
-                    { id: 4, type: '选择题', question: 'He asked me ____ I would go with him.', options: ['A. that', 'B. what', 'C. if', 'D. which'], answer: 'C' },
-                    { id: 5, type: '选择题', question: 'Not only he but also I ____ interested in music.', options: ['A. am', 'B. is', 'C. are', 'D. be'], answer: 'A' },
-                    { id: 6, type: '选择题', question: 'The teacher told us ____ in class.', options: ['A. not talk', 'B. don\'t talk', 'C. not to talk', 'D. to not talk'], answer: 'C' },
-                    { id: 7, type: '选择题', question: '____ the weather improves, we won\'t go out.', options: ['A. If', 'B. Unless', 'C. When', 'D. Since'], answer: 'B' },
-                    { id: 8, type: '选择题', question: 'This is the most interesting book ____ I have ever read.', options: ['A. which', 'B. that', 'C. who', 'D. whom'], answer: 'B' },
-                    { id: 9, type: '选择题', question: 'She ____ the film if she is free tomorrow.', options: ['A. watches', 'B. watched', 'C. will watch', 'D. has watched'], answer: 'C' },
-                    { id: 10, type: '选择题', question: 'The boy is too young to ____ himself.', options: ['A. wear', 'B. dress', 'C. put on', 'D. have on'], answer: 'B' },
-                    { id: 11, type: '选择题', question: '____ of the students passed the exam.', options: ['A. Three fifth', 'B. Three fifths', 'C. Third five', 'D. Three fives'], answer: 'B' },
-                    { id: 12, type: '选择题', question: 'I would appreciate ____ if you could help me.', options: ['A. that', 'B. this', 'C. it', 'D. one'], answer: 'C' },
-                    { id: 13, type: '选择题', question: 'He is used to ____ up early every day.', options: ['A. get', 'B. getting', 'C. gets', 'D. got'], answer: 'B' },
-                    { id: 14, type: '选择题', question: 'The book ____ twenty dollars.', options: ['A. cost', 'B. spends', 'C. pays', 'D. takes'], answer: 'A' },
-                    { id: 15, type: '选择题', question: 'Which sentence is grammatically correct?', options: ['A. He asked me where did I live', 'B. He asked me where I lived', 'C. He asked me where I live', 'D. He asked me where was I living'], answer: 'B' },
-                    { id: 16, type: '选择题', question: 'There is ____ milk in the fridge. Would you like some?', options: ['A. a few', 'B. few', 'C. a little', 'D. little'], answer: 'C' },
-                    { id: 17, type: '选择题', question: 'She prefers ____ at home rather than ____ out.', options: ['A. staying, going', 'B. to stay, go', 'C. staying, to go', 'D. to stay, going'], answer: 'A' },
-                    { id: 18, type: '选择题', question: 'The teacher asked us ____ our homework carefully.', options: ['A. to do', 'B. do', 'C. doing', 'D. did'], answer: 'A' },
-                    { id: 19, type: '选择题', question: '____ beautiful music it is!', options: ['A. What a', 'B. What', 'C. How', 'D. How a'], answer: 'B' },
-                    { id: 20, type: '选择题', question: 'He has lived here since he ____ a child.', options: ['A. was', 'B. is', 'C. has been', 'D. would be'], answer: 'A' }
-                ]
+                id: 3, type: '选择题',
+                question: '某科研小组用石油醚做溶剂进行提取青蒿素的实验，控制其他实验条件不变，研究提取时间和提取温度对青蒿素提取率的影响。下列结论正确的是',
+                options: ['A. 提取时间越长越好', 'B. 提取温度越高越好', 'C. 存在最佳提取时间和温度', 'D. 提取率与时间和温度无关'],
+                answer: 'C',
+                topic: '统计',
+                analysis: '实验数据表明提取率和时间/温度都呈先升后降趋势，存在最优条件'
             },
             {
-                year: 2025, subject: '物化', count: 20, difficulty: '中等偏上',
-                icon: '🔬', fullScore: 120, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: '下列变化中属于化学变化的是', options: ['A. 冰雪融化', 'B. 酒精挥发', 'C. 铁生锈', 'D. 矿石粉碎'], answer: 'C' },
-                    { id: 2, type: '选择题', question: '一个物体放在水平桌面上，下列哪对力是平衡力', options: ['A. 物体的重力和桌面对物体的支持力', 'B. 物体对桌面的压力和桌面对物体的支持力', 'C. 物体的重力和物体对桌面的压力', 'D. 桌子的重力和地面对桌子的支持力'], answer: 'A' },
-                    { id: 3, type: '选择题', question: '下列物质的用途，利用其化学性质的是', options: ['A. 干冰用于人工降雨', 'B. 金刚石用于切割玻璃', 'C. 氧气用于炼钢', 'D. 铜丝用作导线'], answer: 'C' },
-                    { id: 4, type: '选择题', question: '关于惯性，下列说法正确的是', options: ['A. 只有运动的物体才有惯性', 'B. 物体速度越大惯性越大', 'C. 惯性是物体的一种属性，与运动状态无关', 'D. 太空中物体没有惯性'], answer: 'C' },
-                    { id: 5, type: '选择题', question: '下列实验操作正确的是', options: ['A. 稀释浓硫酸时将水倒入浓硫酸中', 'B. 用燃着的酒精灯点燃另一只酒精灯', 'C. 给试管中的液体加热时，试管口不对着人', 'D. 闻气体气味时直接将鼻子凑到瓶口'], answer: 'C' },
-                    { id: 6, type: '选择题', question: '一个标有"6V 3W"的小灯泡，接在3V的电源上，其实际功率为', options: ['A. 3W', 'B. 1.5W', 'C. 0.75W', 'D. 6W'], answer: 'C' },
-                    { id: 7, type: '选择题', question: '下列物质中，属于纯净物的是', options: ['A. 空气', 'B. 矿泉水', 'C. 冰水混合物', 'D. 食盐水'], answer: 'C' },
-                    { id: 8, type: '选择题', question: '关于分子、原子、离子的说法，不正确的是', options: ['A. 分子是保持物质化学性质的最小粒子', 'B. 原子是化学变化中的最小粒子', 'C. 离子是带电的原子或原子团', 'D. 原子是不能再分的粒子'], answer: 'D' },
-                    { id: 9, type: '选择题', question: '在串联电路中，各处的电流', options: ['A. 不相等', 'B. 相等', 'C. 越靠近电源正极越大', 'D. 无法确定'], answer: 'B' },
-                    { id: 10, type: '选择题', question: '下列物质燃烧时能产生刺激性气味气体的是', options: ['A. 硫', 'B. 铁', 'C. 碳', 'D. 磷'], answer: 'A' },
-                    { id: 11, type: '选择题', question: '关于压强，下列说法正确的是', options: ['A. 压力越大，产生的压强越大', 'B. 受力面积越小，产生的压强越大', 'C. 压强与压力和受力面积都有关', 'D. 压强与压力成正比，与受力面积成反比'], answer: 'C' },
-                    { id: 12, type: '选择题', question: '下列金属中，金属活动性最强的是', options: ['A. Fe', 'B. Zn', 'C. Mg', 'D. Cu'], answer: 'C' },
-                    { id: 13, type: '选择题', question: '物体吸收热量，其温度', options: ['A. 一定升高', 'B. 一定不变', 'C. 可能不变', 'D. 一定降低'], answer: 'C' },
-                    { id: 14, type: '选择题', question: '实验室制取氧气的下列操作中，正确的是', options: ['A. 检查装置气密性时，先手握住试管再将导管放入水中', 'B. 用高锰酸钾制氧气时，试管口要塞棉花', 'C. 收集氧气时，用向下排空气法', 'D. 实验结束时，先熄灭酒精灯再移导管'], answer: 'B' },
-                    { id: 15, type: '选择题', question: '下列溶液中，溶剂不是水的是', options: ['A. 碘酒', 'B. 氯化钠溶液', 'C. 蔗糖溶液', 'D. 酒精溶液'], answer: 'A' },
-                    { id: 16, type: '选择题', question: '关于声音的传播，下列说法正确的是', options: ['A. 声音只能在空气中传播', 'B. 声音在不同介质中传播速度相同', 'C. 声音在真空中传播最快', 'D. 声音在固体中传播一般比在空气中快'], answer: 'D' },
-                    { id: 17, type: '选择题', question: '下列物质属于有机物的是', options: ['A. CO', 'B. Na₂CO₃', 'C. C₂H₅OH', 'D. CaCO₃'], answer: 'C' },
-                    { id: 18, type: '选择题', question: '用定滑轮提升物体，与直接用手直接提升相比', options: ['A. 不能省力', 'B. 能省一半力', 'C. 能省三分之一的力', 'D. 无法确定'], answer: 'A' },
-                    { id: 19, type: '选择题', question: '下列反应属于置换反应的是', options: ['A. 2H₂ + O₂ = 2H₂O', 'B. CaO + H₂O = Ca(OH)₂', 'C. Zn + H₂SO₄ = ZnSO₄ + H₂↑', 'D. 2KMnO₄ = K₂MnO₄ + MnO₂ + O₂↑'], answer: 'C' },
-                    { id: 20, type: '选择题', question: '下列现象中，由于光的折射形成的是', options: ['A. 水中倒影', 'B. 筷子在水中弯折', 'C. 手影游戏', 'D. 平面镜成像'], answer: 'B' }
-                ]
+                id: 4, type: '选择题',
+                question: '一种路灯的底部支架与吊线平行，灯杆与底部支架所成锐角为α，顶部支架与灯杆所成锐角为β，则灯罩与水平面所成锐角的度数为',
+                options: ['A. α+β', 'B. α-β', 'C. 90°-α+β', 'D. 90°-α-β'],
+                answer: 'A',
+                topic: '几何',
+                analysis: '利用平行线的性质，灯罩与水平面的夹角等于灯杆与支架夹角的和'
             },
             {
-                year: 2025, subject: '道法', count: 15, difficulty: '中等',
-                icon: '⚖️', fullScore: 80, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: '我国宪法规定，中华人民共和国的一切权力属于', options: ['A. 公民', 'B. 人民', 'C. 人民代表大会', 'D. 中国共产党'], answer: 'B' },
-                    { id: 2, type: '选择题', question: '下列行为属于正确行使公民权利的是', options: ['A. 在网络上随意发布他人隐私', 'B. 依法参加人大代表选举投票', 'C. 故意损坏公共财物', 'D. 拒绝履行受教育义务'], answer: 'B' },
-                    { id: 3, type: '选择题', question: '我国的基本经济制度是', options: ['A. 公有制为主体、多种所有制经济共同发展', 'B. 私有制经济为主体', 'C. 纯公有制经济', 'D. 混合所有制经济'], answer: 'A' },
-                    { id: 4, type: '选择题', question: '全国人民代表大会是我国的', options: ['A. 最高行政机关', 'B. 最高审判机关', 'C. 最高国家权力机关', 'D. 最高监察机关'], answer: 'C' },
-                    { id: 5, type: '选择题', question: '下列属于公民基本义务的是', options: ['A. 依法纳税', 'B. 参加公益活动', 'C. 体育锻炼', 'D. 旅游出行'], answer: 'A' },
-                    { id: 6, type: '选择题', question: '当合法权益受到侵害时，正确的维权途径是', options: ['A. 以暴制暴', 'B. 忍气吞声', 'C. 通过法律途径解决', 'D. 私自扣押对方财物'], answer: 'C' },
-                    { id: 7, type: '选择题', question: '社会主义核心价值观个人层面的内容是', options: ['A. 富强、民主、文明、和谐', 'B. 自由、平等、公正、法治', 'C. 爱国、敬业、诚信、友善', 'D. 公正、诚信、友善、和谐'], answer: 'C' },
-                    { id: 8, type: '选择题', question: '公民的基本政治权利是', options: ['A. 监督权', 'B. 选举权和被选举权', 'C. 知情权', 'D. 表达权'], answer: 'B' },
-                    { id: 9, type: '选择题', question: '我国民族分布的格局是', options: ['A. 大散居、小聚居、交错杂居', 'B. 集中分布', 'C. 均匀分布', 'D. 边境地区分布'], answer: 'A' },
-                    { id: 10, type: '选择题', question: '遇到心理矛盾时，正确的调节方法有：①自我安慰②转移注意③培养爱好④压抑情绪', options: ['A. ①②③', 'B. ②③④', 'C. ①③④', 'D. ①②④'], answer: 'A' },
-                    { id: 11, type: '选择题', question: '关于责任，下列说法正确的是', options: ['A. 责任只有成年人才有', 'B. 承担责任一定会获得物质回报', 'C. 责任来自社会关系中的相互承诺', 'D. 逃避责任不会产生任何后果'], answer: 'C' },
-                    { id: 12, type: '选择题', question: '网络生活的基本准则是', options: ['A. 自由随意', 'B. 遵守道德和法律', 'C. 只遵守法律', 'D. 只遵守道德'], answer: 'B' },
-                    { id: 13, type: '选择题', question: '我国人口现状的特点是', options: ['A. 人口基数大，增长速度快', 'B. 人口老龄化加剧', 'C. 城乡分布不均衡', 'D. 以上都是'], answer: 'D' },
-                    { id: 14, type: '选择题', question: '关于正义，下列说法不正确的是', options: ['A. 正义是社会文明的标志', 'B. 正义行为能增进社会福祉', 'C. 只有英雄人物才能维护正义', 'D. 维护正义是每个公民的责任'], answer: 'C' },
-                    { id: 15, type: '选择题', question: '坚持节约资源和保护环境的基本国策，要坚持', options: ['A. 节约优先、保护优先、自然恢复为主', 'B. 开发优先、利用优先', 'C. 先污染后治理', 'D. 以经济发展为中心'], answer: 'A' }
-                ]
+                id: 5, type: '选择题',
+                question: '已知关于x的一元二次方程x²-3x+m=0，其中m满足|m-2|≤1，关于该方程根的情况，下列判断正确的是',
+                options: ['A. 无实数根', 'B. 有两个相等的实数根', 'C. 有两个不相等的实数根', 'D. 无法确定'],
+                answer: 'C',
+                topic: '方程',
+                analysis: '由|m-2|≤1得1≤m≤3，判别式Δ=9-4m，当m≤9/4时Δ≥0，方程有实根'
             },
             {
-                year: 2024, subject: '语文', count: 20, difficulty: '中等',
-                icon: '📖', fullScore: 120, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: '下列加点字读音全部正确的一项是', options: ['A. 酝酿(niàng) 应和(hè)', 'B. 酝酿(niàng) 应和(hé)', 'C. 酝酿(liàng) 应和(hè)', 'D. 酝酿(liàng) 应和(hé)'], answer: 'A' },
-                    { id: 2, type: '选择题', question: '下列句子中标点符号使用正确的一项是', options: ['A. 我不知道他去哪里了？', 'B. "行，"他说："就这么办。"', 'C. 小河对岸三、四里外是浅山。', 'D. 她轻轻地唱起了《摇篮曲》。'], answer: 'D' },
-                    { id: 3, type: '选择题', question: '下列有关名著的表述不正确的一项是', options: ['A. 《朝花夕拾》是鲁迅的散文集', 'B. 《西游记》是中国古典四大名著之一', 'C. 《钢铁是怎样炼成的》是奥斯特洛夫斯基的作品', 'D. 《水浒传》中武松的绰号是"豹子头"'], answer: 'D' },
-                    { id: 4, type: '选择题', question: '"沉舟侧畔千帆过，病树前头万木春"蕴含的哲理是', options: ['A. 新事物必将取代旧事物', 'B. 旧事物不可战胜', 'C. 自然界变化无常', 'D. 人生短暂应珍惜'], answer: 'A' },
-                    { id: 5, type: '选择题', question: '下列词语中感情色彩与其他三个不同的一项是', options: ['A. 鼓励', 'B. 鼓舞', 'C. 煽动', 'D. 激励'], answer: 'C' },
-                    { id: 6, type: '选择题', question: '将下列句子组成语意连贯的一段话，排序正确的是：①古人对月亮情有独钟 ②留下了许多脍炙人口的诗篇 ③中秋节便是其中最盛大的节日 ④还设立了与月亮有关的节日', options: ['A. ①②④③', 'B. ①④③②', 'C. ①②③④', 'D. ④①②③'], answer: 'B' },
-                    { id: 7, type: '选择题', question: '下列句子中，没有语病的一项是', options: ['A. 通过阅读，使我增长了知识', 'B. 大家要养成讲究卫生', 'C. 这部电影对我很感兴趣', 'D. 我们要虚心接受大家的意见'], answer: 'D' },
-                    { id: 8, type: '选择题', question: '下列关于古代文学常识的表述，正确的一项是', options: ['A. 《孟子》是记录孔子言行的书', 'B. "二十四史"中第一部是《史记》', 'C. 元曲包括杂剧和散曲', 'D. 《聊斋志异》是长篇小说'], answer: 'C' },
-                    { id: 9, type: '选择题', question: '"春蚕到死丝方尽，蜡炬成灰泪始干"采用的修辞手法是', options: ['A. 比喻、对偶', 'B. 拟人、夸张', 'C. 对偶、借代', 'D. 比喻、借代'], answer: 'C' },
-                    { id: 10, type: '选择题', question: '下列词语中，加点字的读音完全相同的是', options: ['A. 图书 画图 图画', 'B. 山水 上山 高山', 'C. 大小 大小 小学生', 'D. 生气 生词 生活'], answer: 'A' },
-                    { id: 11, type: '选择题', question: '下列句子中，关联词使用正确的一项是', options: ['A. 虽然天气很冷，但是大家仍然坚持锻炼', 'B. 因为他学习好，所以他很骄傲', 'C. 既然知道他错了，就该批评他', 'D. 不管天气多么冷，他都不去上学'], answer: 'A' },
-                    { id: 12, type: '选择题', question: '下列关于《诗经》的表述，不正确的一项是', options: ['A. 《诗经》是我国最早的诗歌总集', 'B. 《诗经》收录了305篇诗歌', 'C. 《诗经》只收录了民歌', 'D. 《诗经》分为风、雅、颂三部分'], answer: 'C' },
-                    { id: 13, type: '选择题', question: '对下列文言实词解释不正确的一项是', options: ['A. "之"在"学而时习之"中作代词，指学过的知识', 'B. "而"在"温故而知新"中表顺承关系', 'C. "其"在"其恕乎"中指代孔子的学生', 'D. "于"在"生于忧患"中意思是"在"'], answer: 'C' },
-                    { id: 14, type: '选择题', question: '下列词语书写完全正确的一项是', options: ['A. 再接再厉 走投无路', 'B. 变本加利 天翻地覆', 'C. 不记其数 循序渐近', 'D. 委屈求全 谈笑风声'], answer: 'A' },
-                    { id: 15, type: '选择题', question: '"人生自古谁无死，留取丹心照汗青"出自', options: ['A. 文天祥《过零丁洋》', 'B. 岳飞《满江红》', 'C. 辛弃疾《破阵子》', 'D. 苏轼《念奴娇》'], answer: 'A' },
-                    { id: 16, type: '选择题', question: '下列句子中加点成语使用正确的一项是', options: ['A. 他的一番话，让我受益匪浅', 'B. 面对困难，我们要首当其冲', 'C. 大家都对他的行为叹为观止', 'D. 他做事总是络绎不绝'], answer: 'A' },
-                    { id: 17, type: '选择题', question: '下列不属于唐宋八大家的人物是', options: ['A. 韩愈', 'B. 柳宗元', 'C. 欧阳修', 'D. 杜牧'], answer: 'D' },
-                    { id: 18, type: '选择题', question: '对下列句子的修辞手法判断不正确的一项是', options: ['A. "烽火连三月，家书抵万金"——对偶、夸张', 'B. "好雨知时节，当春乃发生"——拟人', 'C. "山舞银蛇，原驰蜡象"——比喻、拟人', 'D. "问渠那得清如许"——设问'], answer: 'D' },
-                    { id: 19, type: '选择题', question: '下列文学常识搭配正确的一项是', options: ['A. 《背影》——朱自清——小说', 'B. 《最后一课》——都德——法国', 'C. 《皇帝的新装》——安徒生——中国', 'D. 《狼》——蒲松龄——清代'], answer: 'B' },
-                    { id: 20, type: '选择题', question: '下列句子排序正确的一项是：①它象征着坚韧不拔的精神②梅花是中国十大名花之首③与兰、竹、菊并称为"花中四君子"④在严寒中最先开放', options: ['A. ②④①③', 'B. ②③④①', 'C. ④②③①', 'D. ③①②④'], answer: 'A' }
-                ]
-            },
-            {
-                year: 2024, subject: '数学', count: 20, difficulty: '中等偏上',
-                icon: '📐', fullScore: 120, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: '-3的绝对值是', options: ['A. -3', 'B. 3', 'C. -1/3', 'D. 1/3'], answer: 'B' },
-                    { id: 2, type: '选择题', question: '下列运算正确的是', options: ['A. a²+a³=a⁵', 'B. (a²)³=a⁶', 'C. a²·a³=a⁶', 'D. a⁶÷a²=a³'], answer: 'B' },
-                    { id: 3, type: '选择题', question: '不等式组 x>1, x<3 的解集是', options: ['A. x>1', 'B. x<3', 'C. 1<x<3', 'D. 无解'], answer: 'C' },
-                    { id: 4, type: '选择题', question: '一个多边形的内角和为720°，则这个多边形的边数为', options: ['A. 5', 'B. 6', 'C. 7', 'D. 8'], answer: 'B' },
-                    { id: 5, type: '选择题', question: '数据2,3,5,5,5的中位数和众数分别是', options: ['A. 5和5', 'B. 5和3', 'C. 4和5', 'D. 3和5'], answer: 'A' },
-                    { id: 6, type: '选择题', question: '将抛物线y=x²向右平移2个单位，再向上平移1个单位，得到的抛物线解析式为', options: ['A. y=(x-2)²+1', 'B. y=(x+2)²+1', 'C. y=(x-2)²-1', 'D. y=(x+2)²-1'], answer: 'A' },
-                    { id: 7, type: '选择题', question: '某商店将进价为8元的商品按每件10元售出，每天可售出200件，现在采取提高售价的办法来增加利润，如果这种商品每件的销售价每提高0.5元，其销售量就减少20件，那么每天利润为600元时，每件售价应为', options: ['A. 10元', 'B. 11元', 'C. 12元', 'D. 13元'], answer: 'C' },
-                    { id: 8, type: '选择题', question: '在△ABC中，∠A=50°，∠B=60°，则∠C=', options: ['A. 50°', 'B. 60°', 'C. 70°', 'D. 80°'], answer: 'C' },
-                    { id: 9, type: '选择题', question: '若一个三角形的三边长分别为3、4、5，则这个三角形是', options: ['A. 锐角三角形', 'B. 直角三角形', 'C. 钝角三角形', 'D. 等腰三角形'], answer: 'B' },
-                    { id: 10, type: '选择题', question: '抛物线y=2x²-4x+1的对称轴是', options: ['A. x=1', 'B. x=-1', 'C. x=2', 'D. x=-2'], answer: 'A' },
-                    { id: 11, type: '选择题', question: '在反比例函数y=6/x的图象上，x=2对应的y值是', options: ['A. 12', 'B. 3', 'C. -3', 'D. -12'], answer: 'B' },
-                    { id: 12, type: '选择题', question: '一个不透明的袋子里有3个红球和2个白球，这些球除颜色外都相同，从中任意摸出一个球，摸到红球的概率是', options: ['A. 1/5', 'B. 2/5', 'C. 3/5', 'D. 4/5'], answer: 'C' },
-                    { id: 13, type: '选择题', question: '若点P(a,b)在第二象限，则a,b的取值范围是', options: ['A. a>0, b>0', 'B. a>0, b<0', 'C. a<0, b>0', 'D. a<0, b<0'], answer: 'C' },
-                    { id: 14, type: '选择题', question: '如图，AB∥CD，∠1=70°，∠2=50°，则∠3=', options: ['A. 60°', 'B. 70°', 'C. 80°', 'D. 90°'], answer: 'A' },
-                    { id: 15, type: '选择题', question: '化简：√12的结果是', options: ['A. 2√3', 'B. 3√2', 'C. 2√6', 'D. 4√3'], answer: 'A' },
-                    { id: 16, type: '选择题', question: '在△ABC中，AB=AC，∠A=40°，则∠B=', options: ['A. 40°', 'B. 50°', 'C. 70°', 'D. 80°'], answer: 'C' },
-                    { id: 17, type: '选择题', question: '若一次函数y=kx+b的图象经过一、二、四象限，则k,b的符号为', options: ['A. k>0, b>0', 'B. k>0, b<0', 'C. k<0, b>0', 'D. k<0, b<0'], answer: 'C' },
-                    { id: 18, type: '选择题', question: '某校有500名学生，要抽取50名学生进行视力调查，应采用的抽样方法是', options: ['A. 简单随机抽样', 'B. 系统抽样', 'C. 分层抽样', 'D. 以上都不对'], answer: 'A' },
-                    { id: 19, type: '选择题', question: '半径为5的圆中，弧长为2π的弧所对的圆心角为', options: ['A. 36°', 'B. 72°', 'C. 144°', 'D. 18°'], answer: 'B' },
-                    { id: 20, type: '选择题', question: '若x²+mx+9是完全平方式，则m=', options: ['A. 6', 'B. -6', 'C. ±6', 'D. 3'], answer: 'C' }
-                ]
-            },
-            {
-                year: 2024, subject: '英语', count: 20, difficulty: '中等',
-                icon: '🔤', fullScore: 120, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: 'She ____ to the park yesterday.', options: ['A. go', 'B. goes', 'C. went', 'D. going'], answer: 'C' },
-                    { id: 2, type: '选择题', question: 'The boy ____ is standing there is my brother.', options: ['A. which', 'B. who', 'C. whom', 'D. whose'], answer: 'B' },
-                    { id: 3, type: '选择题', question: 'I will wait ____ he comes back.', options: ['A. until', 'B. because', 'C. if', 'D. though'], answer: 'A' },
-                    { id: 4, type: '选择题', question: 'The bridge ____ last year.', options: ['A. built', 'B. was built', 'C. is built', 'D. builds'], answer: 'B' },
-                    { id: 5, type: '选择题', question: 'He runs ____ than his brother.', options: ['A. fast', 'B. faster', 'C. fastest', 'D. more fast'], answer: 'B' },
-                    { id: 6, type: '选择题', question: '____ the box is heavy, I can carry it.', options: ['A. Although', 'B. Because', 'C. If', 'D. Unless'], answer: 'A' },
-                    { id: 7, type: '选择题', question: 'The teacher asked us ____ loudly in class.', options: ['A. not to speak', 'B. not speak', 'C. don\'t speak', 'D. to not speak'], answer: 'A' },
-                    { id: 8, type: '选择题', question: 'This is the house ____ roof is red.', options: ['A. which', 'B. whose', 'C. that', 'D. its'], answer: 'B' },
-                    { id: 9, type: '选择题', question: 'She has lived here ____ ten years.', options: ['A. since', 'B. for', 'C. in', 'D. during'], answer: 'B' },
-                    { id: 10, type: '选择题', question: 'I would like ____ water, please.', options: ['A. a few', 'B. few', 'C. a little', 'D. little'], answer: 'C' },
-                    { id: 11, type: '选择题', question: 'The book ____ to the library yet.', options: ['A. hasn\'t returned', 'B. hasn\'t been returned', 'C. isn\'t returned', 'D. wasn\'t returned'], answer: 'B' },
-                    { id: 12, type: '选择题', question: '____ it rain tomorrow, we will stay at home.', options: ['A. Should', 'B. If', 'C. Unless', 'D. Whether'], answer: 'A' },
-                    { id: 13, type: '选择题', question: 'He is used to ____ in the morning.', options: ['A. exercise', 'B. exercising', 'C. exercises', 'D. exercised'], answer: 'B' },
-                    { id: 14, type: '选择题', question: 'The baby is sleeping. Would you mind ____ the music?', options: ['A. turn off', 'B. turning off', 'C. to turn off', 'D. turned off'], answer: 'B' },
-                    { id: 15, type: '选择题', question: 'Which of the following is correct?', options: ['A. He is taller than any student in his class', 'B. He is taller than any other student in his class', 'C. He is tallest in his class', 'D. He is the taller in his class'], answer: 'B' },
-                    { id: 16, type: '选择题', question: 'My father ____ TV when I got home yesterday.', options: ['A. watches', 'B. is watching', 'C. watched', 'D. was watching'], answer: 'D' },
-                    { id: 17, type: '选择题', question: 'She is ____ beautiful girl ____ everyone likes her.', options: ['A. such, that', 'B. so, that', 'C. such a, that', 'D. so a, that'], answer: 'C' },
-                    { id: 18, type: '选择题', question: 'The news ____ exciting.', options: ['A. sounds', 'B. is sounded', 'C. is sounding', 'D. sound'], answer: 'A' },
-                    { id: 19, type: '选择题', question: 'If I ____ you, I would take this job.', options: ['A. am', 'B. was', 'C. were', 'D. be'], answer: 'C' },
-                    { id: 20, type: '选择题', question: 'There are ____ people in the park today.', options: ['A. many', 'B. much', 'C. a lot', 'D. lot of'], answer: 'A' }
-                ]
-            },
-            {
-                year: 2024, subject: '物化', count: 20, difficulty: '中等偏上',
-                icon: '🔬', fullScore: 120, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: '下列说法中，正确的是', options: ['A. 分子是保持物质化学性质的最小粒子', 'B. 原子是不能再分的粒子', 'C. 物质由分子构成，分子由原子构成', 'D. 离子不带电'], answer: 'C' },
-                    { id: 2, type: '选择题', question: '关于力的认识，下列说法正确的是', options: ['A. 只有直接接触的物体间才有力的作用', 'B. 力的三要素是大小、方向、作用点', 'C. 力是维持物体运动的原因', 'D. 重力的方向是垂直向下'], answer: 'B' },
-                    { id: 3, type: '选择题', question: '下列物质燃烧时，发出白光并放出热量的是', options: ['A. 硫', 'B. 木炭', 'C. 铁丝', 'D. 红磷'], answer: 'B' },
-                    { id: 4, type: '选择题', question: '用手将一重为5N的物体压入水中，排开的水重为8N，则物体所受浮力为', options: ['A. 5N', 'B. 8N', 'C. 13N', 'D. 3N'], answer: 'B' },
-                    { id: 5, type: '选择题', question: '下列物质中，含有氧分子的是', options: ['A. H₂O₂', 'B. MnO₂', 'C. O₂', 'D. CO₂'], answer: 'C' },
-                    { id: 6, type: '选择题', question: '关于温度、热量、内能的关系，下列说法正确的是', options: ['A. 物体吸收热量，温度一定升高', 'B. 物体温度升高，一定吸收了热量', 'C. 物体温度不变，就没有热量的交换', 'D. 物体温度升高，内能增加'], answer: 'D' },
-                    { id: 7, type: '选择题', question: '下列化学方程式书写正确的是', options: ['A. C + O₂ = CO₂', 'B. 2H₂ + O₂ = 2H₂O', 'C. Fe + O₂ = Fe₃O₄', 'D. Mg + O₂ = MgO'], answer: 'B' },
-                    { id: 8, type: '选择题', question: '小明同学用托盘天平称量物体时，将砝码和物体放反了，若1g以下用游码，其他操作正确，他称得物体的质量为5.6g，则物体的实际质量是', options: ['A. 5.6g', 'B. 4.4g', 'C. 6.4g', 'D. 3.6g'], answer: 'B' },
-                    { id: 9, type: '选择题', question: '关于电流、电压、电阻的关系，下列说法正确的是', options: ['A. 电压一定时，电阻与电流成反比', 'B. 电阻一定时，电压与电流成正比', 'C. 电流一定时，电压与电阻成反比', 'D. 以上都不对'], answer: 'B' },
-                    { id: 10, type: '选择题', question: '下列物质敞口放置在空气中，质量会减小的是', options: ['A. 浓盐酸', 'B. 浓硫酸', 'C. 氢氧化钠', 'D. 氯化钠'], answer: 'A' },
-                    { id: 11, type: '选择题', question: '汽车以72km/h的速度行驶，刹车后做匀减速直线运动，加速度大小为5m/s²，则刹车后3s时的速度为', options: ['A. 5m/s', 'B. 10m/s', 'C. 15m/s', 'D. 20m/s'], answer: 'A' },
-                    { id: 12, type: '选择题', question: '下列溶液的pH大于7的是', options: ['A. 稀盐酸', 'B. 稀硫酸', 'C. 氢氧化钠溶液', 'D. 稀硝酸'], answer: 'C' },
-                    { id: 13, type: '选择题', question: '下列物态变化中，属于凝固的是', options: ['A. 冬天河水结冰', 'B. 夏天自来水管"出汗"', 'C. 炼铁时铁水铸成铁块', 'D. 碘升华'], answer: 'C' },
-                    { id: 14, type: '选择题', question: '用托盘天平称量10.5g药品时，发现天平指针偏向左盘，则', options: ['A. 将游码向右移', 'B. 减少药品', 'C. 增加药品', 'D. 将砝码向右移'], answer: 'B' },
-                    { id: 15, type: '选择题', question: '下列关于声音的说法中，正确的是', options: ['A. 声音可以在真空中传播', 'B. 音调越高，声音越响亮', 'C. 噪声是发声体无规律振动产生的', 'D. 超声波不能在水中传播'], answer: 'C' },
-                    { id: 16, type: '选择题', question: '下列反应中，不属于复分解反应的是', options: ['A. HCl + NaOH = NaCl + H₂O', 'B. CaCO₃ = CaO + CO₂↑', 'C. CuSO₄ + 2NaOH = Cu(OH)₂↓ + Na₂SO₄', 'D. HCl + AgNO₃ = AgCl↓ + HNO₃'], answer: 'B' },
-                    { id: 17, type: '选择题', question: '在"测定小灯泡功率"的实验中，小灯泡的额定电压为2.5V，额定功率约为1W，电路连接正确，闭合开关后小灯泡不亮，原因可能是', options: ['A. 小灯泡短路', 'B. 小灯泡断路', 'C. 滑动变阻器阻值太大', 'D. 电源电压太低'], answer: 'B' },
-                    { id: 18, type: '选择题', question: '下列物质燃烧后的产物，既能污染空气又会形成酸雨的是', options: ['A. 硫', 'B. 碳', 'C. 磷', 'D. 铁'], answer: 'A' },
-                    { id: 19, type: '选择题', question: '光从空气斜射入水中时，正确的是', options: ['A. 传播方向不变', 'B. 折射角大于入射角', 'C. 折射角小于入射角', 'D. 同时发生反射和折射'], answer: 'D' },
-                    { id: 20, type: '选择题', question: '在化学方程式2H₂ + O₂ = 2H₂O中，化学计量数之比为', options: ['A. 2:1:2', 'B. 1:2:2', 'C. 2:2:1', 'D. 1:1:2'], answer: 'A' }
-                ]
-            },
-            {
-                year: 2024, subject: '道法', count: 15, difficulty: '中等',
-                icon: '⚖️', fullScore: 80, freeCount: 2,
-                questions: [
-                    { id: 1, type: '选择题', question: '我国宪法的核心价值追求是', options: ['A. 规范国家权力运行以保障公民权利', 'B. 一切权力属于人民', 'C. 依法治国', 'D. 人民当家作主'], answer: 'A' },
-                    { id: 2, type: '选择题', question: '公民行使监督权的正确方式是', options: ['A. 聚众闹事', 'B. 张贴大字报', 'C. 通过人大代表反映', 'D. 围堵政府机关'], answer: 'C' },
-                    { id: 3, type: '选择题', question: '我国社会主义民主政治的特点和优势是', options: ['A. 选举民主', 'B. 协商民主', 'C. 有事好商量，众人的事由众人商量', 'D. 全民民主'], answer: 'C' },
-                    { id: 4, type: '选择题', question: '非公有制经济在国民经济中的地位是', options: ['A. 主导力量', 'B. 主体地位', 'C. 重要组成部分', 'D. 附属地位'], answer: 'C' },
-                    { id: 5, type: '选择题', question: '公民最基本、最重要的权利是', options: ['A. 政治权利', 'B. 人身自由', 'C. 财产所有权', 'D. 受教育权'], answer: 'B' },
-                    { id: 6, type: '选择题', question: '我国处理民族关系的原则是', options: ['A. 民族平等、民族团结、各民族共同繁荣', 'B. 民族区域自治', 'C. 和谐发展', 'D. 共同富裕'], answer: 'A' },
-                    { id: 7, type: '选择题', question: '关于违法行为的说法，正确的是', options: ['A. 只有犯罪行为才是违法行为', 'B. 违法行为都要受到刑罚处罚', 'C. 一般违法行为虽然违法但不触犯刑法', 'D. 违法行为都要受到行政处罚'], answer: 'C' },
-                    { id: 8, type: '选择题', question: '公民维护合法权益的最权威、最有效的方式是', options: ['A. 协商', 'B. 调解', 'C. 仲裁', 'D. 诉讼'], answer: 'D' },
-                    { id: 9, type: '选择题', question: '在我国，未成年人是指', options: ['A. 未满16周岁的公民', 'B. 未满18周岁的公民', 'C. 未满20周岁的公民', 'D. 未满14周岁的公民'], answer: 'B' },
-                    { id: 10, type: '选择题', question: '建设创新型国家的关键是', options: ['A. 科技', 'B. 教育', 'C. 人才', 'D. 资金'], answer: 'C' },
-                    { id: 11, type: '选择题', question: '我国发展新的历史方位是', options: ['A. 社会主义初级阶段', 'B. 中国特色社会主义进入新时代', 'C. 全面建成小康社会', 'D. 实现共同富裕'], answer: 'B' },
-                    { id: 12, type: '选择题', question: '我国宪法的修改由全国人民代表大会以全体代表的', options: ['A. 过半数通过', 'B. 三分之二以上通过', 'C. 四分之三以上通过', 'D. 全票通过'], answer: 'B' },
-                    { id: 13, type: '选择题', question: '关于公平的说法，不正确的是', options: ['A. 公平是社会稳定和进步的重要基础', 'B. 公平就是绝对平等', 'C. 公平通常指人们承担的责任和享有的权利相对等', 'D. 有了公平，社会才能为每个人的发展提供平等的机会'], answer: 'B' },
-                    { id: 14, type: '选择题', question: '我国资源现状是', options: ['A. 资源总量丰富，人均占有量也丰富', 'B. 资源总量丰富，人均占有量不足', 'C. 资源总量不足，但人均占有量丰富', 'D. 资源总量和人均占有量都不足'], answer: 'B' },
-                    { id: 15, type: '选择题', question: '面对生活中的诱惑，正确的态度是', options: ['A. 什么诱惑都去尝试', 'B. 自觉抵制不良诱惑', 'C. 跟随他人的选择', 'D. 只要不违法就可以'], answer: 'B' }
-                ]
+                id: 6, type: '选择题',
+                question: '下列命题是真命题的有',
+                options: [
+                    'A. 若a>b，则ac²>bc²',
+                    'B. 若|a|=|b|，则a=b',
+                    'C. 两个有理数的积仍为有理数',
+                    'D. 两个无理数的积仍为无理数'
+                ],
+                answer: 'C',
+                topic: '数论',
+                analysis: 'A错在c=0时不等式不成立；B错在a=1,b=-1时|a|=|b|但a≠b；D错在√2×√2=2是有理数；C正确'
             }
-        ];
+        ]
+    },
+    {
+        year: 2022, subject: '数学', count: 6, difficulty: '中等偏上',
+        icon: '📐', fullScore: 120, freeCount: 2,
+        questions: [
+            {
+                id: 1, type: '选择题',
+                question: '下列物体中，三视图都是圆的是',
+                options: ['A. 圆柱', 'B. 圆锥', 'C. 球体', 'D. 圆台'],
+                answer: 'C',
+                topic: '几何',
+                analysis: '球体的三视图从任何方向看都是圆，这是球体的特征'
+            },
+            {
+                id: 2, type: '选择题',
+                question: '秦兵马俑的眼睛到下巴的距离与头顶到下巴的距离之比约为0.618（黄金分割比）。若头顶到下巴的距离为25cm，则眼睛到下巴的距离约为',
+                options: ['A. 10cm', 'B. 12cm', 'C. 15cm', 'D. 20cm'],
+                answer: 'C',
+                topic: '计算',
+                analysis: '黄金分割比φ≈0.618，25×0.618≈15.45cm≈15cm'
+            },
+            {
+                id: 3, type: '选择题',
+                question: '不等式组 {x+1>0, x-2<0} 的解集是',
+                options: ['A. [-1,2)', 'B. (-1,2)', 'C. (-1,2]', 'D. [-1,2]'],
+                answer: 'B',
+                topic: '不等式',
+                analysis: 'x+1>0得x>-1，x-2<0得x<2，取交集得-1<x<2'
+            },
+            {
+                id: 4, type: '选择题',
+                question: '抛物线y=x²+x+c与x轴只有一个公共点，则c的值为',
+                options: ['A. 1/4', 'B. 1/2', 'C. 1', 'D. 4'],
+                answer: 'A',
+                topic: '函数',
+                analysis: '与x轴只有一个公共点则Δ=1-4c=0，解得c=1/4'
+            },
+            {
+                id: 5, type: '选择题',
+                question: '两个平面镜的镜面与水平面平行，入射光线l与镜面的夹角为30°，出射光线m与镜面的夹角也为30°，则入射光线l与出射光线m的关系是',
+                options: ['A. 相交', 'B. 平行', 'C. 垂直', 'D. 重合'],
+                answer: 'B',
+                topic: '几何',
+                analysis: '光在平行镜面间发生两次反射，入射角等于反射角，两条光线平行'
+            },
+            {
+                id: 6, type: '选择题',
+                question: '小莹所在班级10名同学的身高数据如下：165, 158, 168, 162, 174, 168, 162, 165, 168, 170（单位：cm）。下列统计量中，能够描述这组数据集中趋势的是',
+                options: ['A. 平均数', 'B. 方差', 'C. 众数', 'D. 中位数'],
+                answer: 'ACD',
+                topic: '统计',
+                analysis: '集中趋势用平均数、众数、中位数描述；方差是离散程度的度量'
+            }
+        ]
+    },
+    {
+        year: 2020, subject: '数学', count: 8, difficulty: '中等',
+        icon: '📐', fullScore: 120, freeCount: 2,
+        questions: [
+            {
+                id: 1, type: '选择题',
+                question: '下列运算正确的是',
+                options: [
+                    'A. a² + a³ = a⁵',
+                    'B. a²·a³ = a⁵',
+                    'C. (a²)³ = a⁵',
+                    'D. a⁶÷a² = a³'
+                ],
+                answer: 'B',
+                topic: '计算',
+                analysis: '同底数幂相乘：底数不变，指数相加。a²·a³ = a^(2+3) = a⁵'
+            },
+            {
+                id: 2, type: '选择题',
+                question: '政府工作报告指出：农村贫困人口减少1109万。数字1109万用科学记数法可表示为',
+                options: ['A. 1.109×10⁷', 'B. 1.109×10⁶', 'C. 1.109×10⁸', 'D. 11.09×10⁶'],
+                answer: 'A',
+                topic: '计算',
+                analysis: '1109万 = 11,090,000 = 1.109×10⁷'
+            },
+            {
+                id: 3, type: '选择题',
+                question: '某校组织一分钟跳绳比赛，随机抽取10名参赛学生成绩：141(5人), 144(2人), 145(1人), 146(2人)。关于这组数据的结论正确的是',
+                options: ['A. 平均数是144', 'B. 众数是141', 'C. 中位数是144.5', 'D. 方差是5.4'],
+                answer: 'B',
+                topic: '统计',
+                analysis: '141出现5次，是出现次数最多的，所以众数是141'
+            },
+            {
+                id: 4, type: '选择题',
+                question: '关于x的一元二次方程x²-(k-3)x+1-k=0根的情况，下列说法正确的是',
+                options: [
+                    'A. 有两个不相等的实数根',
+                    'B. 有两个相等的实数根',
+                    'C. 无实数根',
+                    'D. 无法确定'
+                ],
+                answer: 'A',
+                topic: '方程',
+                analysis: '判别式Δ=(k-3)²-4(1-k)=k²-6k+9-4+4k=k²-2k+5=(k-1)²+4>0，恒有两个不相等实根'
+            },
+            {
+                id: 5, type: '选择题',
+                question: '若关于x的不等式组 {2x≥a, x<b} 有且只有3个整数解，则a的取值范围是',
+                options: ['A. 4<a≤6', 'B. 4≤a<6', 'C. 6<a<8', 'D. 6≤a≤8'],
+                answer: 'C',
+                topic: '不等式',
+                analysis: '由2x≥a得x≥a/2，由x<b得x<b。整数解有3个时，a/2和b之间有3个整数'
+            },
+            {
+                id: 6, type: '选择题',
+                question: '定义新运算：a★b = a²-b。若函数y = (x★2)★1，则y的最小值是',
+                options: ['A. -1', 'B. 0', 'C. 1', 'D. 2'],
+                answer: 'C',
+                topic: '函数',
+                analysis: 'x★2 = x²-2，再★1 = (x²-2)²-1 = x⁴-4x²+3 ≥ 1'
+            },
+            {
+                id: 7, type: '选择题',
+                question: '观察下列数据：2, 5, 10, 17, 26, ...按此规律，第10个数是',
+                options: ['A. 82', 'B. 100', 'C. 101', 'D. 121'],
+                answer: 'C',
+                topic: '数论',
+                analysis: '规律：n²+1，第10个数是10²+1=101'
+            },
+            {
+                id: 8, type: '选择题',
+                question: '已知反比例函数y = k/x的图象经过点(2,3)，则当x<0时，y的取值范围是',
+                options: ['A. y>0', 'B. y<0', 'C. y>3/2', 'D. y<3/2'],
+                answer: 'B',
+                topic: '函数',
+                analysis: '由k=2×3=6>0，当x<0时，y=k/x<0'
+            }
+        ]
+    },
+    {
+        year: 2016, subject: '数学', count: 8, difficulty: '中等偏上',
+        icon: '📐', fullScore: 120, freeCount: 2,
+        questions: [
+            {
+                id: 1, type: '选择题',
+                question: '计算：2⁰·2⁻³的结果是',
+                options: ['A. -1/8', 'B. 1/8', 'C. 0', 'D. 8'],
+                answer: 'B',
+                topic: '计算',
+                analysis: '2⁰=1，2⁻³=1/2³=1/8，所以2⁰·2⁻³=1×1/8=1/8'
+            },
+            {
+                id: 2, type: '选择题',
+                question: '2016年第一季度潍坊全市实现生产总值1256.77亿元，将1256.77亿用科学记数法表示（精确到百亿位）是',
+                options: ['A. 1.2×10¹¹', 'B. 1.3×10¹¹', 'C. 1.26×10¹¹', 'D. 0.13×10¹²'],
+                answer: 'B',
+                topic: '计算',
+                analysis: '1256.77亿 = 1.25677×10¹¹ ≈ 1.3×10¹¹（精确到百亿位）'
+            },
+            {
+                id: 3, type: '选择题',
+                question: '关于x的一元二次方程x²-√2x+sinα=0有两个相等的实数根，则锐角α等于',
+                options: ['A. 15°', 'B. 30°', 'C. 45°', 'D. 60°'],
+                answer: 'B',
+                topic: '方程',
+                analysis: 'Δ=(√2)²-4sinα=2-4sinα=0，解得sinα=1/2，所以α=30°'
+            },
+            {
+                id: 4, type: '选择题',
+                question: '将下列多项式因式分解，结果中不含有因式a+1的是',
+                options: [
+                    'A. a²-1',
+                    'B. a²+a',
+                    'C. a²+a-2',
+                    'D. (a+2)²-2(a+2)+1'
+                ],
+                answer: 'C',
+                topic: '数论',
+                analysis: 'a²-1=(a+1)(a-1)，a²+a=a(a+1)，a²+a-2=(a+2)(a-1)，(a+2)²-2(a+2)+1=(a+1)²'
+            },
+            {
+                id: 5, type: '选择题',
+                question: '关于x的方程(x+m)/(3-x) + (3m)/(x-3) = 3的解为正数，则m的取值范围是',
+                options: [
+                    'A. m<9/2',
+                    'B. m<9/2且m≠-3/4',
+                    'C. m>-4',
+                    'D. m>-4且m≠-3/4'
+                ],
+                answer: 'D',
+                topic: '方程',
+                analysis: '解分式方程得x=(9-2m)/2>0，m<9/2；x≠3时m≠-3/4；分母x-3≠0。所以m>-4且m≠-3/4'
+            },
+            {
+                id: 6, type: '选择题',
+                question: '运行程序：从"输入x"到"结果是否>95"为一次操作，如果程序操作进行了三次才停止，那么x的取值范围是',
+                options: ['A. x≥11', 'B. 11≤x<23', 'C. 11<x≤23', 'D. x≤23'],
+                answer: 'C',
+                topic: '计算',
+                analysis: '第三次才停止说明前两次≤95，第三次>95，解不等式组得11<x≤23'
+            },
+            {
+                id: 7, type: '选择题',
+                question: '木杆AB斜靠在墙壁上，当木杆的上端A沿墙壁竖直下滑时，木杆的底端B随之沿射线方向滑动。下列图中用虚线画出木杆中点P随之下落的路线，其中正确的是',
+                options: ['A. 直线', 'B. 折线', 'C. 圆弧', 'D. 抛物线'],
+                answer: 'C',
+                topic: '几何',
+                analysis: '木杆长度不变，中点P到墙角O的距离不变，P点的轨迹是以O为圆心的圆弧'
+            },
+            {
+                id: 8, type: '选择题',
+                question: '在平面直角坐标系中，⊙M与x轴相切于点A(8,0)，与y轴交于点B(0,4)和点C(0,16)，则圆心M到坐标原点O的距离是',
+                options: ['A. 10', 'B. 8√2', 'C. 4√13', 'D. 2√41'],
+                answer: 'D',
+                topic: '几何',
+                analysis: '圆心M的坐标为(8,10)，所以OM=√(8²+10²)=√164=2√41'
+            }
+        ]
+    },
+    {
+        year: 2012, subject: '数学', count: 8, difficulty: '中等',
+        icon: '📐', fullScore: 120, freeCount: 2,
+        questions: [
+            {
+                id: 1, type: '选择题',
+                question: '计算：2⁻²的结果是',
+                options: ['A. 1/4', 'B. -4', 'C. 1/2', 'D. 4'],
+                answer: 'A',
+                topic: '计算',
+                analysis: '负整数指数幂：a⁻ⁿ=1/aⁿ，所以2⁻²=1/2²=1/4'
+            },
+            {
+                id: 2, type: '选择题',
+                question: '使代数式√(x-3)有意义的x的取值范围是',
+                options: ['A. x>3', 'B. x<3', 'C. x≥3', 'D. x≤3'],
+                answer: 'C',
+                topic: '计算',
+                analysis: '二次根式有意义的条件：被开方数≥0，所以x-3≥0，x≥3'
+            },
+            {
+                id: 3, type: '选择题',
+                question: '某班6名学生的数学成绩分别是：75, 77, 80, 75, 80, 82。关于这组数据下列说法错误的是',
+                options: ['A. 众数是75', 'B. 中位数是77.5', 'C. 平均数是78', 'D. 极差是7'],
+                answer: 'B',
+                topic: '统计',
+                analysis: '排序后为75,75,77,80,80,82，中位数=(77+80)/2=78.5，不是77.5'
+            },
+            {
+                id: 4, type: '选择题',
+                question: '不等式组 {x>1, x<2} 的解集是',
+                options: ['A. 1<x<2', 'B. x>1', 'C. x<2', 'D. 空集'],
+                answer: 'A',
+                topic: '不等式',
+                analysis: '同大取较大，同小取较小，两个不等式取交集得1<x<2'
+            },
+            {
+                id: 5, type: '选择题',
+                question: '一个水龙头滴水，1小时滴水3.5千克。照这样计算，1年（365天）滴水多少千克（用科学记数法表示）',
+                options: ['A. 3.06×10⁴', 'B. 3.07×10⁴', 'C. 3.06×10³', 'D. 3.07×10³'],
+                answer: 'B',
+                topic: '计算',
+                analysis: '1年滴水量=3.5×24×365=30660千克=3.066×10⁴≈3.07×10⁴'
+            },
+            {
+                id: 6, type: '选择题',
+                question: '两圆半径r₁、r₂是方程x²-7x+10=0的两根，圆心距d=7，则这两圆的位置关系是',
+                options: ['A. 内切', 'B. 外切', 'C. 相交', 'D. 外离'],
+                answer: 'B',
+                topic: '几何',
+                analysis: '方程两根为2和5，r₁+r₂=7=d，所以两圆外切'
+            },
+            {
+                id: 7, type: '选择题',
+                question: '直线y=-2x-4与y=4x+b的交点在第三象限，则b的取值范围是',
+                options: ['A. -4<b<8', 'B. b<-4或b>8', 'C. -8<b<4', 'D. b<-8或b>4'],
+                answer: 'A',
+                topic: '函数',
+                analysis: '联立解得交点坐标((b-4)/6, -(2b+8)/6)，在第三象限需x<0,y<0，解得-4<b<8'
+            },
+            {
+                id: 8, type: '选择题',
+                question: '某日历上9个数排列成正方形，它们的和是144，其中最大数与最小数的乘积是192，这9个数之和是',
+                options: ['A. 72', 'B. 96', 'C. 120', 'D. 144'],
+                answer: 'D',
+                topic: '数论',
+                analysis: '日历上连续9个数之和等于中心数的9倍，所以中心数=144/9=16，9数之和=144'
+            }
+        ]
+    },
+    {
+        year: 2008, subject: '数学', count: 6, difficulty: '中等偏上',
+        icon: '📐', fullScore: 120, freeCount: 2,
+        questions: [
+            {
+                id: 1, type: '选择题',
+                question: '下列运算正确的是',
+                options: [
+                    'A. a³·a²=a⁶',
+                    'B. (a³)²=a⁶',
+                    'C. a⁶÷a²=a³',
+                    'D. a³+a²=a⁵'
+                ],
+                answer: 'B',
+                topic: '计算',
+                analysis: '(a³)²=a^(3×2)=a⁶，正确；其他选项均违反运算法则'
+            },
+            {
+                id: 2, type: '选择题',
+                question: '若a与b互为相反数，则a+b的值是',
+                options: ['A. 0', 'B. 1', 'C. -1', 'D. 无法确定'],
+                answer: 'A',
+                topic: '数论',
+                analysis: '相反数的定义：a=-b，所以a+b=0'
+            },
+            {
+                id: 3, type: '选择题',
+                question: '反比例函数y=k/x，当x>0时，y随x的增大而增大，则k的取值范围是',
+                options: ['A. k>0', 'B. k<0', 'C. k≥0', 'D. k≤0'],
+                answer: 'B',
+                topic: '函数',
+                analysis: '反比例函数在第一象限y随x增大而减小，要使x>0时y随x增大而增大，则k<0'
+            },
+            {
+                id: 4, type: '选择题',
+                question: '已知关于x的方程x²+mx+1=0有两个相等的实数根，则m的值是',
+                options: ['A. 2', 'B. -2', 'C. ±2', 'D. 0'],
+                answer: 'C',
+                topic: '方程',
+                analysis: '有两个相等实根则Δ=m²-4=0，m=±2'
+            },
+            {
+                id: 5, type: '选择题',
+                question: '一个蓄水池注水，流量一定，水深h与放水时间t的关系是',
+                options: ['A. 正比例关系', 'B. 反比例关系', 'C. 一次函数关系', 'D. 二次函数关系'],
+                answer: 'B',
+                topic: '函数',
+                analysis: '流量=体积/时间=底面积×h/t，h与t成反比关系'
+            },
+            {
+                id: 6, type: '选择题',
+                question: '一个一次函数的图象过第一、三、四象限，则该函数',
+                options: [
+                    'A. 有最大值k',
+                    'B. 有最大值b',
+                    'C. 有最小值k',
+                    'D. 有最小值b'
+                ],
+                answer: 'B',
+                topic: '函数',
+                analysis: '过一三四象限说明k>0,b<0，函数y=kx+b有最大值b（当x=0时）'
+            }
+        ]
+    }
+];;
 
         let currentExamYear = 2025;
         let examUnlocked = localStorage.getItem('wfzgk_exam_unlocked') === 'true';
@@ -1706,18 +1863,34 @@
         function showQuizResult() {
             if (!currentExam) return;
             
-            // 计算成绩
+            // 计算答题统计
             let correct = 0;
             let wrong = 0;
             let unanswered = 0;
             
+            // 按topic分类统计
+            const topicStats = {};
+            
             currentExam.questions.forEach(q => {
-                if (userAnswers[q.id] === undefined) {
+                const userAns = userAnswers[q.id];
+                const isCorrect = userAns === q.answer;
+                const isUnanswered = userAns === undefined;
+                
+                // 初始化topic统计
+                if (!topicStats[q.topic]) {
+                    topicStats[q.topic] = { total: 0, correct: 0, wrong: 0, unanswered: 0 };
+                }
+                topicStats[q.topic].total++;
+                
+                if (isUnanswered) {
                     unanswered++;
-                } else if (userAnswers[q.id] === q.answer) {
+                    topicStats[q.topic].unanswered++;
+                } else if (isCorrect) {
                     correct++;
+                    topicStats[q.topic].correct++;
                 } else {
                     wrong++;
+                    topicStats[q.topic].wrong++;
                 }
             });
             
@@ -1725,75 +1898,137 @@
             const score = Math.round((correct / total) * currentExam.fullScore);
             const accuracy = Math.round((correct / total) * 100);
             
+            // 生成薄弱点分析HTML
+            let weaknessAnalysis = '';
+            let hasWeakness = false;
+            
+            for (const [topic, stats] of Object.entries(topicStats)) {
+                const topicAccuracy = stats.total > 0 ? Math.round((stats.correct / stats.total) * 100) : 0;
+                const topicIcon = topicAccuracy >= 80 ? '✓' : (topicAccuracy >= 60 ? '△' : '✗');
+                const topicClass = topicAccuracy >= 80 ? 'text-green-600' : (topicAccuracy >= 60 ? 'text-yellow-600' : 'text-red-600');
+                
+                let suggestion = '';
+                if (topicAccuracy < 60) {
+                    hasWeakness = true;
+                    suggestion = getStudySuggestion(topic);
+                    weaknessAnalysis += `
+                        <div class="bg-red-50 border-l-4 border-red-400 rounded-lg p-3 mb-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-lg">✗</span>
+                                <span class="font-medium text-red-700">${topic}</span>
+                                <span class="text-sm text-red-600">${stats.correct}/${stats.total} (${topicAccuracy}%)</span>
+                            </div>
+                            <p class="text-sm text-red-600 ml-6">→ ${suggestion}</p>
+                        </div>
+                    `;
+                } else if (topicAccuracy < 80) {
+                    weaknessAnalysis += `
+                        <div class="bg-yellow-50 border-l-4 border-yellow-400 rounded-lg p-3 mb-3">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span class="text-lg">△</span>
+                                <span class="font-medium text-yellow-700">${topic}</span>
+                                <span class="text-sm text-yellow-600">${stats.correct}/${stats.total} (${topicAccuracy}%)</span>
+                            </div>
+                            <p class="text-sm text-yellow-600 ml-6">→ ${getStudySuggestion(topic)}</p>
+                        </div>
+                    `;
+                } else {
+                    weaknessAnalysis += `
+                        <div class="bg-green-50 border-l-4 border-green-400 rounded-lg p-3 mb-3">
+                            <div class="flex items-center gap-2">
+                                <span class="text-lg">✓</span>
+                                <span class="font-medium text-green-700">${topic}</span>
+                                <span class="text-sm text-green-600">${stats.correct}/${stats.total} (${topicAccuracy}%)</span>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+            
             const modal = document.getElementById('exam-quiz-modal');
             if (!modal) return;
             
             modal.innerHTML = `
-                <div class="bg-white rounded-2xl w-full max-w-3xl max-h-[95vh] md:max-h-[90vh] overflow-hidden flex flex-col shadow-2xl">
+                <div class="bg-white rounded-2xl w-full max-w-4xl max-h-[95vh] md:max-h-[90vh] overflow-hidden flex flex-col shadow-2xl">
                     <!-- 头部 -->
                     <div class="bg-gradient-to-r from-green-600 to-emerald-600 text-white p-4 flex items-center justify-between flex-shrink-0">
                         <div class="flex items-center gap-3">
-                            <span class="text-2xl">🏆</span>
+                            <span class="text-2xl">📊</span>
                             <div>
-                                <h3 class="font-bold text-lg">答题结果</h3>
-                                <p class="text-white/80 text-xs">${currentExam.year}年${currentExam.subject}</p>
+                                <h3 class="font-bold text-lg">答题报告</h3>
+                                <p class="text-white/80 text-xs">${currentExam.year}年 ${currentExam.subject}</p>
                             </div>
                         </div>
-                        <button onclick="closeExamQuiz()" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-xl font-bold transition-colors">
-                            ✕
-                        </button>
+                        <button onclick="closeExamQuiz()" class="w-10 h-10 rounded-full bg-white/20 hover:bg-white/30 flex items-center justify-center text-xl font-bold transition-colors">✕</button>
                     </div>
                     
-                    <!-- 分数展示 -->
+                    <!-- 成绩概览 -->
                     <div class="bg-gradient-to-r from-green-50 to-emerald-50 p-6 text-center flex-shrink-0">
-                        <div class="text-5xl font-bold text-green-600 mb-2">${score}</div>
-                        <div class="text-gray-600 mb-2">满分 ${currentExam.fullScore} 分</div>
+                        <div class="text-5xl font-bold text-green-600 mb-2">${score}<span class="text-xl text-gray-500">/${currentExam.fullScore}</span></div>
+                        <div class="text-gray-600 mb-2">正确率 ${accuracy}%</div>
                         <div class="w-full bg-gray-200 rounded-full h-3 mb-4 max-w-xs mx-auto">
                             <div class="bg-green-500 h-3 rounded-full transition-all" style="width: ${accuracy}%"></div>
                         </div>
                         <div class="flex justify-center gap-6 text-sm">
-                            <span class="text-green-600">✅ 答对 ${correct} 题</span>
-                            <span class="text-red-600">❌ 答错 ${wrong} 题</span>
-                            <span class="text-gray-500">⬜ 未答 ${unanswered} 题</span>
+                            <span class="text-green-600">✓ 正确 ${correct}</span>
+                            <span class="text-red-600">✗ 错误 ${wrong}</span>
+                            <span class="text-gray-500">○ 未答 ${unanswered}</span>
                         </div>
                     </div>
                     
-                    <!-- 逐题回顾 -->
+                    <!-- 薄弱点分析 -->
                     <div class="flex-1 overflow-y-auto p-4 md:p-6">
-                        <h4 class="font-bold text-gray-900 mb-4">📝 逐题回顾</h4>
+                        <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <span class="text-xl">📊</span> 知识点掌握情况
+                        </h4>
+                        <div class="mb-6">
+                            ${weaknessAnalysis}
+                        </div>
+                        
+                        <!-- 详细答题结果 -->
+                        <h4 class="font-bold text-gray-900 mb-4 flex items-center gap-2">
+                            <span class="text-xl">📝</span> 详细答题结果
+                        </h4>
                         <div class="space-y-4">
-                            ${currentExam.questions.map(q => {
+                            ${currentExam.questions.map((q, idx) => {
                                 const userAns = userAnswers[q.id];
                                 const isCorrect = userAns === q.answer;
                                 const isUnanswered = userAns === undefined;
                                 
                                 let resultClass = 'bg-gray-50';
-                                let resultIcon = '⬜';
+                                let resultIcon = '○';
                                 let userAnsDisplay = isUnanswered ? '未作答' : userAns;
                                 
                                 if (isUnanswered) {
                                     resultClass = 'bg-gray-100 border-l-4 border-gray-400';
+                                    resultIcon = '○';
                                 } else if (isCorrect) {
                                     resultClass = 'bg-green-50 border-l-4 border-green-500';
-                                    resultIcon = '✅';
+                                    resultIcon = '✓';
                                 } else {
                                     resultClass = 'bg-red-50 border-l-4 border-red-500';
-                                    resultIcon = '❌';
+                                    resultIcon = '✗';
                                 }
                                 
                                 return `
                                 <div class="${resultClass} rounded-xl p-4">
                                     <div class="flex items-start gap-2 mb-2">
-                                        <span class="text-lg">${resultIcon}</span>
+                                        <span class="text-lg font-bold">${resultIcon}</span>
                                         <div class="flex-1">
                                             <span class="text-sm text-gray-500">第${q.id}题</span>
+                                            <span class="ml-2 px-2 py-0.5 text-xs rounded bg-blue-100 text-blue-700">${q.topic}</span>
                                             <p class="font-medium text-gray-900 mt-1">${q.question}</p>
                                         </div>
                                     </div>
                                     <div class="ml-6 space-y-1 text-sm">
-                                        ${!isUnanswered && !isCorrect ? `<div class="text-red-600">✗ 您的答案：${userAnsDisplay}</div>` : ''}
-                                        ${isUnanswered ? '' : `<div class="text-green-600">✓ 正确答案：${q.answer}</div>`}
-                                        ${isUnanswered ? '<div class="text-gray-500 italic">（此题未作答）</div>' : ''}
+                                        <div class="flex flex-wrap gap-2 mb-2">
+                                            ${q.options.map(opt => `<span class="px-2 py-1 bg-white rounded text-gray-700 text-xs ${opt.startsWith(userAns) && !isCorrect ? 'bg-red-100 text-red-700' : ''} ${opt.startsWith(q.answer) ? 'bg-green-100 text-green-700 font-medium' : ''}">${opt}</span>`).join('')}
+                                        </div>
+                                        ${!isUnanswered && !isCorrect ? `<div class="text-red-600">✗ 你的答案: ${userAnsDisplay}</div>` : ''}
+                                        <div class="text-green-600">✓ 正确答案: ${q.answer}</div>
+                                        <div class="mt-2 p-2 bg-blue-50 rounded text-blue-800 text-xs">
+                                            <strong>💡 解析:</strong> ${q.analysis || '暂无解析'}
+                                        </div>
                                     </div>
                                 </div>
                                 `;
@@ -1804,10 +2039,10 @@
                     <!-- 底部按钮 -->
                     <div class="bg-gray-50 p-4 flex flex-wrap items-center justify-center gap-3 flex-shrink-0 border-t">
                         <button onclick="fillScoreToEstimate(${score})" class="px-4 py-2 rounded-lg bg-orange-500 text-white font-medium hover:bg-orange-600 transition-colors flex items-center gap-2">
-                            🎯 将成绩填入估分
+                            📊 同步到估分
                         </button>
                         <button onclick="retakeQuiz()" class="px-4 py-2 rounded-lg border-2 border-gray-300 text-gray-700 font-medium hover:bg-gray-100 transition-colors">
-                            🔄 再做一次
+                            🔄 重新答题
                         </button>
                         <button onclick="closeExamQuiz()" class="px-4 py-2 rounded-lg bg-gray-600 text-white font-medium hover:bg-gray-700 transition-colors">
                             关闭
@@ -1815,6 +2050,21 @@
                     </div>
                 </div>
             `;
+        }
+        
+        // 获取复习建议
+        function getStudySuggestion(topic) {
+            const suggestions = {
+                '计算': '加强幂的运算法则、指数运算的练习，注意符号变化',
+                '函数': '熟练掌握一次函数、反比例函数、二次函数的图像与性质',
+                '方程': '重点复习一元二次方程根的判别式、根与系数的关系',
+                '几何': '熟练运用几何定理，注意数形结合思想的运用',
+                '统计': '理解平均数、众数、中位数的含义和适用场景',
+                '不等式': '掌握不等式的基本性质，解不等式组时注意取交集',
+                '数论': '加强因式分解、整除性问题的练习',
+                '概率': '理解概率的基本概念，熟练使用列举法求概率'
+            };
+            return suggestions[topic] || '建议回顾相关知识点，多做练习题';
         }
 
         function fillScoreToEstimate(score) {
